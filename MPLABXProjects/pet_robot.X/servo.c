@@ -52,6 +52,27 @@ void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
     }
 }
 
+void setstand(){
+        setServoAngle(0, 1500); 
+        setServoAngle(1, 1500); 
+        setServoAngle(2, 1500); 
+        setServoAngle(3, 1500);    
+}
+
+void setsit(){
+        setServoAngle(0, 1500); 
+        setServoAngle(1, 1500); 
+        setServoAngle(2, 2500); 
+        setServoAngle(3, 500);    
+}
+
+void setlaydown(){
+        setServoAngle(0, 2500); 
+        setServoAngle(1, 500); 
+        setServoAngle(2, 500); 
+        setServoAngle(3, 2500);    
+}
+
 void main(void) {
     TRISB = 0x01; 
     LATB = 0x00;  
@@ -59,19 +80,19 @@ void main(void) {
 
     while (1) {
         while(RB0 == 0b1);
-        setServoAngle(0, 500); 
-        __delay_ms(1000);
+        setstand();
+        __delay_ms(400);
         
         while(RB0 == 0b1);
-        setServoAngle(0, 1500);
-        __delay_ms(1000);
+        setlaydown();
+        __delay_ms(400);
+        
+               while(RB0 == 0b1);
+        setstand();
+        __delay_ms(400);
         
         while(RB0 == 0b1);
-        setServoAngle(0, 2500);
-        __delay_ms(1000);
-        
-        while(RB0 == 0b1);
-        setServoAngle(0, 1500);
-        __delay_ms(1000);
+        setsit();
+        __delay_ms(400);
     }
 }
