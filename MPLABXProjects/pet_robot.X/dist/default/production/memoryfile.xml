@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug\pet_robot.X.debug.hex">
+  <executable name="dist/default/production\pet_robot.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-<<<<<<< HEAD
-      <used>2724</used>
-      <free>30044</free>
-=======
       <used>786</used>
       <free>31982</free>
->>>>>>> origin/master
     </memory>
     <memory name="data">
       <units>bytes</units>
