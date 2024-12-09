@@ -224,8 +224,8 @@ smallconst 600 601 SMALLCONST 600 0
 dataCOMRAM 1 10 COMRAM 1 1
 text1 602 903 CODE 602 0
 %locals
-dist/default/debug\pet_robot.X.debug.o
-C:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_1.s
+dist/default/production\pet_robot.X.production.o
+C:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_1.s
 440 8BC 0 CODE 0
 442 8BC 0 CODE 0
 445 8BC 0 CODE 0
@@ -304,8 +304,8 @@ servo.c
 28 8F6 0 CODE 0
 29 8F8 0 CODE 0
 30 8FA 0 CODE 0
-C:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_1.s
-1396 8 0 CODE 0
+C:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_1.s
+1390 8 0 CODE 0
 servo.c
 32 8 0 CODE 0
 servo.c

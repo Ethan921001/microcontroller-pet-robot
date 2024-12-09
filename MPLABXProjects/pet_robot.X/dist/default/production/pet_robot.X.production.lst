@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.50 build 20240725155939 
-                                                                                               Mon Dec 09 21:03:40 2024
+                                                                                               Mon Dec 09 21:01:08 2024
 
 Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1 
      1                           	processor	18F4520
@@ -262,10 +262,10 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
    248   000F8A                     _LATB           set	3978
    249   000F93                     _TRISB          set	3987
    250   000F8A                     _LATBbits       set	3978
-   251   000FD6                     _TMR0L          set	4054
-   252   000FD7                     _TMR0H          set	4055
-   253   000FD5                     _T0CON          set	4053
-   254   000FF2                     _INTCONbits     set	4082
+   251   000FF2                     _INTCONbits     set	4082
+   252   000FD6                     _TMR0L          set	4054
+   253   000FD7                     _TMR0H          set	4055
+   254   000FD5                     _T0CON          set	4053
    255                           
    256                           ; #config settings
    257                           
@@ -1281,7 +1281,7 @@ Auto Spaces:
     BANK2           256      0       0
     BANK3           256      0       0
     BANK4           256      0       0
-    BANK5           244      0       0
+    BANK5           256      0       0
 
 Pointer List with Targets:
 
@@ -1390,7 +1390,9 @@ Call Graph Tables:
 
 Address spaces:
 Name               Size   Autos  Total    Usage
-BIGRAM            1523      0       0      0.0%
+BIGRAM            1535      0       0      0.0%
+BITBANK5           256      0       0      0.0%
+BANK5              256      0       0      0.0%
 BITBANK4           256      0       0      0.0%
 BANK4              256      0       0      0.0%
 BITBANK3           256      0       0      0.0%
@@ -1399,26 +1401,18 @@ BITBANK2           256      0       0      0.0%
 BANK2              256      0       0      0.0%
 BITBANK1           256      0       0      0.0%
 BANK1              256      0       0      0.0%
-BITBANK5           244      0       0      0.0%
-BANK5              244      0       0      0.0%
 BITBANK0           128      0       0      0.0%
 BANK0              128      0       0      0.0%
+BITBIGSFRh         126      0       0      0.0%
 BITCOMRAM          126      0       0      0.0%
 COMRAM             126      5      15     11.9%
-BITBIGSFR_1         55      0       0      0.0%
-BITBIGSFRh          26      0       0      0.0%
-BITBIGSFR_5h        10      0       0      0.0%
-BITBIGSFR_2h         3      0       0      0.0%
-BITBIGSFR_4          3      0       0      0.0%
-BITBIGSFR_3          3      0       0      0.0%
-BITBIGSFR_5l         2      0       0      0.0%
 BITBIGSFRl           1      0       0      0.0%
 STACK                0      0       0      0.0%
 DATA                 0      0      15      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.50 build 20240725155939 
-Symbol Table                                                                                   Mon Dec 09 21:03:40 2024
+Symbol Table                                                                                   Mon Dec 09 21:01:08 2024
 
                      l25 08FA                       l44 0830                       l62 0722  
                      l47 08BA                      l761 08EA                      l763 08EE  

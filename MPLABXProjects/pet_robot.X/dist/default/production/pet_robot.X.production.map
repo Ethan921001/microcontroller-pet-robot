@@ -4,22 +4,19 @@ Linker command line:
 
 -W-3 \
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
-  -cn -h+dist/default/debug\pet_robot.X.debug.sym \
-  --cmf=dist/default/debug\pet_robot.X.debug.cmf -z -Q18F4520 \
-  -oC:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_3.o \
+  -cn -h+dist/default/production\pet_robot.X.production.sym \
+  --cmf=dist/default/production\pet_robot.X.production.cmf -z -Q18F4520 \
+  -oC:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
-  -Mdist/default/debug/pet_robot.X.debug.map \
-  --md=C:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_0.dat -E1 \
-  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07DBFh -ACONST=00h-07DBFh \
-  -ASMALLCONST=0600h-06FFhx119,07D00h-07DBFh -AMEDIUMCONST=0600h-07DBFh \
-  -ACOMRAM=01h-07Fh -AABS1=00h-05F3h -ABIGRAM=01h-05F3h \
-  -ARAM=080h-0FFh,0100h-01FFhx4,0500h-05F3h -ABANK0=080h-0FFh \
-  -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
-  -ABANK4=0400h-04FFh -ABANK5=0500h-05F3h \
-  -ASFR=0F80h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFCh \
-  -ABIGSFR=0F80h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFCh \
-  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
-  -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
+  -Mdist/default/production/pet_robot.X.production.map \
+  --md=C:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_0.dat -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
+  -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-07Fh \
+  -AABS1=00h-05FFh -ABIGRAM=01h-05FFh -ARAM=080h-0FFh,0100h-01FFhx5 \
+  -ABANK0=080h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
+  -ASFR=0F80h-0FFFh -ABIGSFR=0F80h-0FFFh -ACONFIG=0300000h-030000Dh \
+  -AIDLOC=0200000h-0200007h -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=8h,intcodelo,powerup,init -pramtop=0600h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h \
@@ -27,8 +24,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_9.o \
-  dist/default/debug\pet_robot.X.debug.o 
+  C:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_9.o \
+  dist/default/production\pet_robot.X.production.o 
 
 Object code version is 3.11
 
@@ -37,12 +34,12 @@ Machine type is 18F4520
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\zzzhk\AppData\Local\Temp\xcAs1vfg.\driver_tmp_9.o
+C:\Users\zzzhk\AppData\Local\Temp\xcAs21oo.\driver_tmp_9.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
-dist/default/debug\pet_robot.X.debug.o
+dist/default/production\pet_robot.X.production.o
                 intcode                               8        8        6        4       0
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
@@ -142,31 +139,21 @@ UNUSED ADDRESS RANGES
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
-        BANK5            000500-0005F3               F4
-        BIGRAM           000011-0005F3              5E3
-        BIGSFR           000F80-000F9B               1C
-                         000F9D-000FD3               37
-                         000FD5-000FDA                6
-                         000FE0-000FE2                3
-                         000FE8-000FEA                3
-                         000FF0-000FFC                D
+        BANK5            000500-0005FF              100
+        BIGRAM           000011-0005FF              5EF
+        BIGSFR           000F80-000FFF               80
         CODE             000004-000007                4
                          000012-0005FF              5EE
-                         000904-007DBF             74BC
+                         000904-007FFF             76FC
         COMRAM           000011-00007F               6F
         CONST            000004-000007                4
                          000012-0005FF              5EE
-                         000904-007DBF             74BC
+                         000904-007FFF             76FC
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000904-007DBF             74BC
-        RAM              000080-0005F3              100
-        SFR              000F80-000F9B               1C
-                         000F9D-000FD3               37
-                         000FD5-000FDA                6
-                         000FE0-000FE2                3
-                         000FE8-000FEA                3
-                         000FF0-000FFC                D
-        SMALLCONST       000904-007DBF              100
+        MEDIUMCONST      000904-007FFF             76FC
+        RAM              000080-0005FF              100
+        SFR              000F80-000FFF               80
+        SMALLCONST       000904-007FFF              100
 
                                   Symbol Table
 
