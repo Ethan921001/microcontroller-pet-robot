@@ -92,3 +92,16 @@ void OLED_Display_Look_Left() {
         }
     }
 }
+
+void OLED_Display_Array(const uint8_t data[]) {
+    for (unsigned char page = 0; page < 8; page++) {
+        OLED_Command(0xB0 + page); // ?????
+        OLED_Command(0x00);       // ??????
+        OLED_Command(0x10);       // ??????
+        for (unsigned char col = 0; col < 128; col++) {
+            
+                OLED_Data(data[page*128+col]);  // ??????????
+            
+        }
+    }
+}

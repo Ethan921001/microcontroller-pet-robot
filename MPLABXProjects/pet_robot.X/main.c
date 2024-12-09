@@ -174,6 +174,10 @@ void main() {
         OLED_Display_Look_Left();
         __delay_ms(1000); 
         
+        while(RB0 == 0b1);
+        OLED_Display_Array(originFaceData);
+        __delay_ms(1000);
         
+        while(RB0 == 0b1);
     }
 }
