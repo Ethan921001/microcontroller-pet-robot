@@ -1,49 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"6168 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6168: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
-[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
-"6265
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6265: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"6258
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6258: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"6698
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6698:     struct {
-[s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S275 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"6708
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6708:     struct {
-[s S276 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S276 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"6718
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6718:     struct {
-[s S277 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S277 . . GIEL GIEH ]
-"6697
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6697: typedef union {
-[u S274 `S275 1 `S276 1 `S277 1 ]
-[n S274 . . . . ]
-"6724
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
-[t ~ __interrupt . k ]
-[t T41 __interrupt ]
-"1095
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1095:     struct {
-[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S48 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1105
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1105:     struct {
-[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S49 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"1094
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1094: typedef union {
-[u S47 `S48 1 `S49 1 ]
-[n S47 . . . ]
-"1116
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1116: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS47 ~T0 @X0 0 e@3978 ]
+"9 ./I2C.h
+[; ;./I2C.h: 9: void I2C_Start();
+[v _I2C_Start `(v ~T0 @X0 0 e? ]
+"13
+[; ;./I2C.h: 13: void I2C_Write(unsigned char data);
+[v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
+"11
+[; ;./I2C.h: 11: void I2C_Stop();
+[v _I2C_Stop `(v ~T0 @X0 0 e? ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -458,219 +426,356 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 servo.c
-[p x OSC  =  INTIO67     ]
-"5
-[p x WDT  =  OFF        ]
-"6
-[p x PWRT  =  OFF        ]
-"7
-[p x BOREN  =  ON        ]
-"8
-[p x PBADEN  =  OFF     ]
-"9
-[p x LVP  =  OFF         ]
-"10
-[p x CPD  =  OFF         ]
-"20
-[; ;servo.c: 20: volatile uint16_t servoPulse[4] = {1500, 1500, 1500, 1500};
-[v _servoPulse `Vus ~T0 @X0 -> 4 `i e ]
-[i _servoPulse
-:U ..
--> -> 1500 `i `us
--> -> 1500 `i `us
--> -> 1500 `i `us
--> -> 1500 `i `us
-..
-]
-"21
-[; ;servo.c: 21: volatile uint16_t pwmCounter = 0;
-[v _pwmCounter `Vus ~T0 @X0 1 e ]
-[i _pwmCounter
--> -> 0 `i `us
-]
-"23
-[; ;servo.c: 23: void Timer0_Init(void) {
-[v _Timer0_Init `(v ~T0 @X0 1 ef ]
+"3 OLED.c
+[; ;OLED.c: 3: void OLED_Command(unsigned char cmd) {
+[v _OLED_Command `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _Timer0_Init ]
+[e :U _OLED_Command ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
 [f ]
-"24
-[; ;servo.c: 24:     T0CON = 0x88;
-[e = _T0CON -> -> 136 `i `uc ]
-"25
-[; ;servo.c: 25:     TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
-"26
-[; ;servo.c: 26:     TMR0L = 193;
-[e = _TMR0L -> -> 193 `i `uc ]
-"27
-[; ;servo.c: 27:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"28
-[; ;servo.c: 28:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"29
-[; ;servo.c: 29:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"30
-[; ;servo.c: 30: }
+"4
+[; ;OLED.c: 4:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"5
+[; ;OLED.c: 5:     I2C_Write(0x78);
+[e ( _I2C_Write (1 -> -> 120 `i `uc ]
+"6
+[; ;OLED.c: 6:     I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+"7
+[; ;OLED.c: 7:     I2C_Write(cmd);
+[e ( _I2C_Write (1 _cmd ]
+"8
+[; ;OLED.c: 8:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"9
+[; ;OLED.c: 9: }
 [e :UE 281 ]
 }
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"32
-[; ;servo.c: 32: void __attribute__((picinterrupt(("")))) ISR(void) {
-[v _ISR `(v ~T41 @X0 1 ef ]
+"12
+[; ;OLED.c: 12: void OLED_Init() {
+[v _OLED_Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _ISR ]
+[e :U _OLED_Init ]
 [f ]
+"13
+[; ;OLED.c: 13:     _delay((unsigned long)((100)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"14
+[; ;OLED.c: 14:     OLED_Command(0xAE);
+[e ( _OLED_Command (1 -> -> 174 `i `uc ]
+"15
+[; ;OLED.c: 15:     OLED_Command(0xD5);
+[e ( _OLED_Command (1 -> -> 213 `i `uc ]
+"16
+[; ;OLED.c: 16:     OLED_Command(0x80);
+[e ( _OLED_Command (1 -> -> 128 `i `uc ]
+"17
+[; ;OLED.c: 17:     OLED_Command(0xA8);
+[e ( _OLED_Command (1 -> -> 168 `i `uc ]
+"18
+[; ;OLED.c: 18:     OLED_Command(0x3F);
+[e ( _OLED_Command (1 -> -> 63 `i `uc ]
+"19
+[; ;OLED.c: 19:     OLED_Command(0xD3);
+[e ( _OLED_Command (1 -> -> 211 `i `uc ]
+"20
+[; ;OLED.c: 20:     OLED_Command(0x00);
+[e ( _OLED_Command (1 -> -> 0 `i `uc ]
+"21
+[; ;OLED.c: 21:     OLED_Command(0x40);
+[e ( _OLED_Command (1 -> -> 64 `i `uc ]
+"22
+[; ;OLED.c: 22:     OLED_Command(0x8D);
+[e ( _OLED_Command (1 -> -> 141 `i `uc ]
+"23
+[; ;OLED.c: 23:     OLED_Command(0x14);
+[e ( _OLED_Command (1 -> -> 20 `i `uc ]
+"24
+[; ;OLED.c: 24:     OLED_Command(0x20);
+[e ( _OLED_Command (1 -> -> 32 `i `uc ]
+"25
+[; ;OLED.c: 25:     OLED_Command(0x00);
+[e ( _OLED_Command (1 -> -> 0 `i `uc ]
+"26
+[; ;OLED.c: 26:     OLED_Command(0xA1);
+[e ( _OLED_Command (1 -> -> 161 `i `uc ]
+"27
+[; ;OLED.c: 27:     OLED_Command(0xC8);
+[e ( _OLED_Command (1 -> -> 200 `i `uc ]
+"28
+[; ;OLED.c: 28:     OLED_Command(0xDA);
+[e ( _OLED_Command (1 -> -> 218 `i `uc ]
+"29
+[; ;OLED.c: 29:     OLED_Command(0x12);
+[e ( _OLED_Command (1 -> -> 18 `i `uc ]
+"30
+[; ;OLED.c: 30:     OLED_Command(0x81);
+[e ( _OLED_Command (1 -> -> 129 `i `uc ]
+"31
+[; ;OLED.c: 31:     OLED_Command(0x7F);
+[e ( _OLED_Command (1 -> -> 127 `i `uc ]
+"32
+[; ;OLED.c: 32:     OLED_Command(0xD9);
+[e ( _OLED_Command (1 -> -> 217 `i `uc ]
 "33
-[; ;servo.c: 33:     if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 283  ]
-{
+[; ;OLED.c: 33:     OLED_Command(0xF1);
+[e ( _OLED_Command (1 -> -> 241 `i `uc ]
 "34
-[; ;servo.c: 34:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;OLED.c: 34:     OLED_Command(0xDB);
+[e ( _OLED_Command (1 -> -> 219 `i `uc ]
 "35
-[; ;servo.c: 35:         TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
+[; ;OLED.c: 35:     OLED_Command(0x40);
+[e ( _OLED_Command (1 -> -> 64 `i `uc ]
 "36
-[; ;servo.c: 36:         TMR0L = 0x193;
-[e = _TMR0L -> -> 403 `i `uc ]
+[; ;OLED.c: 36:     OLED_Command(0xA4);
+[e ( _OLED_Command (1 -> -> 164 `i `uc ]
+"37
+[; ;OLED.c: 37:     OLED_Command(0xA6);
+[e ( _OLED_Command (1 -> -> 166 `i `uc ]
 "38
-[; ;servo.c: 38:         pwmCounter += 500;
-[e =+ _pwmCounter -> -> 500 `i `Vus ]
-"40
-[; ;servo.c: 40:         if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 0 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 284  ]
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[e $U 285  ]
-[e :U 284 ]
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e :U 285 ]
-"41
-[; ;servo.c: 41:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 1 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 286  ]
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
-[e $U 287  ]
-[e :U 286 ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e :U 287 ]
-"42
-[; ;servo.c: 42:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 2 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 288  ]
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-[e $U 289  ]
-[e :U 288 ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e :U 289 ]
-"43
-[; ;servo.c: 43:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 3 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 290  ]
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[e $U 291  ]
-[e :U 290 ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[e :U 291 ]
-"45
-[; ;servo.c: 45:         if (pwmCounter >= 20000) pwmCounter = 0;
-[e $ ! >= -> _pwmCounter `ui -> -> 20000 `i `ui 292  ]
-[e = _pwmCounter -> -> 0 `i `us ]
-[e :U 292 ]
-"46
-[; ;servo.c: 46:     }
-}
-[e :U 283 ]
-"47
-[; ;servo.c: 47: }
+[; ;OLED.c: 38:     OLED_Command(0xAF);
+[e ( _OLED_Command (1 -> -> 175 `i `uc ]
+"39
+[; ;OLED.c: 39: }
 [e :UE 282 ]
 }
-"49
-[; ;servo.c: 49: void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
-[v _setServoAngle `(v ~T0 @X0 1 ef2`uc`us ]
+"42
+[; ;OLED.c: 42: void OLED_Data(unsigned char data) {
+[v _OLED_Data `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _setServoAngle ]
-[v _servo `uc ~T0 @X0 1 r1 ]
-[v _pulseWidth `us ~T0 @X0 1 r2 ]
+[e :U _OLED_Data ]
+[v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"50
-[; ;servo.c: 50:     if (servo < 4 && pulseWidth >= 500 && pulseWidth <= 2500) {
-[e $ ! && && < -> _servo `i -> 4 `i >= -> _pulseWidth `ui -> -> 500 `i `ui <= -> _pulseWidth `ui -> -> 2500 `i `ui 294  ]
-{
-"51
-[; ;servo.c: 51:         servoPulse[servo] = pulseWidth;
-[e = *U + &U _servoPulse * -> _servo `ux -> -> # *U &U _servoPulse `ui `ux _pulseWidth ]
-"52
-[; ;servo.c: 52:     }
+"43
+[; ;OLED.c: 43:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"44
+[; ;OLED.c: 44:     I2C_Write(0x78);
+[e ( _I2C_Write (1 -> -> 120 `i `uc ]
+"45
+[; ;OLED.c: 45:     I2C_Write(0x40);
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+"46
+[; ;OLED.c: 46:     I2C_Write(data);
+[e ( _I2C_Write (1 _data ]
+"47
+[; ;OLED.c: 47:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"48
+[; ;OLED.c: 48: }
+[e :UE 283 ]
 }
-[e :U 294 ]
+"51
+[; ;OLED.c: 51: void OLED_Display_Look_Forward() {
+[v _OLED_Display_Look_Forward `(v ~T0 @X0 1 ef ]
+{
+[e :U _OLED_Display_Look_Forward ]
+[f ]
+"52
+[; ;OLED.c: 52:     for (unsigned char page = 0; page < 8; page++) {
+{
+[v _page `uc ~T0 @X0 1 a ]
+[e = _page -> -> 0 `i `uc ]
+[e $ < -> _page `i -> 8 `i 285  ]
+[e $U 286  ]
+[e :U 285 ]
+{
 "53
-[; ;servo.c: 53: }
+[; ;OLED.c: 53:         OLED_Command(0xB0 + page);
+[e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
+"54
+[; ;OLED.c: 54:         OLED_Command(0x00);
+[e ( _OLED_Command (1 -> -> 0 `i `uc ]
+"55
+[; ;OLED.c: 55:         OLED_Command(0x10);
+[e ( _OLED_Command (1 -> -> 16 `i `uc ]
+"56
+[; ;OLED.c: 56:         for (unsigned char col = 0; col < 132; col++) {
+{
+[v _col `uc ~T0 @X0 1 a ]
+[e = _col -> -> 0 `i `uc ]
+[e $ < -> _col `i -> 132 `i 288  ]
+[e $U 289  ]
+[e :U 288 ]
+{
+"57
+[; ;OLED.c: 57:             if (page >= 2 && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
+[e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 30 `i <= -> _col `i -> 50 `i && >= -> _col `i -> 80 `i <= -> _col `i -> 100 `i 291  ]
+{
+"58
+[; ;OLED.c: 58:                 OLED_Data(0xFF);
+[e ( _OLED_Data (1 -> -> 255 `i `uc ]
+"59
+[; ;OLED.c: 59:             } else {
+}
+[e $U 292  ]
+[e :U 291 ]
+{
+"60
+[; ;OLED.c: 60:                 OLED_Data(0x00);
+[e ( _OLED_Data (1 -> -> 0 `i `uc ]
+"61
+[; ;OLED.c: 61:             }
+}
+[e :U 292 ]
+"62
+[; ;OLED.c: 62:         }
+}
+[e ++ _col -> -> 1 `i `uc ]
+[e $ < -> _col `i -> 132 `i 288  ]
+[e :U 289 ]
+}
+"63
+[; ;OLED.c: 63:     }
+}
+[e ++ _page -> -> 1 `i `uc ]
+[e $ < -> _page `i -> 8 `i 285  ]
+[e :U 286 ]
+}
+"64
+[; ;OLED.c: 64: }
+[e :UE 284 ]
+}
+"66
+[; ;OLED.c: 66: void OLED_Display_Look_Right() {
+[v _OLED_Display_Look_Right `(v ~T0 @X0 1 ef ]
+{
+[e :U _OLED_Display_Look_Right ]
+[f ]
+"67
+[; ;OLED.c: 67:     for (unsigned char page = 0; page < 8; page++) {
+{
+[v _page `uc ~T0 @X0 1 a ]
+[e = _page -> -> 0 `i `uc ]
+[e $ < -> _page `i -> 8 `i 294  ]
+[e $U 295  ]
+[e :U 294 ]
+{
+"68
+[; ;OLED.c: 68:         OLED_Command(0xB0 + page);
+[e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
+"69
+[; ;OLED.c: 69:         OLED_Command(0x00);
+[e ( _OLED_Command (1 -> -> 0 `i `uc ]
+"70
+[; ;OLED.c: 70:         OLED_Command(0x10);
+[e ( _OLED_Command (1 -> -> 16 `i `uc ]
+"71
+[; ;OLED.c: 71:         for (unsigned char col = 0; col < 132; col++) {
+{
+[v _col `uc ~T0 @X0 1 a ]
+[e = _col -> -> 0 `i `uc ]
+[e $ < -> _col `i -> 132 `i 297  ]
+[e $U 298  ]
+[e :U 297 ]
+{
+"72
+[; ;OLED.c: 72:             if (page >= 2 && page <= 6 && ((col>=50 && col<=70) || (col>=100 && col<=120))) {
+[e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 50 `i <= -> _col `i -> 70 `i && >= -> _col `i -> 100 `i <= -> _col `i -> 120 `i 300  ]
+{
+"73
+[; ;OLED.c: 73:                 OLED_Data(0xFF);
+[e ( _OLED_Data (1 -> -> 255 `i `uc ]
+"74
+[; ;OLED.c: 74:             } else {
+}
+[e $U 301  ]
+[e :U 300 ]
+{
+"75
+[; ;OLED.c: 75:                 OLED_Data(0x00);
+[e ( _OLED_Data (1 -> -> 0 `i `uc ]
+"76
+[; ;OLED.c: 76:             }
+}
+[e :U 301 ]
+"77
+[; ;OLED.c: 77:         }
+}
+[e ++ _col -> -> 1 `i `uc ]
+[e $ < -> _col `i -> 132 `i 297  ]
+[e :U 298 ]
+}
+"78
+[; ;OLED.c: 78:     }
+}
+[e ++ _page -> -> 1 `i `uc ]
+[e $ < -> _page `i -> 8 `i 294  ]
+[e :U 295 ]
+}
+"79
+[; ;OLED.c: 79: }
 [e :UE 293 ]
 }
-"55
-[; ;servo.c: 55: void setstand(){
-[v _setstand `(v ~T0 @X0 1 ef ]
+"81
+[; ;OLED.c: 81: void OLED_Display_Look_Left() {
+[v _OLED_Display_Look_Left `(v ~T0 @X0 1 ef ]
 {
-[e :U _setstand ]
+[e :U _OLED_Display_Look_Left ]
 [f ]
-"56
-[; ;servo.c: 56:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"57
-[; ;servo.c: 57:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"58
-[; ;servo.c: 58:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"59
-[; ;servo.c: 59:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"60
-[; ;servo.c: 60: }
-[e :UE 295 ]
+"82
+[; ;OLED.c: 82:     for (unsigned char page = 0; page < 8; page++) {
+{
+[v _page `uc ~T0 @X0 1 a ]
+[e = _page -> -> 0 `i `uc ]
+[e $ < -> _page `i -> 8 `i 303  ]
+[e $U 304  ]
+[e :U 303 ]
+{
+"83
+[; ;OLED.c: 83:         OLED_Command(0xB0 + page);
+[e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
+"84
+[; ;OLED.c: 84:         OLED_Command(0x00);
+[e ( _OLED_Command (1 -> -> 0 `i `uc ]
+"85
+[; ;OLED.c: 85:         OLED_Command(0x10);
+[e ( _OLED_Command (1 -> -> 16 `i `uc ]
+"86
+[; ;OLED.c: 86:         for (unsigned char col = 0; col < 132; col++) {
+{
+[v _col `uc ~T0 @X0 1 a ]
+[e = _col -> -> 0 `i `uc ]
+[e $ < -> _col `i -> 132 `i 306  ]
+[e $U 307  ]
+[e :U 306 ]
+{
+"87
+[; ;OLED.c: 87:             if (page >= 2 && page <= 6 && ((col>=10 && col<=30) || (col>=60 && col<=80))) {
+[e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 10 `i <= -> _col `i -> 30 `i && >= -> _col `i -> 60 `i <= -> _col `i -> 80 `i 309  ]
+{
+"88
+[; ;OLED.c: 88:                 OLED_Data(0xFF);
+[e ( _OLED_Data (1 -> -> 255 `i `uc ]
+"89
+[; ;OLED.c: 89:             } else {
 }
-"62
-[; ;servo.c: 62: void setsit(){
-[v _setsit `(v ~T0 @X0 1 ef ]
+[e $U 310  ]
+[e :U 309 ]
 {
-[e :U _setsit ]
-[f ]
-"63
-[; ;servo.c: 63:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"64
-[; ;servo.c: 64:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"65
-[; ;servo.c: 65:         setServoAngle(2, 2500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2500 `i `us ]
-"66
-[; ;servo.c: 66:         setServoAngle(3, 500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 500 `i `us ]
-"67
-[; ;servo.c: 67: }
-[e :UE 296 ]
+"90
+[; ;OLED.c: 90:                 OLED_Data(0x00);
+[e ( _OLED_Data (1 -> -> 0 `i `uc ]
+"91
+[; ;OLED.c: 91:             }
 }
-"69
-[; ;servo.c: 69: void setlaydown(){
-[v _setlaydown `(v ~T0 @X0 1 ef ]
-{
-[e :U _setlaydown ]
-[f ]
-"70
-[; ;servo.c: 70:         setServoAngle(0, 2500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2500 `i `us ]
-"71
-[; ;servo.c: 71:         setServoAngle(1, 500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 500 `i `us ]
-"72
-[; ;servo.c: 72:         setServoAngle(2, 500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 500 `i `us ]
-"73
-[; ;servo.c: 73:         setServoAngle(3, 2500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2500 `i `us ]
-"74
-[; ;servo.c: 74: }
-[e :UE 297 ]
+[e :U 310 ]
+"92
+[; ;OLED.c: 92:         }
+}
+[e ++ _col -> -> 1 `i `uc ]
+[e $ < -> _col `i -> 132 `i 306  ]
+[e :U 307 ]
+}
+"93
+[; ;OLED.c: 93:     }
+}
+[e ++ _page -> -> 1 `i `uc ]
+[e $ < -> _page `i -> 8 `i 303  ]
+[e :U 304 ]
+}
+"94
+[; ;OLED.c: 94: }
+[e :UE 302 ]
 }

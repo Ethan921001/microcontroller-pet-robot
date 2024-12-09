@@ -1,91 +1,39 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5010 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5010: extern volatile unsigned char SSPCON1 __attribute__((address(0xFC6)));
-[v _SSPCON1 `Vuc ~T0 @X0 0 e@4038 ]
-"5080
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5080: extern volatile unsigned char SSPSTAT __attribute__((address(0xFC7)));
-[v _SSPSTAT `Vuc ~T0 @X0 0 e@4039 ]
-"5301
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5301: extern volatile unsigned char SSPADD __attribute__((address(0xFC8)));
-[v _SSPADD `Vuc ~T0 @X0 0 e@4040 ]
-"4921
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4921:     struct {
-[s S198 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S198 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-"4931
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4931:     struct {
-[s S199 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S199 . . ADMSK1 ADMSK2 ADMSK3 ADMSK4 ADMSK5 ]
-"4920
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4920: typedef union {
-[u S197 `S198 1 `S199 1 ]
-[n S197 . . . ]
-"4940
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4940: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0xFC5)));
-[v _SSPCON2bits `VS197 ~T0 @X0 0 e@4037 ]
-"5308
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5308: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
-[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
-"5086
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5086:     struct {
-[s S204 :2 `uc 1 :1 `uc 1 ]
-[n S204 . . R_NOT_W ]
-"5090
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5090:     struct {
-[s S205 :5 `uc 1 :1 `uc 1 ]
-[n S205 . . D_NOT_A ]
-"5094
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5094:     struct {
-[s S206 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S206 . BF UA R_nW S P D_nA CKE SMP ]
-"5104
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5104:     struct {
-[s S207 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S207 . . R . D ]
-"5110
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5110:     struct {
-[s S208 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S208 . . W . A ]
-"5116
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5116:     struct {
-[s S209 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S209 . . nW . nA ]
-"5122
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5122:     struct {
-[s S210 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S210 . . R_W . D_A ]
-"5128
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5128:     struct {
-[s S211 :2 `uc 1 :1 `uc 1 ]
-[n S211 . . NOT_WRITE ]
-"5132
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5132:     struct {
-[s S212 :5 `uc 1 :1 `uc 1 ]
-[n S212 . . NOT_ADDRESS ]
-"5136
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5136:     struct {
-[s S213 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S213 . . nWRITE . nADDRESS ]
-"5142
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5142:     struct {
-[s S214 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S214 . . RW START STOP DA ]
-"5149
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5149:     struct {
-[s S215 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S215 . . NOT_W . NOT_A ]
-"5085
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5085: typedef union {
-[u S203 `S204 1 `S205 1 `S206 1 `S207 1 `S208 1 `S209 1 `S210 1 `S211 1 `S212 1 `S213 1 `S214 1 `S215 1 ]
-[n S203 . . . . . . . . . . . . . ]
-"5156
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 5156: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
-[v _SSPSTATbits `VS203 ~T0 @X0 0 e@4039 ]
 [p mainexit ]
+"6085 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6085: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"7 ./I2C.h
+[; ;./I2C.h: 7: void I2C_Master_Init(unsigned long clock);
+[; ;./I2C.h: 7: void I2C_Master_Init(unsigned long clock);
+[v _I2C_Master_Init `(v ~T0 @X0 0 ef1`ul ]
+"16 ./OLED.h
+[; ;./OLED.h: 16: void OLED_Init();
+[v _OLED_Init `(v ~T0 @X0 0 e? ]
+"8594 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8594: extern volatile __bit TRISB1 __attribute__((address(0x7C99)));
+[v _TRISB1 `Vb ~T0 @X0 0 e@31897 ]
+"271
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 271: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"22 ./OLED.h
+[; ;./OLED.h: 22: void OLED_Display_Look_Forward();
+[v _OLED_Display_Look_Forward `(v ~T0 @X0 0 e? ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
+[t ~ __deprecated__ ]
+[t T1 __deprecated__ ]
+"8093 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8093: extern volatile __bit __attribute__((__deprecated__)) RB0 __attribute__((address(0x7C08)));
+[v _RB0 `Vb ~T1 @X0 0 e@31752 ]
+"24 ./OLED.h
+[; ;./OLED.h: 24: void OLED_Display_Look_Right();
+[v _OLED_Display_Look_Right `(v ~T0 @X0 0 e? ]
+"26
+[; ;./OLED.h: 26: void OLED_Display_Look_Left();
+[v _OLED_Display_Look_Left `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -500,338 +448,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"8 main.c
-[; ;main.c: 8: void I2C1_Start(void) {
-[p x FOSC  =  INTRC_NOCLKOUT     ]
+"7 main.c
+[p x OSC  =  INTIO67   ]
+"8
+[p x WDT  =  OFF       ]
 "9
-[; ;main.c: 9:     SSPCON2bits.SEN = 1;
-[p x WDTE  =  OFF                ]
+[p x PWRT  =  OFF        ]
 "10
-[; ;main.c: 10:     while (SSPCON2bits.SEN);
-[p x PWRTE  =  ON                ]
+[p x BOREN  =  ON        ]
 "11
-[; ;main.c: 11: }
-[p x MCLRE  =  ON                ]
+[p x PBADEN  =  OFF      ]
 "12
-[; ;main.c: 12: 
-[p x LVP  =  OFF                 ]
-"15
-[; ;main.c: 15:     SSPCON2bits.PEN = 1;
-[v _I2C1_Initialize `(v ~T0 @X0 1 ef ]
-{
-[e :U _I2C1_Initialize ]
-[f ]
-"16
-[; ;main.c: 16:     while (SSPCON2bits.PEN);
-[e = _SSPCON1 -> -> 40 `i `uc ]
-"17
-[; ;main.c: 17: }
-[e = _SSPSTAT -> -> 0 `i `uc ]
-"18
-[; ;main.c: 18: 
-[e = _SSPADD -> - / -> 250000 `l * -> -> 4 `i `l -> 100000 `l -> -> 1 `i `l `uc ]
-"19
-[; ;main.c: 19: 
-[e :UE 281 ]
-}
-"22
-[; ;main.c: 22:     while (SSPSTATbits.BF);
-[v _I2C1_Start `(v ~T0 @X0 1 ef ]
-{
-[e :U _I2C1_Start ]
-[f ]
-"23
-[; ;main.c: 23:     while (SSPCON2bits.ACKSTAT);
-[e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
-"24
-[; ;main.c: 24: }
-[e $U 283  ]
-[e :U 284 ]
-[e :U 283 ]
-[e $ != -> . . _SSPCON2bits 0 0 `i -> 0 `i 284  ]
-[e :U 285 ]
-"25
-[; ;main.c: 25: 
-[e :UE 282 ]
-}
-"28
-[; ;main.c: 28:     I2C1_Start();
-[v _I2C1_Stop `(v ~T0 @X0 1 ef ]
-{
-[e :U _I2C1_Stop ]
-[f ]
-"29
-[; ;main.c: 29:     I2C1_Write(0x3C << 1);
-[e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
-"30
-[; ;main.c: 30:     I2C1_Write(0x00);
-[e $U 287  ]
-[e :U 288 ]
-[e :U 287 ]
-[e $ != -> . . _SSPCON2bits 0 2 `i -> 0 `i 288  ]
-[e :U 289 ]
-"31
-[; ;main.c: 31:     I2C1_Write(cmd);
-[e :UE 286 ]
-}
-"34
-[; ;main.c: 34: 
-[v _I2C1_Write `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _I2C1_Write ]
-[v _data `uc ~T0 @X0 1 r1 ]
-[f ]
-"35
-[; ;main.c: 35: 
-[e = _SSPBUF _data ]
-"36
-[; ;main.c: 36: void OLED_Initialize(void) {
-[e $U 291  ]
-[e :U 292 ]
-[e :U 291 ]
-[e $ != -> . . _SSPSTATbits 2 0 `i -> 0 `i 292  ]
-[e :U 293 ]
-"37
-[; ;main.c: 37:     OLED_Command(0xAE);
-[e $U 294  ]
-[e :U 295 ]
-[e :U 294 ]
-[e $ != -> . . _SSPCON2bits 0 6 `i -> 0 `i 295  ]
-[e :U 296 ]
-"38
-[; ;main.c: 38:     OLED_Command(0x20);
-[e :UE 290 ]
-}
-"41
-[; ;main.c: 41:     OLED_Command(0xC8);
-[v _OLED_Command `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _OLED_Command ]
-[v _cmd `uc ~T0 @X0 1 r1 ]
-[f ]
-"42
-[; ;main.c: 42:     OLED_Command(0x00);
-[e ( _I2C1_Start ..  ]
-"43
-[; ;main.c: 43:     OLED_Command(0x10);
-[e ( _I2C1_Write (1 -> << -> 60 `i -> 1 `i `uc ]
-"44
-[; ;main.c: 44:     OLED_Command(0x40);
-[e ( _I2C1_Write (1 -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:     OLED_Command(0x81);
-[e ( _I2C1_Write (1 _cmd ]
-"46
-[; ;main.c: 46:     OLED_Command(0xFF);
-[e ( _I2C1_Stop ..  ]
-"47
-[; ;main.c: 47:     OLED_Command(0xA1);
-[e :UE 297 ]
-}
-"50
-[; ;main.c: 50:     OLED_Command(0x3F);
-[v _OLED_Initialize `(v ~T0 @X0 1 ef ]
-{
-[e :U _OLED_Initialize ]
-[f ]
-"51
-[; ;main.c: 51:     OLED_Command(0xD3);
-[e ( _OLED_Command (1 -> -> 174 `i `uc ]
-"52
-[; ;main.c: 52:     OLED_Command(0x00);
-[e ( _OLED_Command (1 -> -> 32 `i `uc ]
-"53
-[; ;main.c: 53:     OLED_Command(0xD5);
-[e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"54
-[; ;main.c: 54:     OLED_Command(0x80);
-[e ( _OLED_Command (1 -> -> 176 `i `uc ]
-"55
-[; ;main.c: 55:     OLED_Command(0xD9);
-[e ( _OLED_Command (1 -> -> 200 `i `uc ]
-"56
-[; ;main.c: 56:     OLED_Command(0xF1);
-[e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"57
-[; ;main.c: 57:     OLED_Command(0xDA);
-[e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"58
-[; ;main.c: 58:     OLED_Command(0x12);
-[e ( _OLED_Command (1 -> -> 64 `i `uc ]
-"59
-[; ;main.c: 59:     OLED_Command(0xDB);
-[e ( _OLED_Command (1 -> -> 129 `i `uc ]
-"60
-[; ;main.c: 60:     OLED_Command(0x40);
-[e ( _OLED_Command (1 -> -> 255 `i `uc ]
-"61
-[; ;main.c: 61:     OLED_Command(0xA4);
-[e ( _OLED_Command (1 -> -> 161 `i `uc ]
-"62
-[; ;main.c: 62:     OLED_Command(0xAF);
-[e ( _OLED_Command (1 -> -> 166 `i `uc ]
-"63
-[; ;main.c: 63: }
-[e ( _OLED_Command (1 -> -> 168 `i `uc ]
-"64
-[; ;main.c: 64: 
-[e ( _OLED_Command (1 -> -> 63 `i `uc ]
-"65
-[; ;main.c: 65: 
-[e ( _OLED_Command (1 -> -> 211 `i `uc ]
-"66
-[; ;main.c: 66: void OLED_Data(uint8_t data) {
-[e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"67
-[; ;main.c: 67:     I2C1_Start();
-[e ( _OLED_Command (1 -> -> 213 `i `uc ]
-"68
-[; ;main.c: 68:     I2C1_Write(0x3C << 1);
-[e ( _OLED_Command (1 -> -> 128 `i `uc ]
-"69
-[; ;main.c: 69:     I2C1_Write(0x40);
-[e ( _OLED_Command (1 -> -> 217 `i `uc ]
-"70
-[; ;main.c: 70:     I2C1_Write(data);
-[e ( _OLED_Command (1 -> -> 241 `i `uc ]
-"71
-[; ;main.c: 71:     I2C1_Stop();
-[e ( _OLED_Command (1 -> -> 218 `i `uc ]
-"72
-[; ;main.c: 72: }
-[e ( _OLED_Command (1 -> -> 18 `i `uc ]
-"73
-[; ;main.c: 73: 
-[e ( _OLED_Command (1 -> -> 219 `i `uc ]
-"74
-[; ;main.c: 74: 
-[e ( _OLED_Command (1 -> -> 64 `i `uc ]
-"75
-[; ;main.c: 75: const uint8_t font[96][5] = {
-[e ( _OLED_Command (1 -> -> 164 `i `uc ]
-"76
-[; ;main.c: 76:     {0x00, 0x00, 0x00, 0x00, 0x00},
-[e ( _OLED_Command (1 -> -> 175 `i `uc ]
-"77
-[; ;main.c: 77:     {0x00, 0x00, 0x5F, 0x00, 0x00},
-[e :UE 298 ]
-}
-"80
-[; ;main.c: 80: };
-[v _OLED_Data `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _OLED_Data ]
-[v _data `uc ~T0 @X0 1 r1 ]
-[f ]
-"81
-[; ;main.c: 81: 
-[e ( _I2C1_Start ..  ]
-"82
-[; ;main.c: 82: 
-[e ( _I2C1_Write (1 -> << -> 60 `i -> 1 `i `uc ]
-"83
-[; ;main.c: 83: void OLED_PrintChar(char c) {
-[e ( _I2C1_Write (1 -> -> 64 `i `uc ]
-"84
-[; ;main.c: 84:     for (int i = 0; i < 5; i++) {
-[e ( _I2C1_Write (1 _data ]
-"85
-[; ;main.c: 85:         OLED_Data(font[c - ' '][i]);
-[e ( _I2C1_Stop ..  ]
-"86
-[; ;main.c: 86:     }
-[e :UE 299 ]
-}
-[v F2591 `Cuc ~T0 @X0 -> 5 `i t ]
-"89
-[; ;main.c: 89: 
-[v _font `F2591 ~T0 @X0 -> 96 `i e ]
-[i _font
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 95 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-:U ..
--> -> 0 `i `uc
--> -> 7 `i `uc
--> -> 0 `i `uc
--> -> 7 `i `uc
--> -> 0 `i `uc
-..
-..
-]
-"97
-[; ;main.c: 97:         OLED_Command(0x00);
-[v _OLED_PrintChar `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _OLED_PrintChar ]
-[v _c `uc ~T0 @X0 1 r1 ]
-[f ]
-"98
-[; ;main.c: 98:         OLED_Command(0x10);
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 301  ]
-[e $U 302  ]
-[e :U 301 ]
-{
-"99
-[; ;main.c: 99: 
-[e ( _OLED_Data (1 *U + &U *U + &U _font * -> - -> _c `ui -> 32 `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux * -> -> _i `ui `ux -> -> # *U &U *U + &U _font * -> - -> _c `ui -> 32 `ui `ux -> * -> # *U &U *U &U _font `ui -> -> 5 `i `ui `ux `ui `ux ]
-"100
-[; ;main.c: 100:         OLED_PrintChar('A');
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 301  ]
-[e :U 302 ]
-}
-"101
-[; ;main.c: 101:         _delay((unsigned long)((1000)*(250000/4000.0)));
-[e ( _OLED_Data (1 -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:     }
-[e :UE 300 ]
-}
+[p x LVP  =  OFF       ]
+"13
+[p x CPD  =  OFF         ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"105
+"150
+[; ;main.c: 150: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"106
-[e ( _I2C1_Initialize ..  ]
-"107
-[e ( _OLED_Initialize ..  ]
-"109
-[e :U 306 ]
+"151
+[; ;main.c: 151:     OSCCON = 0x60;
+[e = _OSCCON -> -> 96 `i `uc ]
+"152
+[; ;main.c: 152:     I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
+"153
+[; ;main.c: 153:     OLED_Init();
+[e ( _OLED_Init ..  ]
+"155
+[; ;main.c: 155:     TRISB1 = 1;
+[e = _TRISB1 -> -> 1 `i `b ]
+"156
+[; ;main.c: 156:     PORTB = 0b00000000;
+[e = _PORTB -> -> 0 `i `uc ]
+"160
+[; ;main.c: 160:     while (1) {
+[e :U 283 ]
 {
-"110
-[e ( _OLED_Command (1 -> -> 176 `i `uc ]
-"111
-[e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"112
-[e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"114
-[e ( _OLED_PrintChar (1 -> -> 65 `ui `uc ]
-"115
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"116
+"162
+[; ;main.c: 162:         OLED_Display_Look_Forward();
+[e ( _OLED_Display_Look_Forward ..  ]
+"163
+[; ;main.c: 163:         _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"165
+[; ;main.c: 165:         while(RB0 == 0b1);
+[e $U 285  ]
+[e :U 286 ]
+[e :U 285 ]
+[e $ == -> _RB0 `i -> 1 `i 286  ]
+[e :U 287 ]
+"166
+[; ;main.c: 166:         OLED_Display_Look_Right();
+[e ( _OLED_Display_Look_Right ..  ]
+"167
+[; ;main.c: 167:         _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"169
+[; ;main.c: 169:         while(RB0 == 0b1);
+[e $U 288  ]
+[e :U 289 ]
+[e :U 288 ]
+[e $ == -> _RB0 `i -> 1 `i 289  ]
+[e :U 290 ]
+"170
+[; ;main.c: 170:         OLED_Display_Look_Forward();
+[e ( _OLED_Display_Look_Forward ..  ]
+"171
+[; ;main.c: 171:         _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"173
+[; ;main.c: 173:         while(RB0 == 0b1);
+[e $U 291  ]
+[e :U 292 ]
+[e :U 291 ]
+[e $ == -> _RB0 `i -> 1 `i 292  ]
+[e :U 293 ]
+"174
+[; ;main.c: 174:         OLED_Display_Look_Left();
+[e ( _OLED_Display_Look_Left ..  ]
+"175
+[; ;main.c: 175:         _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"178
+[; ;main.c: 178:     }
 }
-[e :U 305 ]
-[e $U 306  ]
-[e :U 307 ]
-"117
-[e :UE 304 ]
+[e :U 282 ]
+[e $U 283  ]
+[e :U 284 ]
+"179
+[; ;main.c: 179: }
+[e :UE 281 ]
 }

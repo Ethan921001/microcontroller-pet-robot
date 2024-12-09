@@ -72,7 +72,7 @@ void setlaydown(){
         setServoAngle(2, 500); 
         setServoAngle(3, 2500);    
 }
-
+/*
 void main(void) {
     TRISB = 0x01; 
     LATB = 0x00;  
@@ -96,3 +96,4 @@ void main(void) {
         __delay_ms(400);
     }
 }
+*/

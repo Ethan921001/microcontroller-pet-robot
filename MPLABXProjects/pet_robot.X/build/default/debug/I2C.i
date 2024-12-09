@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "I2C.c" 2
+# 1 "./I2C.h" 1
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4627,31 +4629,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
-
-
-
-# 1 "./I2C.h" 1
-
-
-
-
-
-
-void I2C_Master_Init(unsigned long clock);
-
-void I2C_Start();
-
-void I2C_Stop();
-
-void I2C_Write(unsigned char data);
-# 4 "main.c" 2
-
-# 1 "./OLED.h" 1
-
-
-# 1 "./I2C.h" 1
-
+# 2 "./I2C.h" 2
 
 
 
@@ -4664,60 +4642,34 @@ void I2C_Start();
 void I2C_Stop();
 
 void I2C_Write(unsigned char data);
-# 3 "./OLED.h" 2
-# 13 "./OLED.h"
-void OLED_Command(unsigned char cmd);
-
-
-void OLED_Init();
-
-
-void OLED_Data(unsigned char data);
-
-
-void OLED_Display_Look_Forward();
-
-void OLED_Display_Look_Right();
-
-void OLED_Display_Look_Left();
-# 5 "main.c" 2
-
-
-#pragma config OSC = INTIO67
-#pragma config WDT = OFF
-#pragma config PWRT = OFF
-#pragma config BOREN = ON
-#pragma config PBADEN = OFF
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-# 150 "main.c"
-void main() {
-    OSCCON = 0x60;
-    I2C_Master_Init(100000);
-    OLED_Init();
-
-    TRISB1 = 1;
-    PORTB = 0b00000000;
+# 1 "I2C.c" 2
 
 
 
-    while (1) {
-
-        OLED_Display_Look_Forward();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Right();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Forward();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Left();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
+void I2C_Master_Init(unsigned long clock) {
+    SSPCON1 = 0b00101000;
+    SSPCON2 = 0x00;
+    SSPADD = (1000000 / (4 * clock)) - 1;
+    SSPSTAT = 0x00;
+    TRISC3 = 1;
+    TRISC4 = 1;
+}
 
 
-    }
+void I2C_Start() {
+    SEN = 1;
+    while (SEN);
+}
+
+
+void I2C_Stop() {
+    PEN = 1;
+    while (PEN);
+}
+
+
+void I2C_Write(unsigned char data) {
+    SSPBUF = data;
+    while (BF);
+    while (SSPCON2 & 0x1F);
 }

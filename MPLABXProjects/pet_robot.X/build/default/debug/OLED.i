@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "OLED.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "OLED.c" 2
+# 1 "./OLED.h" 1
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4627,27 +4628,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
-
-
-
-# 1 "./I2C.h" 1
-
-
-
-
-
-
-void I2C_Master_Init(unsigned long clock);
-
-void I2C_Start();
-
-void I2C_Stop();
-
-void I2C_Write(unsigned char data);
-# 4 "main.c" 2
-
-# 1 "./OLED.h" 1
+# 1 "./OLED.h" 2
 
 
 # 1 "./I2C.h" 1
@@ -4680,44 +4661,98 @@ void OLED_Display_Look_Forward();
 void OLED_Display_Look_Right();
 
 void OLED_Display_Look_Left();
-# 5 "main.c" 2
+# 1 "OLED.c" 2
 
 
-#pragma config OSC = INTIO67
-#pragma config WDT = OFF
-#pragma config PWRT = OFF
-#pragma config BOREN = ON
-#pragma config PBADEN = OFF
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-# 150 "main.c"
-void main() {
-    OSCCON = 0x60;
-    I2C_Master_Init(100000);
-    OLED_Init();
-
-    TRISB1 = 1;
-    PORTB = 0b00000000;
+void OLED_Command(unsigned char cmd) {
+    I2C_Start();
+    I2C_Write(0x78);
+    I2C_Write(0x00);
+    I2C_Write(cmd);
+    I2C_Stop();
+}
 
 
+void OLED_Init() {
+    _delay((unsigned long)((100)*(1000000/4000.0)));
+    OLED_Command(0xAE);
+    OLED_Command(0xD5);
+    OLED_Command(0x80);
+    OLED_Command(0xA8);
+    OLED_Command(0x3F);
+    OLED_Command(0xD3);
+    OLED_Command(0x00);
+    OLED_Command(0x40);
+    OLED_Command(0x8D);
+    OLED_Command(0x14);
+    OLED_Command(0x20);
+    OLED_Command(0x00);
+    OLED_Command(0xA1);
+    OLED_Command(0xC8);
+    OLED_Command(0xDA);
+    OLED_Command(0x12);
+    OLED_Command(0x81);
+    OLED_Command(0x7F);
+    OLED_Command(0xD9);
+    OLED_Command(0xF1);
+    OLED_Command(0xDB);
+    OLED_Command(0x40);
+    OLED_Command(0xA4);
+    OLED_Command(0xA6);
+    OLED_Command(0xAF);
+}
 
-    while (1) {
 
-        OLED_Display_Look_Forward();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Right();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Forward();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
-
-        while(RB0 == 0b1);
-        OLED_Display_Look_Left();
-        _delay((unsigned long)((1000)*(1000000/4000.0)));
+void OLED_Data(unsigned char data) {
+    I2C_Start();
+    I2C_Write(0x78);
+    I2C_Write(0x40);
+    I2C_Write(data);
+    I2C_Stop();
+}
 
 
+void OLED_Display_Look_Forward() {
+    for (unsigned char page = 0; page < 8; page++) {
+        OLED_Command(0xB0 + page);
+        OLED_Command(0x00);
+        OLED_Command(0x10);
+        for (unsigned char col = 0; col < 132; col++) {
+            if (page >= 2 && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
+                OLED_Data(0xFF);
+            } else {
+                OLED_Data(0x00);
+            }
+        }
+    }
+}
+
+void OLED_Display_Look_Right() {
+    for (unsigned char page = 0; page < 8; page++) {
+        OLED_Command(0xB0 + page);
+        OLED_Command(0x00);
+        OLED_Command(0x10);
+        for (unsigned char col = 0; col < 132; col++) {
+            if (page >= 2 && page <= 6 && ((col>=50 && col<=70) || (col>=100 && col<=120))) {
+                OLED_Data(0xFF);
+            } else {
+                OLED_Data(0x00);
+            }
+        }
+    }
+}
+
+void OLED_Display_Look_Left() {
+    for (unsigned char page = 0; page < 8; page++) {
+        OLED_Command(0xB0 + page);
+        OLED_Command(0x00);
+        OLED_Command(0x10);
+        for (unsigned char col = 0; col < 132; col++) {
+            if (page >= 2 && page <= 6 && ((col>=10 && col<=30) || (col>=60 && col<=80))) {
+                OLED_Data(0xFF);
+            } else {
+                OLED_Data(0x00);
+            }
+        }
     }
 }
