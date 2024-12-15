@@ -3,6 +3,7 @@
 
 #include"I2C.h"
 #include"OLED.h"
+#include"servo.h"
 // ??? (??????????)
 #pragma config OSC = INTIO67  // ?????
 #pragma config WDT = OFF      // ?????
@@ -143,7 +144,22 @@ void OLED_Display_Look_Left() {
     }
 }
 */
+void __interrupt() ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0;
+        TMR0H = 0xFF;
+        TMR0L = 193;
 
+        pwmCounter += 500;
+
+        if (pwmCounter <= servoPulse[0]) SERVO1 = 1; else SERVO1 = 0;
+        if (pwmCounter <= servoPulse[1]) SERVO2 = 1; else SERVO2 = 0;
+        if (pwmCounter <= servoPulse[2]) SERVO3 = 1; else SERVO3 = 0;
+        if (pwmCounter <= servoPulse[3]) SERVO4 = 1; else SERVO4 = 0;
+
+        if (pwmCounter >= 20000) pwmCounter = 0;
+    }
+}
 
 
 // ???
@@ -151,30 +167,34 @@ void main() {
     OSCCON = 0x60;                 // ???????? 1 MHz
     I2C_Master_Init(100000);       // ??? I²C?????? 100 kHz
     OLED_Init();                   // ??? OLED
-    
-    TRISB1 = 1;
+    Timer0_Initialize();
+    TRISB= 0x01;
     PORTB = 0b00000000;
     
     
     
     while (1) {
-        
+        setstand();
         OLED_Display_Look_Forward();      // ??????
         __delay_ms(1000); 
         
         while(RB0 == 0b1); 
+        setsit();
         OLED_Display_Look_Right();
         __delay_ms(1000);          // ?? 1 ?
         
-        while(RB0 == 0b1); 
+        while(RB0 == 0b1);
+        setstand();
         OLED_Display_Look_Forward();
         __delay_ms(1000); 
         
         while(RB0 == 0b1);
+        setlaydown();
         OLED_Display_Look_Left();
         __delay_ms(1000); 
         
         while(RB0 == 0b1);
+        setsit();
         OLED_Display_Array(originFaceData);
         __delay_ms(1000);
         

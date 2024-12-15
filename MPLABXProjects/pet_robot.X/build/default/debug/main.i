@@ -4730,6 +4730,24 @@ const uint8_t originFaceData[] = {
 };
 # 5 "main.c" 2
 
+# 1 "./servo.h" 1
+# 14 "./servo.h"
+volatile uint16_t servoPulse[4] = {1500, 1500, 1500, 1500};
+volatile uint16_t pwmCounter = 0;
+void Timer0_Initialize(void);
+
+void setServoAngle(uint8_t servo, uint16_t pulseWidth);
+
+
+void setstand();
+void setsit();
+void setlaydown();
+void walk();
+void back_walk();
+void turn_right();
+void turn_left();
+# 6 "main.c" 2
+
 
 #pragma config OSC = INTIO67
 #pragma config WDT = OFF
@@ -4738,35 +4756,58 @@ const uint8_t originFaceData[] = {
 #pragma config PBADEN = OFF
 #pragma config LVP = OFF
 #pragma config CPD = OFF
-# 150 "main.c"
+# 147 "main.c"
+void __attribute__((picinterrupt(("")))) ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0;
+        TMR0H = 0xFF;
+        TMR0L = 193;
+
+        pwmCounter += 500;
+
+        if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
+        if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
+        if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
+        if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
+
+        if (pwmCounter >= 20000) pwmCounter = 0;
+    }
+}
+
+
+
 void main() {
     OSCCON = 0x60;
     I2C_Master_Init(100000);
     OLED_Init();
-
-    TRISB1 = 1;
+    Timer0_Initialize();
+    TRISB= 0x01;
     PORTB = 0b00000000;
 
 
 
     while (1) {
-
+        setstand();
         OLED_Display_Look_Forward();
         _delay((unsigned long)((1000)*(1000000/4000.0)));
 
         while(RB0 == 0b1);
+        setsit();
         OLED_Display_Look_Right();
         _delay((unsigned long)((1000)*(1000000/4000.0)));
 
         while(RB0 == 0b1);
+        setstand();
         OLED_Display_Look_Forward();
         _delay((unsigned long)((1000)*(1000000/4000.0)));
 
         while(RB0 == 0b1);
+        setlaydown();
         OLED_Display_Look_Left();
         _delay((unsigned long)((1000)*(1000000/4000.0)));
 
         while(RB0 == 0b1);
+        setsit();
         OLED_Display_Array(originFaceData);
         _delay((unsigned long)((1000)*(1000000/4000.0)));
 
