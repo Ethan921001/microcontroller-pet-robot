@@ -226,7 +226,6 @@ void turn_left(){
         setServoAngle(3, 1500);  
         __delay_ms(250);
 }
-
 void main(void) {
     // 0-> right front leg
     // 1 -> left front leg
