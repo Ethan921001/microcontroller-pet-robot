@@ -164,40 +164,49 @@ void __interrupt() ISR(void) {
 
 // ???
 void main() {
-    OSCCON = 0x60;                 // ???????? 1 MHz
-    I2C_Master_Init(100000);       // ??? I²C?????? 100 kHz
-    OLED_Init();                   // ??? OLED
+    //OSCCON = 0x60;                 // ???????? 1 MHz
+    //I2C_Master_Init(100000);       // ??? I²C?????? 100 kHz
+    //OLED_Init();                   // ??? OLED
     Timer0_Initialize();
     TRISB= 0x01;
     PORTB = 0b00000000;
     
-    
-    
-    while (1) {
-        setstand();
-        OLED_Display_Look_Forward();      // ??????
-        __delay_ms(1000); 
-        
-        while(RB0 == 0b1); 
+    while(1){
+        __delay_ms(100); 
+        while(RB0 == 0b1){
+            walk();
+            //__delay_ms(50);
+        }
         setsit();
-        OLED_Display_Look_Right();
-        __delay_ms(1000);          // ?? 1 ?
-        
-        while(RB0 == 0b1);
-        setstand();
-        OLED_Display_Look_Forward();
-        __delay_ms(1000); 
-        
-        while(RB0 == 0b1);
-        setlaydown();
-        OLED_Display_Look_Left();
-        __delay_ms(1000); 
-        
-        while(RB0 == 0b1);
-        setsit();
-        OLED_Display_Array(originFaceData);
-        __delay_ms(1000);
-        
+        __delay_ms(100); 
         while(RB0 == 0b1);
     }
+    
+//    while (1) {
+//        setstand();
+//        OLED_Display_Look_Forward();      // ??????
+//        __delay_ms(1000); 
+//        
+//        while(RB0 == 0b1); 
+//        setsit();
+//        OLED_Display_Look_Right();
+//        __delay_ms(1000);          // ?? 1 ?
+//        
+//        while(RB0 == 0b1);
+//        setstand();
+//        OLED_Display_Look_Forward();
+//        __delay_ms(1000); 
+//        
+//        while(RB0 == 0b1);
+//        setlaydown();
+//        OLED_Display_Look_Left();
+//        __delay_ms(1000); 
+//        
+//        while(RB0 == 0b1);
+//        setsit();
+//        OLED_Display_Array(originFaceData);
+//        __delay_ms(1000);
+//        
+//        while(RB0 == 0b1);
+//    }
 }

@@ -27,39 +27,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6724
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6724: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS274 ~T0 @X0 0 e@4082 ]
-[t ~ __interrupt . k ]
-[t T41 __interrupt ]
-"1095
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1095:     struct {
-[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S48 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1105
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1105:     struct {
-[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S49 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"1094
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1094: typedef union {
-[u S47 `S48 1 `S49 1 ]
-[n S47 . . . ]
-"1116
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1116: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS47 ~T0 @X0 0 e@3978 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-[p mainexit ]
-"1699 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1699: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"1089
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1089: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
-[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-[t ~ __deprecated__ ]
-[t T1 __deprecated__ ]
-"8093
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8093: extern volatile __bit __attribute__((__deprecated__)) RB0 __attribute__((address(0x7C08)));
-[v _RB0 `Vb ~T1 @X0 0 e@31752 ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -474,22 +445,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 servo.c
-[p x OSC  =  INTIO67     ]
-"5
-[p x WDT  =  OFF        ]
-"6
-[p x PWRT  =  OFF        ]
-"7
-[p x BOREN  =  ON        ]
-"8
-[p x PBADEN  =  OFF     ]
-"9
-[p x LVP  =  OFF         ]
-"10
-[p x CPD  =  OFF         ]
-"20
-[; ;servo.c: 20: volatile uint16_t servoPulse[4] = {1500, 1500, 1500, 1500};
+"14 ./servo.h
+[; ;./servo.h: 14: volatile uint16_t servoPulse[4] = {1500, 1500, 1500, 1500};
 [v _servoPulse `Vus ~T0 @X0 -> 4 `i e ]
 [i _servoPulse
 :U ..
@@ -499,293 +456,280 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 1500 `i `us
 ..
 ]
-"21
-[; ;servo.c: 21: volatile uint16_t pwmCounter = 0;
+"15
+[; ;./servo.h: 15: volatile uint16_t pwmCounter = 0;
 [v _pwmCounter `Vus ~T0 @X0 1 e ]
 [i _pwmCounter
 -> -> 0 `i `us
 ]
-"23
-[; ;servo.c: 23: void Timer0_Init(void) {
-[v _Timer0_Init `(v ~T0 @X0 1 ef ]
+"3 servo.c
+[; ;servo.c: 3: void Timer0_Initialize(void) {
+[v _Timer0_Initialize `(v ~T0 @X0 1 ef ]
 {
-[e :U _Timer0_Init ]
+[e :U _Timer0_Initialize ]
 [f ]
-"24
-[; ;servo.c: 24:     T0CON = 0x88;
+"4
+[; ;servo.c: 4:     T0CON = 0x88;
 [e = _T0CON -> -> 136 `i `uc ]
-"25
-[; ;servo.c: 25:     TMR0H = 0xFF;
+"5
+[; ;servo.c: 5:     TMR0H = 0xFF;
 [e = _TMR0H -> -> 255 `i `uc ]
-"26
-[; ;servo.c: 26:     TMR0L = 193;
+"6
+[; ;servo.c: 6:     TMR0L = 193;
 [e = _TMR0L -> -> 193 `i `uc ]
-"27
-[; ;servo.c: 27:     INTCONbits.TMR0IE = 1;
+"7
+[; ;servo.c: 7:     INTCONbits.TMR0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"28
-[; ;servo.c: 28:     INTCONbits.GIE = 1;
+"8
+[; ;servo.c: 8:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"29
-[; ;servo.c: 29:     INTCONbits.PEIE = 1;
+"9
+[; ;servo.c: 9:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"30
-[; ;servo.c: 30: }
+"10
+[; ;servo.c: 10: }
 [e :UE 281 ]
 }
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"32
-[; ;servo.c: 32: void __attribute__((picinterrupt(("")))) ISR(void) {
-[v _ISR `(v ~T41 @X0 1 ef ]
-{
-[e :U _ISR ]
-[f ]
-"33
-[; ;servo.c: 33:     if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 283  ]
-{
-"34
-[; ;servo.c: 34:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"35
-[; ;servo.c: 35:         TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
-"36
-[; ;servo.c: 36:         TMR0L = 0x193;
-[e = _TMR0L -> -> 403 `i `uc ]
-"38
-[; ;servo.c: 38:         pwmCounter += 500;
-[e =+ _pwmCounter -> -> 500 `i `Vus ]
-"40
-[; ;servo.c: 40:                     if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 0 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 284  ]
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[e $U 285  ]
-[e :U 284 ]
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e :U 285 ]
-"41
-[; ;servo.c: 41:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 1 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 286  ]
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
-[e $U 287  ]
-[e :U 286 ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e :U 287 ]
-"42
-[; ;servo.c: 42:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 2 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 288  ]
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-[e $U 289  ]
-[e :U 288 ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e :U 289 ]
-"43
-[; ;servo.c: 43:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 3 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 290  ]
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[e $U 291  ]
-[e :U 290 ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[e :U 291 ]
-"45
-[; ;servo.c: 45:         if (pwmCounter >= 20000) pwmCounter = 0;
-[e $ ! >= -> _pwmCounter `ui -> -> 20000 `i `ui 292  ]
-[e = _pwmCounter -> -> 0 `i `us ]
-[e :U 292 ]
-"46
-[; ;servo.c: 46:     }
-}
-[e :U 283 ]
-"47
-[; ;servo.c: 47: }
-[e :UE 282 ]
-}
-"49
-[; ;servo.c: 49: void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
+"29
+[; ;servo.c: 29: void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
 [v _setServoAngle `(v ~T0 @X0 1 ef2`uc`us ]
 {
 [e :U _setServoAngle ]
 [v _servo `uc ~T0 @X0 1 r1 ]
 [v _pulseWidth `us ~T0 @X0 1 r2 ]
 [f ]
-"50
-[; ;servo.c: 50:     if (servo < 4 && pulseWidth >= 500 && pulseWidth <= 2500) {
-[e $ ! && && < -> _servo `i -> 4 `i >= -> _pulseWidth `ui -> -> 500 `i `ui <= -> _pulseWidth `ui -> -> 2500 `i `ui 294  ]
+"30
+[; ;servo.c: 30:     if (servo < 4 && pulseWidth >= 500 && pulseWidth <= 2500) {
+[e $ ! && && < -> _servo `i -> 4 `i >= -> _pulseWidth `ui -> -> 500 `i `ui <= -> _pulseWidth `ui -> -> 2500 `i `ui 283  ]
 {
-"51
-[; ;servo.c: 51:         servoPulse[servo] = pulseWidth;
+"31
+[; ;servo.c: 31:         servoPulse[servo] = pulseWidth;
 [e = *U + &U _servoPulse * -> _servo `ux -> -> # *U &U _servoPulse `ui `ux _pulseWidth ]
-"52
-[; ;servo.c: 52:     }
+"32
+[; ;servo.c: 32:     }
 }
-[e :U 294 ]
-"53
-[; ;servo.c: 53: }
-[e :UE 293 ]
+[e :U 283 ]
+"33
+[; ;servo.c: 33: }
+[e :UE 282 ]
 }
-"55
-[; ;servo.c: 55: void setstand(){
+"35
+[; ;servo.c: 35: void setstand(){
 [v _setstand `(v ~T0 @X0 1 ef ]
 {
 [e :U _setstand ]
 [f ]
-"56
-[; ;servo.c: 56:         setServoAngle(0, 1500);
+"36
+[; ;servo.c: 36:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"57
-[; ;servo.c: 57:         setServoAngle(1, 1500);
+"37
+[; ;servo.c: 37:         setServoAngle(1, 1500);
 [e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"58
-[; ;servo.c: 58:         setServoAngle(2, 1500);
+"38
+[; ;servo.c: 38:         setServoAngle(2, 1500);
 [e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"59
-[; ;servo.c: 59:         setServoAngle(3, 1500);
+"39
+[; ;servo.c: 39:         setServoAngle(3, 1500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"60
-[; ;servo.c: 60: }
-[e :UE 295 ]
+"40
+[; ;servo.c: 40: }
+[e :UE 284 ]
 }
-"62
-[; ;servo.c: 62: void setsit(){
+"42
+[; ;servo.c: 42: void setsit(){
 [v _setsit `(v ~T0 @X0 1 ef ]
 {
 [e :U _setsit ]
 [f ]
-"63
-[; ;servo.c: 63:         setServoAngle(0, 1500);
+"43
+[; ;servo.c: 43:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"64
-[; ;servo.c: 64:         setServoAngle(1, 1500);
+"44
+[; ;servo.c: 44:         setServoAngle(1, 1500);
 [e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"65
-[; ;servo.c: 65:         setServoAngle(2, 2500);
+"45
+[; ;servo.c: 45:         setServoAngle(2, 2500);
 [e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2500 `i `us ]
-"66
-[; ;servo.c: 66:         setServoAngle(3, 500);
+"46
+[; ;servo.c: 46:         setServoAngle(3, 500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 500 `i `us ]
-"67
-[; ;servo.c: 67: }
-[e :UE 296 ]
+"47
+[; ;servo.c: 47: }
+[e :UE 285 ]
 }
-"69
-[; ;servo.c: 69: void setlaydown(){
+"49
+[; ;servo.c: 49: void setlaydown(){
 [v _setlaydown `(v ~T0 @X0 1 ef ]
 {
 [e :U _setlaydown ]
 [f ]
-"70
-[; ;servo.c: 70:         setServoAngle(0, 2500);
+"50
+[; ;servo.c: 50:         setServoAngle(0, 2500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2500 `i `us ]
-"71
-[; ;servo.c: 71:         setServoAngle(1, 500);
+"51
+[; ;servo.c: 51:         setServoAngle(1, 500);
 [e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 500 `i `us ]
-"72
-[; ;servo.c: 72:         setServoAngle(2, 500);
+"52
+[; ;servo.c: 52:         setServoAngle(2, 500);
 [e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 500 `i `us ]
-"73
-[; ;servo.c: 73:         setServoAngle(3, 2500);
+"53
+[; ;servo.c: 53:         setServoAngle(3, 2500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2500 `i `us ]
-"74
-[; ;servo.c: 74: }
-[e :UE 297 ]
+"54
+[; ;servo.c: 54: }
+[e :UE 286 ]
 }
-"76
-[; ;servo.c: 76: void walk(){
+"56
+[; ;servo.c: 56: void walk(){
 [v _walk `(v ~T0 @X0 1 ef ]
 {
 [e :U _walk ]
 [f ]
+"58
+[; ;servo.c: 58:         setServoAngle(0, 2000);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+"59
+[; ;servo.c: 59:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"60
+[; ;servo.c: 60:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"61
+[; ;servo.c: 61:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"62
+[; ;servo.c: 62:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"64
+[; ;servo.c: 64:         setServoAngle(0, 2000);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+"65
+[; ;servo.c: 65:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"66
+[; ;servo.c: 66:         setServoAngle(2, 1005);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
+"67
+[; ;servo.c: 67:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"68
+[; ;servo.c: 68:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"70
+[; ;servo.c: 70:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"71
+[; ;servo.c: 71:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"72
+[; ;servo.c: 72:         setServoAngle(2, 1005);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
+"73
+[; ;servo.c: 73:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+"74
+[; ;servo.c: 74:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"76
+[; ;servo.c: 76:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"77
+[; ;servo.c: 77:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
 "78
-[; ;servo.c: 78:         setServoAngle(0, 2000);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 78:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
 "79
-[; ;servo.c: 79:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 79:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "80
-[; ;servo.c: 80:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"81
-[; ;servo.c: 81:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 80:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "82
-[; ;servo.c: 82:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 82:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"83
+[; ;servo.c: 83:         setServoAngle(1, 1005);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
 "84
-[; ;servo.c: 84:         setServoAngle(0, 2000);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 84:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
 "85
-[; ;servo.c: 85:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 85:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "86
-[; ;servo.c: 86:         setServoAngle(2, 1005);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
-"87
-[; ;servo.c: 87:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 86:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "88
-[; ;servo.c: 88:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"90
-[; ;servo.c: 90:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"91
-[; ;servo.c: 91:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"92
-[; ;servo.c: 92:         setServoAngle(2, 1005);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
-"93
-[; ;servo.c: 93:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"94
-[; ;servo.c: 94:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"96
-[; ;servo.c: 96:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"97
-[; ;servo.c: 97:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"98
-[; ;servo.c: 98:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"99
-[; ;servo.c: 99:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"100
-[; ;servo.c: 100:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"102
-[; ;servo.c: 102:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"103
-[; ;servo.c: 103:         setServoAngle(1, 1005);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
-"104
-[; ;servo.c: 104:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"105
-[; ;servo.c: 105:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"106
-[; ;servo.c: 106:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"108
-[; ;servo.c: 108:         setServoAngle(0, 1005);
+[; ;servo.c: 88:         setServoAngle(0, 1005);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
-"109
-[; ;servo.c: 109:         setServoAngle(1, 1005);
+"89
+[; ;servo.c: 89:         setServoAngle(1, 1005);
 [e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
-"110
-[; ;servo.c: 110:         setServoAngle(2, 2000);
+"90
+[; ;servo.c: 90:         setServoAngle(2, 2000);
 [e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"111
-[; ;servo.c: 111:         setServoAngle(3, 2000);
+"91
+[; ;servo.c: 91:         setServoAngle(3, 2000);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
+"92
+[; ;servo.c: 92:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"94
+[; ;servo.c: 94:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+"95
+[; ;servo.c: 95:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"96
+[; ;servo.c: 96:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"97
+[; ;servo.c: 97:         setServoAngle(3, 2000);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
+"98
+[; ;servo.c: 98:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"100
+[; ;servo.c: 100:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"101
+[; ;servo.c: 101:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"102
+[; ;servo.c: 102:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"103
+[; ;servo.c: 103:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+"104
+[; ;servo.c: 104:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"105
+[; ;servo.c: 105: }
+[e :UE 287 ]
+}
+"106
+[; ;servo.c: 106: void back_walk(){
+[v _back_walk `(v ~T0 @X0 1 ef ]
+{
+[e :U _back_walk ]
+[f ]
+"108
+[; ;servo.c: 108:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"109
+[; ;servo.c: 109:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"110
+[; ;servo.c: 110:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"111
+[; ;servo.c: 111:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "112
-[; ;servo.c: 112:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 112:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "114
 [; ;servo.c: 114:         setServoAngle(0, 1005);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
@@ -799,351 +743,239 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 117:         setServoAngle(3, 2000);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
 "118
-[; ;servo.c: 118:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 118:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "120
-[; ;servo.c: 120:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 120:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
 "121
-[; ;servo.c: 121:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 121:         setServoAngle(1, 1005);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
 "122
-[; ;servo.c: 122:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 122:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
 "123
-[; ;servo.c: 123:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 123:         setServoAngle(3, 2000);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
 "124
-[; ;servo.c: 124:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"125
-[; ;servo.c: 125: }
-[e :UE 298 ]
-}
+[; ;servo.c: 124:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "126
-[; ;servo.c: 126: void back_walk(){
-[v _back_walk `(v ~T0 @X0 1 ef ]
-{
-[e :U _back_walk ]
-[f ]
+[; ;servo.c: 126:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"127
+[; ;servo.c: 127:         setServoAngle(1, 1005);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
 "128
-[; ;servo.c: 128:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 128:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
 "129
-[; ;servo.c: 129:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 129:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "130
-[; ;servo.c: 130:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"131
-[; ;servo.c: 131:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 130:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "132
-[; ;servo.c: 132:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 132:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"133
+[; ;servo.c: 133:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
 "134
-[; ;servo.c: 134:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 134:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
 "135
-[; ;servo.c: 135:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 135:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "136
-[; ;servo.c: 136:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"137
-[; ;servo.c: 137:         setServoAngle(3, 2000);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 136:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "138
-[; ;servo.c: 138:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 138:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"139
+[; ;servo.c: 139:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
 "140
-[; ;servo.c: 140:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 140:         setServoAngle(2, 1005);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
 "141
-[; ;servo.c: 141:         setServoAngle(1, 1005);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 141:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "142
-[; ;servo.c: 142:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"143
-[; ;servo.c: 143:         setServoAngle(3, 2000);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 142:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "144
-[; ;servo.c: 144:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 144:        setServoAngle(0, 2000);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+"145
+[; ;servo.c: 145:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
 "146
-[; ;servo.c: 146:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 146:         setServoAngle(2, 1005);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
 "147
-[; ;servo.c: 147:         setServoAngle(1, 1005);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 147:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
 "148
-[; ;servo.c: 148:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"149
-[; ;servo.c: 149:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 148:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "150
-[; ;servo.c: 150:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
+[; ;servo.c: 150:         setServoAngle(0, 2000);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
+"151
+[; ;servo.c: 151:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
 "152
-[; ;servo.c: 152:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 152:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
 "153
-[; ;servo.c: 153:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 153:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
 "154
-[; ;servo.c: 154:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 154:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "155
-[; ;servo.c: 155:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"156
-[; ;servo.c: 156:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"158
-[; ;servo.c: 158:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"159
-[; ;servo.c: 159:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"160
-[; ;servo.c: 160:         setServoAngle(2, 1005);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
-"161
-[; ;servo.c: 161:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"162
-[; ;servo.c: 162:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"164
-[; ;servo.c: 164:        setServoAngle(0, 2000);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
-"165
-[; ;servo.c: 165:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"166
-[; ;servo.c: 166:         setServoAngle(2, 1005);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1005 `i `us ]
-"167
-[; ;servo.c: 167:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"168
-[; ;servo.c: 168:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"170
-[; ;servo.c: 170:         setServoAngle(0, 2000);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
-"171
-[; ;servo.c: 171:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"172
-[; ;servo.c: 172:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"173
-[; ;servo.c: 173:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"174
-[; ;servo.c: 174:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"175
-[; ;servo.c: 175: }
-[e :UE 299 ]
+[; ;servo.c: 155: }
+[e :UE 288 ]
 }
-"176
-[; ;servo.c: 176: void turn_right(){
+"156
+[; ;servo.c: 156: void turn_right(){
 [v _turn_right `(v ~T0 @X0 1 ef ]
 {
 [e :U _turn_right ]
 [f ]
+"158
+[; ;servo.c: 158:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+"159
+[; ;servo.c: 159:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"160
+[; ;servo.c: 160:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"161
+[; ;servo.c: 161:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"162
+[; ;servo.c: 162:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"164
+[; ;servo.c: 164:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+"165
+[; ;servo.c: 165:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"166
+[; ;servo.c: 166:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+"167
+[; ;servo.c: 167:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"168
+[; ;servo.c: 168:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"170
+[; ;servo.c: 170:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"171
+[; ;servo.c: 171:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"172
+[; ;servo.c: 172:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+"173
+[; ;servo.c: 173:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+"174
+[; ;servo.c: 174:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"176
+[; ;servo.c: 176:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"177
+[; ;servo.c: 177:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
 "178
-[; ;servo.c: 178:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+[; ;servo.c: 178:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
 "179
-[; ;servo.c: 179:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 179:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "180
-[; ;servo.c: 180:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 180:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "181
-[; ;servo.c: 181:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"182
-[; ;servo.c: 182:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"184
-[; ;servo.c: 184:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
-"185
-[; ;servo.c: 185:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"186
-[; ;servo.c: 186:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"187
-[; ;servo.c: 187:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"188
-[; ;servo.c: 188:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"190
-[; ;servo.c: 190:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"191
-[; ;servo.c: 191:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"192
-[; ;servo.c: 192:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"193
-[; ;servo.c: 193:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"194
-[; ;servo.c: 194:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"196
-[; ;servo.c: 196:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"197
-[; ;servo.c: 197:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"198
-[; ;servo.c: 198:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"199
-[; ;servo.c: 199:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"200
-[; ;servo.c: 200:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"201
-[; ;servo.c: 201: }
-[e :UE 300 ]
+[; ;servo.c: 181: }
+[e :UE 289 ]
 }
-"203
-[; ;servo.c: 203: void turn_left(){
+"183
+[; ;servo.c: 183: void turn_left(){
 [v _turn_left `(v ~T0 @X0 1 ef ]
 {
 [e :U _turn_left ]
 [f ]
+"185
+[; ;servo.c: 185:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"186
+[; ;servo.c: 186:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"187
+[; ;servo.c: 187:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+"188
+[; ;servo.c: 188:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
+"189
+[; ;servo.c: 189:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"191
+[; ;servo.c: 191:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+"192
+[; ;servo.c: 192:         setServoAngle(1, 2000);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+"193
+[; ;servo.c: 193:         setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+"194
+[; ;servo.c: 194:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"195
+[; ;servo.c: 195:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"197
+[; ;servo.c: 197:         setServoAngle(0, 1005);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
+"198
+[; ;servo.c: 198:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"199
+[; ;servo.c: 199:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
+"200
+[; ;servo.c: 200:         setServoAngle(3, 1005);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
+"201
+[; ;servo.c: 201:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"203
+[; ;servo.c: 203:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"204
+[; ;servo.c: 204:         setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
 "205
-[; ;servo.c: 205:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+[; ;servo.c: 205:         setServoAngle(2, 1500);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
 "206
-[; ;servo.c: 206:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 206:         setServoAngle(3, 1500);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "207
-[; ;servo.c: 207:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+[; ;servo.c: 207:         _delay((unsigned long)((250)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "208
-[; ;servo.c: 208:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"209
-[; ;servo.c: 209:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"211
-[; ;servo.c: 211:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
-"212
-[; ;servo.c: 212:         setServoAngle(1, 2000);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 2000 `i `us ]
-"213
-[; ;servo.c: 213:         setServoAngle(2, 2000);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
-"214
-[; ;servo.c: 214:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"215
-[; ;servo.c: 215:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"217
-[; ;servo.c: 217:         setServoAngle(0, 1005);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
-"218
-[; ;servo.c: 218:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"219
-[; ;servo.c: 219:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"220
-[; ;servo.c: 220:         setServoAngle(3, 1005);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
-"221
-[; ;servo.c: 221:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"223
-[; ;servo.c: 223:         setServoAngle(0, 1500);
-[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
-"224
-[; ;servo.c: 224:         setServoAngle(1, 1500);
-[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
-"225
-[; ;servo.c: 225:         setServoAngle(2, 1500);
-[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 1500 `i `us ]
-"226
-[; ;servo.c: 226:         setServoAngle(3, 1500);
-[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
-"227
-[; ;servo.c: 227:         _delay((unsigned long)((250)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"228
-[; ;servo.c: 228: }
-[e :UE 301 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"230
-[; ;servo.c: 230: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"235
-[; ;servo.c: 235:     TRISB = 0x01;
-[e = _TRISB -> -> 1 `i `uc ]
-"236
-[; ;servo.c: 236:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
-"237
-[; ;servo.c: 237:     Timer0_Init();
-[e ( _Timer0_Init ..  ]
-"239
-[; ;servo.c: 239:     while (1) {
-[e :U 304 ]
-{
-"240
-[; ;servo.c: 240:         setstand();
-[e ( _setstand ..  ]
-"246
-[; ;servo.c: 246:                 _delay((unsigned long)((400)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"247
-[; ;servo.c: 247:         while(1){
-[e :U 307 ]
-{
-"248
-[; ;servo.c: 248:             if((RB0 == 0b0)) break;
-[e $ ! == -> _RB0 `i -> 0 `i 309  ]
-[e $U 308  ]
-[e :U 309 ]
-"249
-[; ;servo.c: 249:                    turn_right();
-[e ( _turn_right ..  ]
-"250
-[; ;servo.c: 250:         }
-}
-[e :U 306 ]
-[e $U 307  ]
-[e :U 308 ]
-"251
-[; ;servo.c: 251:                       _delay((unsigned long)((400)*(250000/4000.0)));
-[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 250000 `l `d .4000.0 `ul ]
-"267
-[; ;servo.c: 267:     }
-}
-[e :U 303 ]
-[e $U 304  ]
-[e :U 305 ]
-"268
-[; ;servo.c: 268: }
-[e :UE 302 ]
+[; ;servo.c: 208: }
+[e :UE 290 ]
 }

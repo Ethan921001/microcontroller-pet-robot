@@ -598,8 +598,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 61:         setServoAngle(3, 1005);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
 "62
-[; ;servo.c: 62:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 62:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "64
 [; ;servo.c: 64:         setServoAngle(0, 2000);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2000 `i `us ]
@@ -613,8 +613,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 67:         setServoAngle(3, 1005);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1005 `i `us ]
 "68
-[; ;servo.c: 68:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 68:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "70
 [; ;servo.c: 70:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
@@ -628,8 +628,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 73:         setServoAngle(3, 1500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "74
-[; ;servo.c: 74:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 74:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "76
 [; ;servo.c: 76:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
@@ -643,8 +643,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 79:         setServoAngle(3, 1500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "80
-[; ;servo.c: 80:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 80:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "82
 [; ;servo.c: 82:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
@@ -658,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 85:         setServoAngle(3, 1500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "86
-[; ;servo.c: 86:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 86:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "88
 [; ;servo.c: 88:         setServoAngle(0, 1005);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
@@ -673,8 +673,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 91:         setServoAngle(3, 2000);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
 "92
-[; ;servo.c: 92:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 92:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "94
 [; ;servo.c: 94:         setServoAngle(0, 1005);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1005 `i `us ]
@@ -688,8 +688,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 97:         setServoAngle(3, 2000);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 2000 `i `us ]
 "98
-[; ;servo.c: 98:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 98:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "100
 [; ;servo.c: 100:         setServoAngle(0, 1500);
 [e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
@@ -703,8 +703,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 103:         setServoAngle(3, 1500);
 [e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1500 `i `us ]
 "104
-[; ;servo.c: 104:         _delay((unsigned long)((250)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;servo.c: 104:         _delay((unsigned long)((60)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "105
 [; ;servo.c: 105: }
 [e :UE 287 ]

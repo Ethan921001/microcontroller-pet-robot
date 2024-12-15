@@ -17,7 +17,7 @@ void Timer0_Initialize(void) {
 //
 //        pwmCounter += 500;
 //
-//                    if (pwmCounter <= servoPulse[0]) SERVO1 = 1; else SERVO1 = 0;
+//        if (pwmCounter <= servoPulse[0]) SERVO1 = 1; else SERVO1 = 0;
 //        if (pwmCounter <= servoPulse[1]) SERVO2 = 1; else SERVO2 = 0;
 //        if (pwmCounter <= servoPulse[2]) SERVO3 = 1; else SERVO3 = 0;
 //        if (pwmCounter <= servoPulse[3]) SERVO4 = 1; else SERVO4 = 0;
@@ -59,49 +59,49 @@ void walk(){
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1005);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 2
         setServoAngle(0, 2000);
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);  
         setServoAngle(3, 1005);
-        __delay_ms(250);
+        __delay_ms(60);
         // 3
         setServoAngle(0, 1500);  
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);
         setServoAngle(3, 1500);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 5
         setServoAngle(0, 1500);  
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 6
         setServoAngle(0, 1005);  
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 7
         setServoAngle(0, 1005);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);  
-        __delay_ms(250);
+        __delay_ms(60);
         // 8
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
-        __delay_ms(250);
+        __delay_ms(60);
 }
 void back_walk(){
     // 1

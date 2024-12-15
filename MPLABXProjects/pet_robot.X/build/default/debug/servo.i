@@ -4689,49 +4689,49 @@ void walk(){
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1005);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 2000);
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);
         setServoAngle(3, 1005);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1500);
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1005);
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1005);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((250)*(1000000/4000.0)));
+        _delay((unsigned long)((60)*(1000000/4000.0)));
 }
 void back_walk(){
 
