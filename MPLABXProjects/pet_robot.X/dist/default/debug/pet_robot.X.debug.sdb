@@ -5,6 +5,8 @@
 [d frameptr 4065 ]
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\float.c
@@ -35,9 +37,13 @@
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 "26
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"30 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+"32 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+[v _Interupt0_Initialize Interupt0_Initialize `(v  1 e 1 0 ]
+"40
+[v _H_ISR H_ISR `IIH(v  1 e 1 0 ]
+"50
 [v _L_ISR L_ISR `IIL(v  1 e 1 0 ]
-"49
+"69
 [v _main main `(v  1 e 1 0 ]
 "3 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\OLED.c
 [v _OLED_Command OLED_Command `(v  1 e 1 0 ]
@@ -45,19 +51,33 @@
 [v _OLED_Data OLED_Data `(v  1 e 1 0 ]
 "3 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
 [v _Timer0_Initialize Timer0_Initialize `(v  1 e 1 0 ]
-"31
+"14
 [v _setServoAngle setServoAngle `(v  1 e 1 0 ]
-"44
+"20
+[v _setstand setstand `(v  1 e 1 0 ]
+"27
 [v _setsit setsit `(v  1 e 1 0 ]
-"58
+"34
+[v _setlaydown setlaydown `(v  1 e 1 0 ]
+"41
 [v _walk walk `(v  1 e 1 0 ]
+"99
+[v _back_walk back_walk `(v  1 e 1 0 ]
+"157
+[v _turn_right turn_right `(v  1 e 1 0 ]
+"188
+[v _turn_left turn_left `(v  1 e 1 0 ]
 "14 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X/servo.h
 [v _servoPulse servoPulse `VE[4]us  1 e 8 0 ]
 "15
 [v _pwmCounter pwmCounter `VEus  1 e 2 0 ]
-"271 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
-[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S75 . 1 `uc 1 LATB0 1 0 :1:0 
+"19
+[v _mode mode `i  1 e 2 0 ]
+"977 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1089
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S118 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -67,7 +87,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1116
-[s S84 . 1 `uc 1 LB0 1 0 :1:0 
+[s S127 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -76,10 +96,14 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S93 . 1 `S75 1 . 1 0 `S84 1 . 1 0 ]
-[v _LATBbits LATBbits `VES93  1 e 1 @3978 ]
+[u S136 . 1 `S118 1 . 1 0 `S127 1 . 1 0 ]
+[v _LATBbits LATBbits `VES136  1 e 1 @3978 ]
+"1477
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "1699
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"4690
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4915
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
 "5010
@@ -90,22 +114,22 @@
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "5308
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S231 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S308 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "5697
-[s S233 . 1 `uc 1 . 1 0 :1:0 
+[s S310 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S236 . 1 `uc 1 . 1 0 :2:0 
+[s S313 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S239 . 1 `uc 1 . 1 0 :3:0 
+[s S316 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S242 . 1 `uc 1 . 1 0 :4:0 
+[s S319 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S245 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S322 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -114,25 +138,25 @@
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S254 . 1 `uc 1 BOR 1 0 :1:0 
+[s S331 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S260 . 1 `S231 1 . 1 0 `S233 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 `S242 1 . 1 0 `S245 1 . 1 0 `S254 1 . 1 0 ]
-[v _RCONbits RCONbits `VES260  1 e 1 @4048 ]
+[u S337 . 1 `S308 1 . 1 0 `S310 1 . 1 0 `S313 1 . 1 0 `S316 1 . 1 0 `S319 1 . 1 0 `S322 1 . 1 0 `S331 1 . 1 0 ]
+[v _RCONbits RCONbits `VES337  1 e 1 @4048 ]
 "6168
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "6258
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6265
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S196 . 1 `uc 1 . 1 0 :7:0 
+[s S73 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6647
-[s S199 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S76 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -141,11 +165,11 @@
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S208 . 1 `uc 1 . 1 0 :7:0 
+[s S85 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S211 . 1 `S196 1 . 1 0 `S199 1 . 1 0 `S208 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES211  1 e 1 @4081 ]
+[u S88 . 1 `S73 1 . 1 0 `S76 1 . 1 0 `S85 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES88  1 e 1 @4081 ]
 [s S24 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -175,45 +199,89 @@
 [v _BF BF `VEb  1 e 0 @32312 ]
 "7997
 [v _PEN PEN `VEb  1 e 0 @32298 ]
-"8093
-[v _RB0 RB0 `VEb  1 e 0 @31752 ]
 "8297
 [v _SEN SEN `VEb  1 e 0 @32296 ]
 "8624
 [v _TRISC3 TRISC3 `VEb  1 e 0 @31907 ]
 "8627
 [v _TRISC4 TRISC4 `VEb  1 e 0 @31908 ]
-"49 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+"69 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"95
+"123
 } 0
-"58 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+"41 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
 [v _walk walk `(v  1 e 1 0 ]
 {
-"107
+"98
 } 0
-"44
+"157
+[v _turn_right turn_right `(v  1 e 1 0 ]
+{
+"186
+} 0
+"188
+[v _turn_left turn_left `(v  1 e 1 0 ]
+{
+"217
+} 0
+"20
+[v _setstand setstand `(v  1 e 1 0 ]
+{
+"25
+} 0
+"27
 [v _setsit setsit `(v  1 e 1 0 ]
 {
-"49
+"32
 } 0
-"31
+"34
+[v _setlaydown setlaydown `(v  1 e 1 0 ]
+{
+"39
+} 0
+"99
+[v _back_walk back_walk `(v  1 e 1 0 ]
+{
+"156
+} 0
+"14
 [v _setServoAngle setServoAngle `(v  1 e 1 0 ]
 {
 [v setServoAngle@servo servo `uc  1 p 1 wreg ]
 [v setServoAngle@servo servo `uc  1 p 1 wreg ]
-[v setServoAngle@pulseWidth pulseWidth `us  1 p 2 3 ]
-[v setServoAngle@servo servo `uc  1 p 1 5 ]
-"35
+[v setServoAngle@pulseWidth pulseWidth `us  1 p 2 9 ]
+[v setServoAngle@servo servo `uc  1 p 1 11 ]
+"18
 } 0
 "3
 [v _Timer0_Initialize Timer0_Initialize `(v  1 e 1 0 ]
 {
 "12
 } 0
-"30 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+"32 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+[v _Interupt0_Initialize Interupt0_Initialize `(v  1 e 1 0 ]
+{
+"38
+} 0
+"50
 [v _L_ISR L_ISR `IIL(v  1 e 1 0 ]
 {
-"45
+"65
+} 0
+"40
+[v _H_ISR H_ISR `IIH(v  1 e 1 0 ]
+{
+"48
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
 } 0

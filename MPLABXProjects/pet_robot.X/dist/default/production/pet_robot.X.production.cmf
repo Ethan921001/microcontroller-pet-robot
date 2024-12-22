@@ -12,25 +12,33 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\pet_robot.X.production.o
-cinit CODE 0 3E6 3E6 32 1 2
+intcodelo CODE 0 18 18 D2 1 2
+cinit CODE 0 C3A C3A 36 1 2
 idloc IDLOC 5 200000 200000 8 1 1
-intcode_body CODE 0 244 244 BA 1 2
-text0 CODE 0 2FE 2FE 5A 1 2
-text1 CODE 0 12 12 232 1 2
-text2 CODE 0 3AC 3AC 3A 1 2
-text3 CODE 0 358 358 54 1 2
-text4 CODE 0 418 418 12 1 2
-idataCOMRAM CODE 0 42A 42A 8 1 1
-cstackCOMRAM COMRAM 1 9 9 5 1 1
-temp COMRAM 1 10 10 1 1 1
+intcode_body CODE 0 B42 B42 4A 1 2
+text0 CODE 0 966 966 DA 1 2
+text1 CODE 0 EE EE 2DA 1 2
+text2 CODE 0 6A2 6A2 162 1 2
+text3 CODE 0 804 804 162 1 2
+text4 CODE 0 B8C B8C 3A 1 2
+text5 CODE 0 BC6 BC6 3A 1 2
+text6 CODE 0 C00 C00 3A 1 2
+text7 CODE 0 3C8 3C8 2DA 1 2
+text8 CODE 0 AEE AEE 54 1 2
+text9 CODE 0 C70 C70 16 1 2
+text10 CODE 0 C86 C86 E 1 2
+text13 CODE 0 A40 A40 AE 1 2
+idataCOMRAM CODE 0 C94 C94 8 1 1
+cstackCOMRAM COMRAM 1 1 1 E 1 1
+temp COMRAM 1 1B 1B 1 1 1
 intcode CODE 0 8 8 6 1 2
-dataCOMRAM COMRAM 1 1 1 8 1 1
-bssCOMRAM COMRAM 1 E E 2 1 1
-mediumconst MEDIUMCONST 0 7BFE 7BFE 402 1 2
+dataCOMRAM COMRAM 1 F F 8 1 1
+bssCOMRAM COMRAM 1 17 17 4 1 1
+mediumconst MEDIUMCONST 0 4BFE 4BFE 3402 1 2
 config CONFIG 4 300000 300000 E 1 1
-$C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+$C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 idloc IDLOC 5 200000 200000 8 1 1
-init CODE 0 E E 4 1 2
+init CODE 0 EA EA 4 1 2
 reset_vec CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
@@ -48,15 +56,17 @@ BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 4-7 1
-CONST 432-7BFD 1
-SMALLCONST 600-7BFD 1
+CONST E-17 1
+CONST C9C-4BFD 1
+SMALLCONST C9C-4BFD 1
 CODE 4-7 1
-CODE 432-7BFD 1
-BIGRAM 11-5FF 1
+CODE E-17 1
+CODE C9C-4BFD 1
+BIGRAM 1C-5FF 1
 BIGSFR F80-FFF 1
-COMRAM 11-7F 1
+COMRAM 1C-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 600-7BFD 1
+MEDIUMCONST C9C-4BFD 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -71,117 +81,287 @@ MEDIUMCONST 600-7BFD 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\pet_robot.X.production.o
-8 intcode CODE >3508:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-8 intcode CODE >147:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-244 intcode_body CODE >147:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-246 intcode_body CODE >148:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-254 intcode_body CODE >149:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-256 intcode_body CODE >150:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-258 intcode_body CODE >151:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-25C intcode_body CODE >153:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-264 intcode_body CODE >155:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-282 intcode_body CODE >156:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-2A0 intcode_body CODE >157:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-2BE intcode_body CODE >158:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-2DC intcode_body CODE >160:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-2FA intcode_body CODE >162:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-418 text4 CODE >3:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-418 text4 CODE >4:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-41C text4 CODE >5:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-41E text4 CODE >6:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-422 text4 CODE >7:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-424 text4 CODE >8:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-426 text4 CODE >9:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-428 text4 CODE >10:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-358 text3 CODE >29:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-35A text3 CODE >30:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-396 text3 CODE >31:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3AA text3 CODE >33:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3AC text2 CODE >42:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3AC text2 CODE >43:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3BA text2 CODE >44:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3C8 text2 CODE >45:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3D6 text2 CODE >46:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3E4 text2 CODE >47:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-12 text1 CODE >56:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-12 text1 CODE >58:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-20 text1 CODE >59:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-2E text1 CODE >60:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-3C text1 CODE >61:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-4A text1 CODE >62:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-58 text1 CODE >64:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-66 text1 CODE >65:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-74 text1 CODE >66:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-82 text1 CODE >67:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-90 text1 CODE >68:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-9E text1 CODE >70:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-AC text1 CODE >71:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-BA text1 CODE >72:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-C8 text1 CODE >73:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-D6 text1 CODE >74:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-E4 text1 CODE >76:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-F2 text1 CODE >77:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-100 text1 CODE >78:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-10E text1 CODE >79:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-11C text1 CODE >80:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-12A text1 CODE >82:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-138 text1 CODE >83:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-146 text1 CODE >84:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-154 text1 CODE >85:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-162 text1 CODE >86:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-170 text1 CODE >88:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-17E text1 CODE >89:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-18C text1 CODE >90:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-19A text1 CODE >91:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1A8 text1 CODE >92:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1B6 text1 CODE >94:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1C4 text1 CODE >95:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1D2 text1 CODE >96:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1E0 text1 CODE >97:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1EE text1 CODE >98:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-1FC text1 CODE >100:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-20A text1 CODE >101:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-218 text1 CODE >102:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-226 text1 CODE >103:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-234 text1 CODE >104:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-242 text1 CODE >105:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
-2FE text0 CODE >166:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-2FE text0 CODE >170:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-302 text0 CODE >171:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-306 text0 CODE >172:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-308 text0 CODE >175:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-318 text0 CODE >176:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-31C text0 CODE >177:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-320 text0 CODE >176:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-32E text0 CODE >180:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-332 text0 CODE >181:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-342 text0 CODE >182:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-3E6 cinit CODE >2322:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3E6 cinit CODE >2324:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3E6 cinit CODE >2327:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3E6 cinit CODE >2348:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3E8 cinit CODE >2349:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3EA cinit CODE >2350:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3EC cinit CODE >2351:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3EE cinit CODE >2352:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3F0 cinit CODE >2353:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3F2 cinit CODE >2354:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3F6 cinit CODE >2355:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3FA cinit CODE >2356:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3FA cinit CODE >2357:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-3FC cinit CODE >2358:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-400 cinit CODE >2359:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-402 cinit CODE >2360:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-404 cinit CODE >2361:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-406 cinit CODE >2365:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-408 cinit CODE >2366:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-40A cinit CODE >2372:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-40A cinit CODE >2374:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-40C cinit CODE >2375:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-40E cinit CODE >2377:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-410 cinit CODE >2378:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-412 cinit CODE >2379:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
-414 cinit CODE >2380:C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_1.s
+18 intcodelo CODE >17950:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+18 intcodelo CODE >50:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+26 intcodelo CODE >51:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+34 intcodelo CODE >52:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+36 intcodelo CODE >53:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+38 intcodelo CODE >54:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+3C intcodelo CODE >56:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+44 intcodelo CODE >58:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+62 intcodelo CODE >59:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+80 intcodelo CODE >60:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9E intcodelo CODE >61:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+BC intcodelo CODE >63:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+DA intcodelo CODE >65:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+8 intcode CODE >18150:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+8 intcode CODE >40:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+A40 text13 CODE >7:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A40 text13 CODE >12:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A42 text13 CODE >13:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A50 text13 CODE >14:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A58 text13 CODE >15:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A5C text13 CODE >17:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A6A text13 CODE >18:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A72 text13 CODE >19:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A84 text13 CODE >20:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A88 text13 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A8C text13 CODE >22:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A92 text13 CODE >23:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+A94 text13 CODE >21:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AA2 text13 CODE >26:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AB8 text13 CODE >27:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AC0 text13 CODE >28:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AC6 text13 CODE >29:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+ACC text13 CODE >31:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+ADC text13 CODE >32:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AE4 text13 CODE >33:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+AEC text13 CODE >34:C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
+B42 intcode_body CODE >40:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B44 intcode_body CODE >41:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B52 intcode_body CODE >42:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B56 intcode_body CODE >43:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B76 intcode_body CODE >44:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B78 intcode_body CODE >45:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B86 intcode_body CODE >46:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+B88 intcode_body CODE >48:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C86 text10 CODE >32:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C86 text10 CODE >33:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C88 text10 CODE >34:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C8A text10 CODE >35:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C8C text10 CODE >36:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C8E text10 CODE >37:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C92 text10 CODE >38:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C70 text9 CODE >3:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C70 text9 CODE >4:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C74 text9 CODE >5:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C76 text9 CODE >6:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C7A text9 CODE >7:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C7C text9 CODE >8:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C7E text9 CODE >9:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C80 text9 CODE >10:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C82 text9 CODE >11:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C84 text9 CODE >12:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+AEE text8 CODE >31:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+AF0 text8 CODE >32:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+B2C text8 CODE >33:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+B40 text8 CODE >35:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3C8 text7 CODE >116:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3C8 text7 CODE >118:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3D6 text7 CODE >119:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3E4 text7 CODE >120:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3F2 text7 CODE >121:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+400 text7 CODE >122:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+40E text7 CODE >123:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+426 text7 CODE >125:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+434 text7 CODE >126:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+442 text7 CODE >127:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+450 text7 CODE >128:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+45E text7 CODE >129:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+46C text7 CODE >130:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+484 text7 CODE >132:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+492 text7 CODE >133:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4A0 text7 CODE >134:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4AE text7 CODE >135:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4BC text7 CODE >136:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4CA text7 CODE >137:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4E2 text7 CODE >139:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4F0 text7 CODE >140:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+4FE text7 CODE >141:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+50C text7 CODE >142:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+51A text7 CODE >143:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+528 text7 CODE >144:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+540 text7 CODE >146:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+54E text7 CODE >147:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+55C text7 CODE >148:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+56A text7 CODE >149:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+578 text7 CODE >150:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+586 text7 CODE >151:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+59E text7 CODE >153:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5AC text7 CODE >154:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5BA text7 CODE >155:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5C8 text7 CODE >156:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5D6 text7 CODE >157:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5E4 text7 CODE >158:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+5FC text7 CODE >160:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+60A text7 CODE >161:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+618 text7 CODE >162:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+626 text7 CODE >163:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+634 text7 CODE >164:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+642 text7 CODE >165:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+65A text7 CODE >167:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+668 text7 CODE >168:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+676 text7 CODE >169:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+684 text7 CODE >170:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+692 text7 CODE >171:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6A0 text7 CODE >173:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C00 text6 CODE >51:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C00 text6 CODE >52:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C0E text6 CODE >53:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C1C text6 CODE >54:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C2A text6 CODE >55:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+C38 text6 CODE >56:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BC6 text5 CODE >44:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BC6 text5 CODE >45:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BD4 text5 CODE >46:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BE2 text5 CODE >47:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BF0 text5 CODE >48:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BFE text5 CODE >49:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+B8C text4 CODE >37:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+B8C text4 CODE >38:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+B9A text4 CODE >39:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BA8 text4 CODE >40:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BB6 text4 CODE >41:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+BC4 text4 CODE >42:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+804 text3 CODE >205:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+804 text3 CODE >207:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+812 text3 CODE >208:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+820 text3 CODE >209:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+82E text3 CODE >210:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+83C text3 CODE >211:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+84A text3 CODE >212:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+862 text3 CODE >214:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+870 text3 CODE >215:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+87E text3 CODE >216:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+88C text3 CODE >217:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+89A text3 CODE >218:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8A8 text3 CODE >219:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8C0 text3 CODE >221:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8CE text3 CODE >222:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8DC text3 CODE >223:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8EA text3 CODE >224:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+8F8 text3 CODE >225:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+906 text3 CODE >226:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+91E text3 CODE >228:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+92C text3 CODE >229:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+93A text3 CODE >230:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+948 text3 CODE >231:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+956 text3 CODE >232:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+964 text3 CODE >234:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6A2 text2 CODE >174:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6A2 text2 CODE >176:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6B0 text2 CODE >177:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6BE text2 CODE >178:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6CC text2 CODE >179:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6DA text2 CODE >180:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+6E8 text2 CODE >181:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+700 text2 CODE >183:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+70E text2 CODE >184:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+71C text2 CODE >185:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+72A text2 CODE >186:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+738 text2 CODE >187:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+746 text2 CODE >188:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+75E text2 CODE >190:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+76C text2 CODE >191:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+77A text2 CODE >192:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+788 text2 CODE >193:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+796 text2 CODE >194:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7A4 text2 CODE >195:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7BC text2 CODE >197:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7CA text2 CODE >198:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7D8 text2 CODE >199:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7E6 text2 CODE >200:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+7F4 text2 CODE >201:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+802 text2 CODE >203:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+EE text1 CODE >58:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+EE text1 CODE >60:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+FC text1 CODE >61:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+10A text1 CODE >62:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+118 text1 CODE >63:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+126 text1 CODE >64:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+134 text1 CODE >65:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+14C text1 CODE >67:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+15A text1 CODE >68:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+168 text1 CODE >69:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+176 text1 CODE >70:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+184 text1 CODE >71:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+192 text1 CODE >72:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1AA text1 CODE >74:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1B8 text1 CODE >75:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1C6 text1 CODE >76:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1D4 text1 CODE >77:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1E2 text1 CODE >78:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+1F0 text1 CODE >79:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+208 text1 CODE >81:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+216 text1 CODE >82:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+224 text1 CODE >83:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+232 text1 CODE >84:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+240 text1 CODE >85:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+24E text1 CODE >86:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+266 text1 CODE >88:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+274 text1 CODE >89:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+282 text1 CODE >90:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+290 text1 CODE >91:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+29E text1 CODE >92:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2AC text1 CODE >93:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2C4 text1 CODE >95:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2D2 text1 CODE >96:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2E0 text1 CODE >97:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2EE text1 CODE >98:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+2FC text1 CODE >99:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+30A text1 CODE >100:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+322 text1 CODE >102:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+330 text1 CODE >103:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+33E text1 CODE >104:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+34C text1 CODE >105:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+35A text1 CODE >106:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+368 text1 CODE >107:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+380 text1 CODE >109:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+38E text1 CODE >110:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+39C text1 CODE >111:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3AA text1 CODE >112:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3B8 text1 CODE >113:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+3C6 text1 CODE >115:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+966 text0 CODE >69:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+966 text0 CODE >73:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+96A text0 CODE >74:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+96E text0 CODE >75:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+972 text0 CODE >76:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+974 text0 CODE >77:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+976 text0 CODE >78:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+978 text0 CODE >80:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+98A text0 CODE >81:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+98E text0 CODE >82:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9A4 text0 CODE >83:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9A8 text0 CODE >84:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9C0 text0 CODE >85:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9C4 text0 CODE >86:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9DC text0 CODE >87:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9E0 text0 CODE >88:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9F8 text0 CODE >89:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+9FC text0 CODE >90:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+A14 text0 CODE >91:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+A18 text0 CODE >92:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+A30 text0 CODE >93:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+A38 text0 CODE >94:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+C3A cinit CODE >14994:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C3A cinit CODE >14996:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C3A cinit CODE >14999:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C3A cinit CODE >15023:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C3C cinit CODE >15024:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C3E cinit CODE >15025:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C40 cinit CODE >15026:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C42 cinit CODE >15027:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C44 cinit CODE >15028:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C46 cinit CODE >15029:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C4A cinit CODE >15030:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C4E cinit CODE >15031:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C4E cinit CODE >15032:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C50 cinit CODE >15033:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C54 cinit CODE >15034:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C56 cinit CODE >15035:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C58 cinit CODE >15036:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C5A cinit CODE >15040:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C5C cinit CODE >15041:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C5E cinit CODE >15042:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C60 cinit CODE >15043:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C62 cinit CODE >15049:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C62 cinit CODE >15051:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C64 cinit CODE >15052:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C66 cinit CODE >15054:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C68 cinit CODE >15055:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C6A cinit CODE >15056:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
+C6C cinit CODE >15057:C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -194,61 +374,81 @@ F2 text1 CODE >77:C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\M
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Lmediumconst 7BFE 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__Lmediumconst 4BFE 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Hspace_0 8000 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-__Hspace_1 11 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+__Hspace_1 1C 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\pet_robot.X.production.o
-__mediumconst 7BFE 0 MEDIUMCONST 0 mediumconst C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+__mediumconst 4BFE 0 MEDIUMCONST 0 mediumconst C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\pet_robot.X.production.o
 _BF 7E38 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\pet_robot.X.production.o
+_sadFace2Data 5BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_sadFace3Data 57FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\pet_robot.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-_main 2FE 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
-_walk 12 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
-btemp 10 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-___stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-start E 0 CODE 0 init C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+_LATA F89 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+_LATB F8A 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+_main 966 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
+_mode 17 0 COMRAM 1 bssCOMRAM dist/default/production\pet_robot.X.production.o
+_walk EE 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
+btemp 1B 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+___stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+_sleepFace2Data 6FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_sleepFace3Data 6BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+start EA 0 CODE 0 init C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+_Interupt0_Initialize C86 0 CODE 0 text10 dist/default/production\pet_robot.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\pet_robot.X.production.o
-__Hpowerup E 0 CODE 0 powerup dist/default/production\pet_robot.X.production.o
-_pwmCounter E 0 COMRAM 1 bssCOMRAM dist/default/production\pet_robot.X.production.o
-ttemp5 11 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
-ttemp6 14 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
-ttemp7 18 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+__Hpowerup EA 0 CODE 0 powerup dist/default/production\pet_robot.X.production.o
+_pwmCounter 19 0 COMRAM 1 bssCOMRAM dist/default/production\pet_robot.X.production.o
+___awmod@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+ttemp5 1C 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+ttemp6 1F 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+ttemp7 23 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\pet_robot.X.production.o
-__accesstop 80 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-intlevel0 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-intlevel1 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-intlevel2 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-intlevel3 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+__end_of_originalFaceData 7FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__accesstop 80 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\pet_robot.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\pet_robot.X.production.o
-wtemp8 11 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+wtemp8 1C 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+_sadFaceData 5FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\pet_robot.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\pet_robot.X.production.o
-__pidataCOMRAM 42A 0 CODE 0 idataCOMRAM dist/default/production\pet_robot.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+__pidataCOMRAM C94 0 CODE 0 idataCOMRAM dist/default/production\pet_robot.X.production.o
+__end_of_sleepFace2Data 73FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_sleepFace3Data 6FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_ADCON1 FC1 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\pet_robot.X.production.o
+__end_of_sadFace2Data 5FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_sleepFaceData 73FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_sadFace3Data 5BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\pet_robot.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\pet_robot.X.production.o
 __Hmediumconst 8000 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
-__Hintcodelo E 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
+__Hintcodelo EA 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
+__end_of___awmod AEE 0 CODE 0 text13 dist/default/production\pet_robot.X.production.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\pet_robot.X.production.o
-__Lintcodelo E 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
-start_initialization 3E6 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+__Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
+start_initialization C3A 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\pet_robot.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+_shockFaceData 67FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_angryFaceData 53FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 _SSPADD FC8 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _SSPBUF FC9 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _TRISC3 7CA3 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _TRISC4 7CA4 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-_originFaceData 7BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-__end_of_setsit 3E6 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
+isa$xinst 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+__end_of_setsit C00 0 CODE 0 text5 dist/default/production\pet_robot.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\pet_robot.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\pet_robot.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\pet_robot.X.production.o
@@ -268,11 +468,16 @@ __Htext1 0 0 ABS 0 text1 dist/default/production\pet_robot.X.production.o
 __Htext2 0 0 ABS 0 text2 dist/default/production\pet_robot.X.production.o
 __Htext3 0 0 ABS 0 text3 dist/default/production\pet_robot.X.production.o
 __Htext4 0 0 ABS 0 text4 dist/default/production\pet_robot.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\pet_robot.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\pet_robot.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\pet_robot.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\pet_robot.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\pet_robot.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\pet_robot.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\pet_robot.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\pet_robot.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-_setServoAngle 358 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+_setServoAngle AEE 0 CODE 0 text8 dist/default/production\pet_robot.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\pet_robot.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\pet_robot.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\pet_robot.X.production.o
@@ -294,119 +499,162 @@ __Ltext1 0 0 ABS 0 text1 dist/default/production\pet_robot.X.production.o
 __Ltext2 0 0 ABS 0 text2 dist/default/production\pet_robot.X.production.o
 __Ltext3 0 0 ABS 0 text3 dist/default/production\pet_robot.X.production.o
 __Ltext4 0 0 ABS 0 text4 dist/default/production\pet_robot.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\pet_robot.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\pet_robot.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\pet_robot.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\pet_robot.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\pet_robot.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\pet_robot.X.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\pet_robot.X.production.o
 _INTCONbits FF2 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production\pet_robot.X.production.o
 __Hdata 0 0 ABS 0 data dist/default/production\pet_robot.X.production.o
 __Hheap 0 0 HEAP 7 heap dist/default/production\pet_robot.X.production.o
-__Hinit 12 0 CODE 0 init dist/default/production\pet_robot.X.production.o
+__Hinit EE 0 CODE 0 init dist/default/production\pet_robot.X.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\pet_robot.X.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\pet_robot.X.production.o
-__Htemp 11 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+__Htemp 1C 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
 __Htext 0 0 ABS 0 text dist/default/production\pet_robot.X.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production\pet_robot.X.production.o
 __Ldata 0 0 ABS 0 data dist/default/production\pet_robot.X.production.o
 __Lheap 0 0 HEAP 7 heap dist/default/production\pet_robot.X.production.o
-__Linit E 0 CODE 0 init dist/default/production\pet_robot.X.production.o
+__Linit EA 0 CODE 0 init dist/default/production\pet_robot.X.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\pet_robot.X.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\pet_robot.X.production.o
-__Ltemp 10 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+__Ltemp 1B 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production\pet_robot.X.production.o
-int$flags 10 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
+int$flags 1B 0 COMRAM 1 temp dist/default/production\pet_robot.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\pet_robot.X.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production\pet_robot.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\pet_robot.X.production.o
-_ISR 8 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
 _PEN 7E2A 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-_RB0 7C08 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _SEN 7E28 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __S0 8000 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-__S1 11 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+__S1 1C 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-__end_of_originFaceData 7FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_sleepFaceData 77FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\pet_robot.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\pet_robot.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\pet_robot.X.production.o
-__end_of_ISR 2FE 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
-int_func 244 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
+__end_of_back_walk 6A2 0 CODE 0 text7 dist/default/production\pet_robot.X.production.o
+int_func B42 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
+__end_of_sadFaceData 63FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production\pet_robot.X.production.o
 __Hramtop 600 0 RAM 0 ramtop dist/default/production\pet_robot.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\pet_robot.X.production.o
 __activetblptr 2 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\pet_robot.X.production.o
-__end_of_Timer0_Initialize 42A 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
-__pintcode_body 244 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\pet_robot.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\pet_robot.X.production.o
+_back_walk 3C8 0 CODE 0 text7 dist/default/production\pet_robot.X.production.o
+___awmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+__ptext10 C86 0 CODE 0 text10 dist/default/production\pet_robot.X.production.o
+__ptext13 A40 0 CODE 0 text13 dist/default/production\pet_robot.X.production.o
+_shockFace2Data 63FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_Timer0_Initialize C86 0 CODE 0 text9 dist/default/production\pet_robot.X.production.o
+___awmod A40 0 CODE 0 text13 dist/default/production\pet_robot.X.production.o
+__pintcode_body B42 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\pet_robot.X.production.o
 __Lbigram 0 0 ABS 0 bigram dist/default/production\pet_robot.X.production.o
 __Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\pet_robot.X.production.o
+__end_of_shockFaceData 6BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_setlaydown C00 0 CODE 0 text6 dist/default/production\pet_robot.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\pet_robot.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production\pet_robot.X.production.o
+__end_of_angryFaceData 57FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_Interupt0_Initialize C94 0 CODE 0 text10 dist/default/production\pet_robot.X.production.o
 _LATBbits F8A 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Lsivt_hi 0 0 ABS 0 sivt_hi dist/default/production\pet_robot.X.production.o
 __Lsivt_lo 0 0 ABS 0 sivt_lo dist/default/production\pet_robot.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\pet_robot.X.production.o
-_setsit 3AC 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
-___inthi_stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-___inthi_stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+_setsit BC6 0 CODE 0 text5 dist/default/production\pet_robot.X.production.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+_turn_right 6A2 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\pet_robot.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-stackhi 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-stacklo 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+isa$std 1 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+stackhi 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
-setServoAngle@pulseWidth 9 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+setServoAngle@pulseWidth B 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\pet_robot.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\pet_robot.X.production.o
-__end_of_setServoAngle 3AC 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
+__end_of_setServoAngle B42 0 CODE 0 text8 dist/default/production\pet_robot.X.production.o
+_happyFaceData 77FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Lspace_4 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-__pbssCOMRAM E 0 COMRAM 1 bssCOMRAM dist/default/production\pet_robot.X.production.o
+__pbssCOMRAM 17 0 COMRAM 1 bssCOMRAM dist/default/production\pet_robot.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\pet_robot.X.production.o
-end_of_initialization 40A 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+__end_of_turn_left 966 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
+end_of_initialization C62 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+__end_of_shockFace2Data 67FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\pet_robot.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\pet_robot.X.production.o
+_RCONbits FD0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+?___awmod 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\pet_robot.X.production.o
+___awmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+__end_of_setlaydown C3A 0 CODE 0 text6 dist/default/production\pet_robot.X.production.o
+_setstand B8C 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
 __Lramtop 600 0 RAM 0 ramtop dist/default/production\pet_robot.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\pet_robot.X.production.o
-__pcinit 3E6 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
-__ptext0 2FE 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
-__ptext1 12 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
-__ptext2 3AC 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
-__ptext3 358 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
-__ptext4 418 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
+__pcinit C3A 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+__ptext0 966 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
+__ptext1 EE 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
+__ptext2 6A2 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
+__ptext3 804 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
+__ptext4 B8C 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
+__ptext5 BC6 0 CODE 0 text5 dist/default/production\pet_robot.X.production.o
+__ptext6 C00 0 CODE 0 text6 dist/default/production\pet_robot.X.production.o
+__ptext7 3C8 0 CODE 0 text7 dist/default/production\pet_robot.X.production.o
+__ptext8 AEE 0 CODE 0 text8 dist/default/production\pet_robot.X.production.o
+__ptext9 C70 0 CODE 0 text9 dist/default/production\pet_robot.X.production.o
+_turn_left 804 0 CODE 0 text3 dist/default/production\pet_robot.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\pet_robot.X.production.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-_Timer0_Initialize 418 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
-__Lpowerup E 0 CODE 0 powerup dist/default/production\pet_robot.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\pet_robot.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\pet_robot.X.production.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+__end_of_setstand BC6 0 CODE 0 text4 dist/default/production\pet_robot.X.production.o
+__end_of_turn_right 804 0 CODE 0 text2 dist/default/production\pet_robot.X.production.o
+_Timer0_Initialize C70 0 CODE 0 text9 dist/default/production\pet_robot.X.production.o
+__Lpowerup EA 0 CODE 0 powerup dist/default/production\pet_robot.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\pet_robot.X.production.o
 __H__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\pet_robot.X.production.o
-setServoAngle@servo B 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+_angryFace2Data 4FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+_angryFace3Data 4BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+setServoAngle@servo D 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\pet_robot.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-___heap_lo 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+___heap_hi 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 ___param_bank 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-___intlo_stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
-___intlo_stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAsi5k.\driver_tmp_9.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\ru03m\AppData\Local\Temp\xcAssp4.\driver_tmp_9.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\pet_robot.X.production.o
-__end_of__initialization 40A 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+__end_of__initialization C62 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+___awmod@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\pet_robot.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\pet_robot.X.production.o
-__pcstackCOMRAM 9 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
-__pmediumconst 7BFE 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__pintcodelo 18 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pet_robot.X.production.o
+__pmediumconst 4BFE 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 _SSPCON1 FC6 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _SSPCON2 FC5 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _SSPSTAT FC7 0 ABS 0 - dist/default/production\pet_robot.X.production.o
-__end_of_main 358 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
-__end_of_walk 244 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
-_servoPulse 1 0 COMRAM 1 dataCOMRAM dist/default/production\pet_robot.X.production.o
+__end_of_main A40 0 CODE 0 text0 dist/default/production\pet_robot.X.production.o
+__end_of_walk 3C8 0 CODE 0 text1 dist/default/production\pet_robot.X.production.o
+_servoPulse F 0 COMRAM 1 dataCOMRAM dist/default/production\pet_robot.X.production.o
 __pintcode 8 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
-_PORTB F81 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+__end_of_H_ISR B8C 0 CODE 0 intcode_body dist/default/production\pet_robot.X.production.o
+__end_of_L_ISR EA 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
+_H_ISR 8 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
+_L_ISR 18 0 CODE 0 intcodelo dist/default/production\pet_robot.X.production.o
 _T0CON FD5 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _TMR0H FD7 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _TMR0L FD6 0 ABS 0 - dist/default/production\pet_robot.X.production.o
+_TRISA F92 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 _TRISB F93 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Hbss 0 0 RAM 1 bss dist/default/production\pet_robot.X.production.o
@@ -416,12 +664,16 @@ __LRAM 1 0 ABS 0 - dist/default/production\pet_robot.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\pet_robot.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\pet_robot.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\pet_robot.X.production.o
+__end_of_angryFace2Data 53FF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__end_of_angryFace3Data 4FFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Hsivt_hi 0 0 ABS 0 sivt_hi dist/default/production\pet_robot.X.production.o
 __Hsivt_lo 0 0 ABS 0 sivt_lo dist/default/production\pet_robot.X.production.o
-__initialization 3E6 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
-__pdataCOMRAM 1 0 COMRAM 1 dataCOMRAM dist/default/production\pet_robot.X.production.o
+__initialization C3A 0 CODE 0 cinit dist/default/production\pet_robot.X.production.o
+_originalFaceData 7BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
+__pdataCOMRAM F 0 COMRAM 1 dataCOMRAM dist/default/production\pet_robot.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\pet_robot.X.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\pet_robot.X.production.o
+__end_of_happyFaceData 7BFF 0 MEDIUMCONST 0 mediumconst dist/default/production\pet_robot.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\pet_robot.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\pet_robot.X.production.o
 __Hintcode E 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
@@ -449,10 +701,11 @@ __Hintcode E 0 CODE 0 intcode dist/default/production\pet_robot.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
+intcodelo 0 18 18 C84 1
+cstackCOMRAM 1 1 1 1B 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 42A 1
-dataCOMRAM 1 1 1 10 1
-mediumconst 0 7BFE 7BFE 402 1
+intcode 0 8 8 6 1
+mediumconst 0 4BFE 4BFE 3402 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
