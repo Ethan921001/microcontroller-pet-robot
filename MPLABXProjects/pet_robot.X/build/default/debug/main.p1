@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
-[t T41 __interrupt ]
+[t T41 __interrupt low_priority ]
 "6698 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6698:     struct {
 [s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1542,133 +1542,139 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP  =  OFF       ]
 "14
 [p x CPD  =  OFF         ]
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"147
-[; ;main.c: 147: void __attribute__((picinterrupt(("")))) ISR(void) {
-[v _ISR `(v ~T41 @X0 1 ef ]
+"24
+[; ;main.c: 24: int mode = 0;
+[v _mode `i ~T0 @X0 1 e ]
+[i _mode
+-> 0 `i
+]
+[v $root$_L_ISR `(v ~T0 @X0 0 e ]
+"30
+[; ;main.c: 30: void __attribute__((picinterrupt(("low_priority")))) L_ISR(void) {
+[v _L_ISR `(v ~T41 @X0 1 ef ]
 {
-[e :U _ISR ]
+[e :U _L_ISR ]
 [f ]
-"148
-[; ;main.c: 148:     if (INTCONbits.TMR0IF) {
+"31
+[; ;main.c: 31:     if (INTCONbits.TMR0IF) {
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 282  ]
 {
-"149
-[; ;main.c: 149:         INTCONbits.TMR0IF = 0;
+"32
+[; ;main.c: 32:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"150
-[; ;main.c: 150:         TMR0H = 0xFF;
+"33
+[; ;main.c: 33:         TMR0H = 0xFF;
 [e = _TMR0H -> -> 255 `i `uc ]
-"151
-[; ;main.c: 151:         TMR0L = 193;
+"34
+[; ;main.c: 34:         TMR0L = 193;
 [e = _TMR0L -> -> 193 `i `uc ]
-"153
-[; ;main.c: 153:         pwmCounter += 500;
+"36
+[; ;main.c: 36:         pwmCounter += 500;
 [e =+ _pwmCounter -> -> 500 `i `Vus ]
-"155
-[; ;main.c: 155:         if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
+"38
+[; ;main.c: 38:         if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
 [e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 0 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 283  ]
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 [e $U 284  ]
 [e :U 283 ]
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e :U 284 ]
-"156
-[; ;main.c: 156:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
+"39
+[; ;main.c: 39:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
 [e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 1 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 285  ]
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 [e $U 286  ]
 [e :U 285 ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e :U 286 ]
-"157
-[; ;main.c: 157:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
+"40
+[; ;main.c: 40:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
 [e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 2 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 287  ]
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 [e $U 288  ]
 [e :U 287 ]
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [e :U 288 ]
-"158
-[; ;main.c: 158:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
+"41
+[; ;main.c: 41:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
 [e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 3 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 289  ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
 [e $U 290  ]
 [e :U 289 ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 [e :U 290 ]
-"160
-[; ;main.c: 160:         if (pwmCounter >= 20000) pwmCounter = 0;
+"43
+[; ;main.c: 43:         if (pwmCounter >= 20000) pwmCounter = 0;
 [e $ ! >= -> _pwmCounter `ui -> -> 20000 `i `ui 291  ]
 [e = _pwmCounter -> -> 0 `i `us ]
 [e :U 291 ]
-"161
-[; ;main.c: 161:     }
+"44
+[; ;main.c: 44:     }
 }
 [e :U 282 ]
-"162
-[; ;main.c: 162: }
+"45
+[; ;main.c: 45: }
 [e :UE 281 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"166
-[; ;main.c: 166: void main() {
+"49
+[; ;main.c: 49: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"170
-[; ;main.c: 170:     Timer0_Initialize();
+"53
+[; ;main.c: 53:     Timer0_Initialize();
 [e ( _Timer0_Initialize ..  ]
-"171
-[; ;main.c: 171:     TRISB= 0x01;
+"54
+[; ;main.c: 54:     TRISB= 0x01;
 [e = _TRISB -> -> 1 `i `uc ]
-"172
-[; ;main.c: 172:     PORTB = 0b00000000;
+"55
+[; ;main.c: 55:     PORTB = 0b00000000;
 [e = _PORTB -> -> 0 `i `uc ]
-"174
-[; ;main.c: 174:     while(1){
+"57
+[; ;main.c: 57:     while(1){
 [e :U 294 ]
 {
-"175
-[; ;main.c: 175:         _delay((unsigned long)((100)*(1000000/4000.0)));
+"58
+[; ;main.c: 58:         _delay((unsigned long)((100)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"176
-[; ;main.c: 176:         while(RB0 == 0b1){
+"59
+[; ;main.c: 59:         while(RB0 == 0b1){
 [e $U 296  ]
 [e :U 297 ]
 {
-"177
-[; ;main.c: 177:             walk();
+"60
+[; ;main.c: 60:             walk();
 [e ( _walk ..  ]
-"179
-[; ;main.c: 179:         }
+"62
+[; ;main.c: 62:         }
 }
 [e :U 296 ]
-"176
-[; ;main.c: 176:         while(RB0 == 0b1){
+"59
+[; ;main.c: 59:         while(RB0 == 0b1){
 [e $ == -> _RB0 `i -> 1 `i 297  ]
 [e :U 298 ]
-"180
-[; ;main.c: 180:         setsit();
+"63
+[; ;main.c: 63:         setsit();
 [e ( _setsit ..  ]
-"181
-[; ;main.c: 181:         _delay((unsigned long)((100)*(1000000/4000.0)));
+"64
+[; ;main.c: 64:         _delay((unsigned long)((100)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"182
-[; ;main.c: 182:         while(RB0 == 0b1);
+"65
+[; ;main.c: 65:         while(RB0 == 0b1);
 [e $U 299  ]
 [e :U 300 ]
 [e :U 299 ]
 [e $ == -> _RB0 `i -> 1 `i 300  ]
 [e :U 301 ]
-"183
-[; ;main.c: 183:     }
+"66
+[; ;main.c: 66:     }
 }
 [e :U 293 ]
 [e $U 294  ]
 [e :U 295 ]
-"212
-[; ;main.c: 212: }
+"95
+[; ;main.c: 95: }
 [e :UE 292 ]
 }

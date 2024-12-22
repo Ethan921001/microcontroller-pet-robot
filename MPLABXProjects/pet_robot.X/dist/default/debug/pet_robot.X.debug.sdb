@@ -35,9 +35,9 @@
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 "26
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"147 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-[v _ISR ISR `IIH(v  1 e 1 0 ]
-"166
+"30 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+[v _L_ISR L_ISR `IIL(v  1 e 1 0 ]
+"49
 [v _main main `(v  1 e 1 0 ]
 "3 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\OLED.c
 [v _OLED_Command OLED_Command `(v  1 e 1 0 ]
@@ -45,11 +45,11 @@
 [v _OLED_Data OLED_Data `(v  1 e 1 0 ]
 "3 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
 [v _Timer0_Initialize Timer0_Initialize `(v  1 e 1 0 ]
-"29
+"31
 [v _setServoAngle setServoAngle `(v  1 e 1 0 ]
-"42
+"44
 [v _setsit setsit `(v  1 e 1 0 ]
-"56
+"58
 [v _walk walk `(v  1 e 1 0 ]
 "14 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X/servo.h
 [v _servoPulse servoPulse `VE[4]us  1 e 8 0 ]
@@ -90,12 +90,62 @@
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "5308
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+[s S231 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"5697
+[s S233 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S236 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S239 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S242 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S245 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S254 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S260 . 1 `S231 1 . 1 0 `S233 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 `S242 1 . 1 0 `S245 1 . 1 0 `S254 1 . 1 0 ]
+[v _RCONbits RCONbits `VES260  1 e 1 @4048 ]
 "6168
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "6258
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6265
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S196 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"6647
+[s S199 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S208 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S211 . 1 `S196 1 . 1 0 `S199 1 . 1 0 `S208 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES211  1 e 1 @4081 ]
 [s S24 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -133,37 +183,37 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @31907 ]
 "8627
 [v _TRISC4 TRISC4 `VEb  1 e 0 @31908 ]
-"166 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+"49 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"212
+"95
 } 0
-"56 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
+"58 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\servo.c
 [v _walk walk `(v  1 e 1 0 ]
 {
-"105
+"107
 } 0
-"42
+"44
 [v _setsit setsit `(v  1 e 1 0 ]
 {
-"47
+"49
 } 0
-"29
+"31
 [v _setServoAngle setServoAngle `(v  1 e 1 0 ]
 {
 [v setServoAngle@servo servo `uc  1 p 1 wreg ]
 [v setServoAngle@servo servo `uc  1 p 1 wreg ]
-[v setServoAngle@pulseWidth pulseWidth `us  1 p 2 0 ]
-[v setServoAngle@servo servo `uc  1 p 1 2 ]
-"33
+[v setServoAngle@pulseWidth pulseWidth `us  1 p 2 3 ]
+[v setServoAngle@servo servo `uc  1 p 1 5 ]
+"35
 } 0
 "3
 [v _Timer0_Initialize Timer0_Initialize `(v  1 e 1 0 ]
 {
-"10
+"12
 } 0
-"147 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
-[v _ISR ISR `IIH(v  1 e 1 0 ]
+"30 C:\Users\ru03m\MPLABXProjects\microcontroller-pet-robot_new2\MPLABXProjects\pet_robot.X\main.c
+[v _L_ISR L_ISR `IIL(v  1 e 1 0 ]
 {
-"162
+"45
 } 0

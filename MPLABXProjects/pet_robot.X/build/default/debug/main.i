@@ -4756,8 +4756,14 @@ void turn_left();
 #pragma config PBADEN = OFF
 #pragma config LVP = OFF
 #pragma config CPD = OFF
-# 147 "main.c"
-void __attribute__((picinterrupt(("")))) ISR(void) {
+# 24 "main.c"
+int mode = 0;
+
+
+
+
+
+void __attribute__((picinterrupt(("low_priority")))) L_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
         TMR0H = 0xFF;
@@ -4794,5 +4800,5 @@ void main() {
         _delay((unsigned long)((100)*(1000000/4000.0)));
         while(RB0 == 0b1);
     }
-# 212 "main.c"
+# 95 "main.c"
 }

@@ -1,5 +1,5 @@
 #include "servo.h"
-
+#define Move_delay 30
 void Timer0_Initialize(void) {
     T0CON = 0x88;       // ?? Timer0
     TMR0H = 0xFF;       // ????50µs?
@@ -7,6 +7,8 @@ void Timer0_Initialize(void) {
     INTCONbits.TMR0IE = 1; // ?? Timer0 ??
     INTCONbits.GIE = 1;    // ??????
     INTCONbits.PEIE = 1;   // ??????
+    INTCON2bits.TMR0IP = 0;
+    RCONbits.IPEN = 1;
 }
 
 //void __interrupt() ISR(void) {
@@ -59,49 +61,49 @@ void walk(){
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1005);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 2
         setServoAngle(0, 2000);
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);  
         setServoAngle(3, 1005);
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 3
         setServoAngle(0, 1500);  
         setServoAngle(1, 2000);
         setServoAngle(2, 1005);
         setServoAngle(3, 1500);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 5
         setServoAngle(0, 1500);  
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 6
         setServoAngle(0, 1005);  
         setServoAngle(1, 1005);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 7
         setServoAngle(0, 1005);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
         // 8
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
-        __delay_ms(60);
+        __delay_ms(Move_delay);
 }
 void back_walk(){
     // 1

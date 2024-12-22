@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o
+ C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o
  -Odist/default/debug\pet_robot.X.debug.hex
  -logfile=dist/default/debug\pet_robot.X.debug.hxl
  -format=INHX032
@@ -10,26 +10,26 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
-  8h - 431h		(C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
-  79BEh - 7DBFh		(C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
-  200000h - 200007h		(C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
+  18h - 46Bh		(C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
+  79BEh - 7DBFh		(C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
+  200000h - 200007h		(C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
  Unused ranges:
-  4h - 7h
-  432h - 79BDh
+  4h - 17h
+  46Ch - 79BDh
   7DC0h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\ru03m\AppData\Local\Temp\xcAs5k0.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\ru03m\AppData\Local\Temp\xcAsl10.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
-00000000 | H1 H1 H1 H1 -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
-00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+00000010 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
 00000020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -95,7 +95,10 @@
 00000400 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000410 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000420 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000430 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+00000430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000440 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000450 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000460 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
 ----------------------------------------------------------
 000079B0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 000079C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
