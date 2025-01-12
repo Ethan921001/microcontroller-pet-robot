@@ -1,2 +1,3 @@
 build/default/debug/bluetooth.p1:  \
-bluetooth.c 
+bluetooth.c  \
+bluetooth.h 

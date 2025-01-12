@@ -1,4 +1,141 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"8633 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8633: extern volatile __bit TRISC6 __attribute__((address(0x7CA6)));
+[v _TRISC6 `Vb ~T0 @X0 0 e@31910 ]
+"8636
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 8636: extern volatile __bit TRISC7 __attribute__((address(0x7CA7)));
+[v _TRISC7 `Vb ~T0 @X0 0 e@31911 ]
+"3121
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3121:     struct {
+[s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S109 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"3131
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3131:     struct {
+[s S110 :3 `uc 1 :1 `uc 1 ]
+[n S110 . . ADEN ]
+"3135
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3135:     struct {
+[s S111 :5 `uc 1 :1 `uc 1 ]
+[n S111 . . SRENA ]
+"3139
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3139:     struct {
+[s S112 :6 `uc 1 :1 `uc 1 ]
+[n S112 . . RC8_9 ]
+"3143
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3143:     struct {
+[s S113 :6 `uc 1 :1 `uc 1 ]
+[n S113 . . RC9 ]
+"3147
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3147:     struct {
+[s S114 :1 `uc 1 ]
+[n S114 . RCD8 ]
+"3120
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3120: typedef union {
+[u S108 `S109 1 `S110 1 `S111 1 `S112 1 `S113 1 `S114 1 ]
+[n S108 . . . . . . . ]
+"3151
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3151: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
+[v _RCSTAbits `VS108 ~T0 @X0 0 e@4011 ]
+"3331
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3331:     struct {
+[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S123 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"3341
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3341:     struct {
+[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S124 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
+"3351
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3351:     struct {
+[s S125 :6 `uc 1 :1 `uc 1 ]
+[n S125 . . TX8_9 ]
+"3355
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3355:     struct {
+[s S126 :1 `uc 1 ]
+[n S126 . TXD8 ]
+"3330
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3330: typedef union {
+[u S122 `S123 1 `S124 1 `S125 1 `S126 1 ]
+[n S122 . . . . . ]
+"3359
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3359: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VS122 ~T0 @X0 0 e@4012 ]
+"2677
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2677:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2687
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2687:     struct {
+[s S92 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S92 . . TX1IF RC1IF ]
+"2676
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2676: typedef union {
+[u S90 `S91 1 `S92 1 ]
+[n S90 . . . ]
+"2693
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2693: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS90 ~T0 @X0 0 e@3998 ]
+"4232
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4232:     struct {
+[s S159 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S159 . ABDEN WUE . BRG16 TXCKP RXDTP RCIDL ABDOVF ]
+"4242
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4242:     struct {
+[s S160 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S160 . . SCKP . RCMT ]
+"4248
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4248:     struct {
+[s S161 :5 `uc 1 :1 `uc 1 ]
+[n S161 . . RXCKP ]
+"4252
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4252:     struct {
+[s S162 :1 `uc 1 :1 `uc 1 ]
+[n S162 . . W4E ]
+"4231
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4231: typedef union {
+[u S158 `S159 1 `S160 1 `S161 1 `S162 1 ]
+[n S158 . . . . . ]
+"4257
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 4257: extern volatile BAUDCONbits_t BAUDCONbits __attribute__((address(0xFB8)));
+[v _BAUDCONbits `VS158 ~T0 @X0 0 e@4024 ]
+"3600
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3600: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"2600
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2600:     struct {
+[s S88 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S88 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2610
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2610:     struct {
+[s S89 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . . TX1IE RC1IE ]
+"2599
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2599: typedef union {
+[u S87 `S88 1 `S89 1 ]
+[n S87 . . . ]
+"2616
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2616: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS87 ~T0 @X0 0 e@3997 ]
+"2754
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2754:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"2764
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2764:     struct {
+[s S95 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S95 . . TX1IP RC1IP ]
+"2753
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2753: typedef union {
+[u S93 `S94 1 `S95 1 ]
+[n S93 . . . ]
+"2770
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2770: extern volatile IPR1bits_t IPR1bits __attribute__((address(0xF9F)));
+[v _IPR1bits `VS93 ~T0 @X0 0 e@3999 ]
+"3576
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3576: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"3588
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3588: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -413,3 +550,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"4 bluetooth.c
+[; ;bluetooth.c: 4: void UART_Init(void) {
+[v _UART_Init `(v ~T0 @X0 1 ef ]
+{
+[e :U _UART_Init ]
+[f ]
+"5
+[; ;bluetooth.c: 5:     TRISC6 = 1;
+[e = _TRISC6 -> -> 1 `i `b ]
+"6
+[; ;bluetooth.c: 6:     TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
+"9
+[; ;bluetooth.c: 9:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"10
+[; ;bluetooth.c: 10:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"11
+[; ;bluetooth.c: 11:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"12
+[; ;bluetooth.c: 12:     PIR1bits.TXIF = 1;
+[e = . . _PIR1bits 0 4 -> -> 1 `i `uc ]
+"13
+[; ;bluetooth.c: 13:     PIR1bits.RCIF = 1;
+[e = . . _PIR1bits 0 5 -> -> 1 `i `uc ]
+"15
+[; ;bluetooth.c: 15:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"16
+[; ;bluetooth.c: 16:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"17
+[; ;bluetooth.c: 17:     BAUDCONbits.BRG16 = 1;
+[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
+"18
+[; ;bluetooth.c: 18:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"20
+[; ;bluetooth.c: 20:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"21
+[; ;bluetooth.c: 21:     IPR1bits.RCIP = 1;
+[e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
+"22
+[; ;bluetooth.c: 22: }
+[e :UE 281 ]
+}
+"25
+[; ;bluetooth.c: 25: void UART_Write(char data) {
+[v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _UART_Write ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"26
+[; ;bluetooth.c: 26:     while (!TXSTAbits.TRMT);
+[e $U 283  ]
+[e :U 284 ]
+[e :U 283 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 284  ]
+[e :U 285 ]
+"27
+[; ;bluetooth.c: 27:     TXREG = data;
+[e = _TXREG -> _data `uc ]
+"28
+[; ;bluetooth.c: 28: }
+[e :UE 282 ]
+}
+"31
+[; ;bluetooth.c: 31: char UART_Read(void) {
+[v _UART_Read `(uc ~T0 @X0 1 ef ]
+{
+[e :U _UART_Read ]
+[f ]
+"32
+[; ;bluetooth.c: 32:     while (!PIR1bits.RCIF);
+[e $U 287  ]
+[e :U 288 ]
+[e :U 287 ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 288  ]
+[e :U 289 ]
+"34
+[; ;bluetooth.c: 34:     if (RCREG == '\r')
+[e $ ! == -> _RCREG `ui -> 13 `ui 290  ]
+"35
+[; ;bluetooth.c: 35:             UART_Write('\n');
+[e ( _UART_Write (1 -> -> 10 `ui `uc ]
+[e :U 290 ]
+"37
+[; ;bluetooth.c: 37:     UART_Write(RCREG);
+[e ( _UART_Write (1 -> _RCREG `uc ]
+"38
+[; ;bluetooth.c: 38:     return RCREG;
+[e ) -> _RCREG `uc ]
+[e $UE 286  ]
+"39
+[; ;bluetooth.c: 39: }
+[e :UE 286 ]
+}

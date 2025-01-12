@@ -17,6 +17,7 @@ void Timer0_Initialize(void);
 //void __interrupt() ISR(void);
 void setServoAngle(uint8_t servo, uint16_t pulseWidth);
 extern int mode = 0;
+extern int old_mode = 0;
 
 // action
 void setstand();

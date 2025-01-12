@@ -5458,6 +5458,7 @@ void Timer0_Initialize(void);
 
 void setServoAngle(uint8_t servo, uint16_t pulseWidth);
 extern int mode = 0;
+extern int old_mode = 0;
 
 
 void setstand();
@@ -5469,6 +5470,24 @@ void turn_right();
 void turn_left();
 # 6 "main.c" 2
 
+# 1 "./bluetooth.h" 1
+
+
+
+
+
+
+
+
+void UART_Init(void);
+
+
+void UART_Write(char data);
+
+
+char UART_Read(void);
+# 7 "main.c" 2
+
 
 #pragma config OSC = INTIO67
 #pragma config WDT = OFF
@@ -5477,7 +5496,7 @@ void turn_left();
 #pragma config PBADEN = OFF
 #pragma config LVP = OFF
 #pragma config CPD = OFF
-# 32 "main.c"
+# 33 "main.c"
 void Interupt0_Initialize(void){
     INTCONbits.INT0IF = 0;
     INTCONbits.GIE = 1;
@@ -5489,10 +5508,24 @@ void Interupt0_Initialize(void){
 void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
     if (INTCONbits.INT0IF) {
         LATA = 0x01;
-            mode = (mode + 1) % 7;
+        mode = (mode + 1) % 7;
         INTCONbits.INT0IF = 0;
         _delay((unsigned long)((2)*(1000000/4000.0)));
         LATA = 0x00;
+    }
+    if(PIR1bits.RCIF){
+
+        int data = RCREG;
+        if('0' <= data && data <= '6'){
+            mode = data - '0';
+        }
+
+        UART_Write(data);
+
+
+
+
+
     }
 }
 
@@ -5525,10 +5558,26 @@ void main() {
     TRISA = 0x00;
     LATA = 0;
     LATB = 0b00000000;
+        UART_Init();
+        I2C_Master_Init(100000);
+        OLED_Init();
+
+
+
+
+    OLED_Display_Look_Forward();
     while(1){
         if(mode == 0){
+            if(old_mode != 0){
+                OLED_Display_Look_Forward();
+                old_mode = 0;
+            }
             setstand();
         }else if(mode == 1){
+            if(old_mode != 1){
+                OLED_Display_Look_Right();
+                old_mode = 1;
+            }
             setsit();
         }else if(mode == 2){
             setlaydown();
@@ -5542,5 +5591,5 @@ void main() {
             turn_left();
         }
     }
-# 123 "main.c"
+# 154 "main.c"
 }

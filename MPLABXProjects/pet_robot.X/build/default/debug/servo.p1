@@ -522,6 +522,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _mode
 -> 0 `i
 ]
+"20
+[; ;./servo.h: 20: extern int old_mode = 0;
+[v _old_mode `i ~T0 @X0 1 e ]
+[i _old_mode
+-> 0 `i
+]
 "3 servo.c
 [; ;servo.c: 3: void Timer0_Initialize(void) {
 [v _Timer0_Initialize `(v ~T0 @X0 1 ef ]

@@ -4,6 +4,7 @@
 #include"I2C.h"
 #include"OLED.h"
 #include"servo.h"
+#include"bluetooth.h"
 // ??? (??????????)
 #pragma config OSC = INTIO67  // ?????
 #pragma config WDT = OFF      // ?????
@@ -40,10 +41,24 @@ void Interupt0_Initialize(void){
 void __interrupt(high_priority) H_ISR(void){
     if (INTCONbits.INT0IF) {
         LATA = 0x01;
-            mode = (mode + 1) % 7;
+        mode = (mode + 1) % 7;
         INTCONbits.INT0IF = 0;
         __delay_ms(2);
         LATA = 0x00;
+    }
+    if(PIR1bits.RCIF){
+        //int data = UART_Read();
+        int data = RCREG;
+        if('0' <= data && data <= '6'){
+            mode = data - '0';
+        }
+  
+        UART_Write(data);
+//        if(data == '0'){
+//            mode = 0;
+//        }else if(data == 'a'){
+//            mode = 3;
+//        }
     }
 }
 
@@ -76,10 +91,26 @@ void main() {
     TRISA = 0x00;
     LATA = 0;
     LATB = 0b00000000;
+        UART_Init();
+        I2C_Master_Init(100000);
+        OLED_Init();
+//    while(1){
+//        UART_Read();
+//        UART_Write('r');
+//    }
+    OLED_Display_Look_Forward(); 
     while(1){
         if(mode == 0){
+            if(old_mode != 0){ 
+                OLED_Display_Look_Forward(); 
+                old_mode = 0;
+            }
             setstand();
         }else if(mode == 1){
+            if(old_mode != 1){ 
+                OLED_Display_Look_Right(); 
+                old_mode = 1;
+            }
             setsit();
         }else if(mode == 2){
             setlaydown();

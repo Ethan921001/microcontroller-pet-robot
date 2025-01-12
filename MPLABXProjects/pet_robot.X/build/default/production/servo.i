@@ -4658,7 +4658,7 @@ void Timer0_Initialize(void) {
     INTCON2bits.TMR0IP = 0;
     RCONbits.IPEN = 1;
 }
-# 31 "servo.c"
+
 void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
     if (servo < 4 && pulseWidth >= 500 && pulseWidth <= 2500) {
         servoPulse[servo] = pulseWidth;

@@ -49,6 +49,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
+"2677 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2677:     struct {
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S96 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2687
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2687:     struct {
+[s S97 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . . TX1IF RC1IF ]
+"2676
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2676: typedef union {
+[u S95 `S96 1 `S97 1 ]
+[n S95 . . . ]
+"2693
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 2693: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS95 ~T0 @X0 0 e@3998 ]
+"3588
+[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 3588: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"12 ./bluetooth.h
+[; ;./bluetooth.h: 12: void UART_Write(char data);
+[v _UART_Write `(v ~T0 @X0 0 ef1`uc ]
 [t T42 __interrupt low_priority ]
 "6265 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 6265: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
@@ -84,26 +105,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1089
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1089: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
 [v _LATB `Vuc ~T0 @X0 0 e@3978 ]
-"22 ./servo.h
-[; ;./servo.h: 22: void setstand();
+"9 ./bluetooth.h
+[; ;./bluetooth.h: 9: void UART_Init(void);
+[v _UART_Init `(v ~T0 @X0 0 ef ]
+"7 ./I2C.h
+[; ;./I2C.h: 7: void I2C_Master_Init(unsigned long clock);
+[; ;./I2C.h: 7: void I2C_Master_Init(unsigned long clock);
+[v _I2C_Master_Init `(v ~T0 @X0 0 ef1`ul ]
+"16 ./OLED.h
+[; ;./OLED.h: 16: void OLED_Init();
+[v _OLED_Init `(v ~T0 @X0 0 e? ]
+"22
+[; ;./OLED.h: 22: void OLED_Display_Look_Forward();
+[v _OLED_Display_Look_Forward `(v ~T0 @X0 0 e? ]
+"23 ./servo.h
+[; ;./servo.h: 23: void setstand();
 [v _setstand `(v ~T0 @X0 0 e? ]
-"23
-[; ;./servo.h: 23: void setsit();
+"24 ./OLED.h
+[; ;./OLED.h: 24: void OLED_Display_Look_Right();
+[v _OLED_Display_Look_Right `(v ~T0 @X0 0 e? ]
+"24 ./servo.h
+[; ;./servo.h: 24: void setsit();
 [v _setsit `(v ~T0 @X0 0 e? ]
-"24
-[; ;./servo.h: 24: void setlaydown();
-[v _setlaydown `(v ~T0 @X0 0 e? ]
 "25
-[; ;./servo.h: 25: void walk();
-[v _walk `(v ~T0 @X0 0 e? ]
+[; ;./servo.h: 25: void setlaydown();
+[v _setlaydown `(v ~T0 @X0 0 e? ]
 "26
-[; ;./servo.h: 26: void back_walk();
-[v _back_walk `(v ~T0 @X0 0 e? ]
+[; ;./servo.h: 26: void walk();
+[v _walk `(v ~T0 @X0 0 e? ]
 "27
-[; ;./servo.h: 27: void turn_right();
-[v _turn_right `(v ~T0 @X0 0 e? ]
+[; ;./servo.h: 27: void back_walk();
+[v _back_walk `(v ~T0 @X0 0 e? ]
 "28
-[; ;./servo.h: 28: void turn_left();
+[; ;./servo.h: 28: void turn_right();
+[v _turn_right `(v ~T0 @X0 0 e? ]
+"29
+[; ;./servo.h: 29: void turn_left();
 [v _turn_left `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
@@ -18069,260 +18106,332 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _mode
 -> 0 `i
 ]
-"8 main.c
+"20
+[; ;./servo.h: 20: extern int old_mode = 0;
+[v _old_mode `i ~T0 @X0 1 e ]
+[i _old_mode
+-> 0 `i
+]
+"9 main.c
 [p x OSC  =  INTIO67   ]
-"9
-[p x WDT  =  OFF       ]
 "10
-[p x PWRT  =  OFF        ]
+[p x WDT  =  OFF       ]
 "11
-[p x BOREN  =  ON        ]
+[p x PWRT  =  OFF        ]
 "12
-[p x PBADEN  =  OFF      ]
+[p x BOREN  =  ON        ]
 "13
-[p x LVP  =  OFF       ]
+[p x PBADEN  =  OFF      ]
 "14
+[p x LVP  =  OFF       ]
+"15
 [p x CPD  =  OFF         ]
-"32
-[; ;main.c: 32: void Interupt0_Initialize(void){
+"33
+[; ;main.c: 33: void Interupt0_Initialize(void){
 [v _Interupt0_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _Interupt0_Initialize ]
 [f ]
-"33
-[; ;main.c: 33:     INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "34
-[; ;main.c: 34:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 34:     INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "35
-[; ;main.c: 35:     INTCONbits.INT0IE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 35:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "36
-[; ;main.c: 36:     INTCON2bits.INTEDG0 = 1;
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;main.c: 36:     INTCONbits.INT0IE = 1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
 "37
-[; ;main.c: 37:     ADCON1 = 0x0F;
-[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;main.c: 37:     INTCON2bits.INTEDG0 = 1;
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
 "38
-[; ;main.c: 38: }
+[; ;main.c: 38:     ADCON1 = 0x0F;
+[e = _ADCON1 -> -> 15 `i `uc ]
+"39
+[; ;main.c: 39: }
 [e :UE 281 ]
 }
 [v $root$_H_ISR `(v ~T0 @X0 0 e ]
-"40
-[; ;main.c: 40: void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
+"41
+[; ;main.c: 41: void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
 [v _H_ISR `(v ~T41 @X0 1 ef ]
 {
 [e :U _H_ISR ]
 [f ]
-"41
-[; ;main.c: 41:     if (INTCONbits.INT0IF) {
+"42
+[; ;main.c: 42:     if (INTCONbits.INT0IF) {
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 283  ]
 {
-"42
-[; ;main.c: 42:         LATA = 0x01;
-[e = _LATA -> -> 1 `i `uc ]
 "43
-[; ;main.c: 43:             mode = (mode + 1) % 7;
-[e = _mode % + _mode -> 1 `i -> 7 `i ]
+[; ;main.c: 43:         LATA = 0x01;
+[e = _LATA -> -> 1 `i `uc ]
 "44
-[; ;main.c: 44:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 44:         mode = (mode + 1) % 7;
+[e = _mode % + _mode -> 1 `i -> 7 `i ]
 "45
-[; ;main.c: 45:         _delay((unsigned long)((2)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 45:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "46
-[; ;main.c: 46:         LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
+[; ;main.c: 46:         _delay((unsigned long)((2)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "47
-[; ;main.c: 47:     }
+[; ;main.c: 47:         LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"48
+[; ;main.c: 48:     }
 }
 [e :U 283 ]
-"48
-[; ;main.c: 48: }
+"49
+[; ;main.c: 49:     if(PIR1bits.RCIF){
+[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 284  ]
+{
+"51
+[; ;main.c: 51:         int data = RCREG;
+[v _data `i ~T0 @X0 1 a ]
+[e = _data -> _RCREG `i ]
+"52
+[; ;main.c: 52:         if('0' <= data && data <= '6'){
+[e $ ! && <= -> 48 `ui -> _data `ui <= -> _data `ui -> 54 `ui 285  ]
+{
+"53
+[; ;main.c: 53:             mode = data - '0';
+[e = _mode -> - -> _data `ui -> 48 `ui `i ]
+"54
+[; ;main.c: 54:         }
+}
+[e :U 285 ]
+"56
+[; ;main.c: 56:         UART_Write(data);
+[e ( _UART_Write (1 -> _data `uc ]
+"62
+[; ;main.c: 62:     }
+}
+[e :U 284 ]
+"63
+[; ;main.c: 63: }
 [e :UE 282 ]
 }
 [v $root$_L_ISR `(v ~T0 @X0 0 e ]
-"50
-[; ;main.c: 50: void __attribute__((picinterrupt(("low_priority")))) L_ISR(void) {
+"65
+[; ;main.c: 65: void __attribute__((picinterrupt(("low_priority")))) L_ISR(void) {
 [v _L_ISR `(v ~T42 @X0 1 ef ]
 {
 [e :U _L_ISR ]
 [f ]
-"51
-[; ;main.c: 51:     if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 285  ]
+"66
+[; ;main.c: 66:     if (INTCONbits.TMR0IF) {
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 287  ]
 {
-"52
-[; ;main.c: 52:         INTCONbits.TMR0IF = 0;
+"67
+[; ;main.c: 67:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:         TMR0H = 0xFF;
+"68
+[; ;main.c: 68:         TMR0H = 0xFF;
 [e = _TMR0H -> -> 255 `i `uc ]
-"54
-[; ;main.c: 54:         TMR0L = 193;
+"69
+[; ;main.c: 69:         TMR0L = 193;
 [e = _TMR0L -> -> 193 `i `uc ]
-"56
-[; ;main.c: 56:         pwmCounter += 500;
+"71
+[; ;main.c: 71:         pwmCounter += 500;
 [e =+ _pwmCounter -> -> 500 `i `Vus ]
-"58
-[; ;main.c: 58:         if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 0 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 286  ]
+"73
+[; ;main.c: 73:         if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
+[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 0 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 288  ]
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[e $U 287  ]
-[e :U 286 ]
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e :U 287 ]
-"59
-[; ;main.c: 59:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 1 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 288  ]
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 [e $U 289  ]
 [e :U 288 ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e :U 289 ]
-"60
-[; ;main.c: 60:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 2 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 290  ]
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"74
+[; ;main.c: 74:         if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
+[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 1 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 290  ]
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 [e $U 291  ]
 [e :U 290 ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e :U 291 ]
-"61
-[; ;main.c: 61:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
-[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 3 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 292  ]
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+"75
+[; ;main.c: 75:         if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
+[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 2 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 292  ]
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 [e $U 293  ]
 [e :U 292 ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [e :U 293 ]
-"63
-[; ;main.c: 63:         if (pwmCounter >= 20000) pwmCounter = 0;
-[e $ ! >= -> _pwmCounter `ui -> -> 20000 `i `ui 294  ]
-[e = _pwmCounter -> -> 0 `i `us ]
+"76
+[; ;main.c: 76:         if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
+[e $ ! <= -> _pwmCounter `ui -> *U + &U _servoPulse * -> -> -> 3 `i `ui `ux -> -> # *U &U _servoPulse `ui `ux `ui 294  ]
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+[e $U 295  ]
 [e :U 294 ]
-"64
-[; ;main.c: 64:     }
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+[e :U 295 ]
+"78
+[; ;main.c: 78:         if (pwmCounter >= 20000) pwmCounter = 0;
+[e $ ! >= -> _pwmCounter `ui -> -> 20000 `i `ui 296  ]
+[e = _pwmCounter -> -> 0 `i `us ]
+[e :U 296 ]
+"79
+[; ;main.c: 79:     }
 }
-[e :U 285 ]
-"65
-[; ;main.c: 65: }
-[e :UE 284 ]
+[e :U 287 ]
+"80
+[; ;main.c: 80: }
+[e :UE 286 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"69
-[; ;main.c: 69: void main() {
+"84
+[; ;main.c: 84: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"73
-[; ;main.c: 73:     Timer0_Initialize();
-[e ( _Timer0_Initialize ..  ]
-"74
-[; ;main.c: 74:     Interupt0_Initialize();
-[e ( _Interupt0_Initialize ..  ]
-"75
-[; ;main.c: 75:     TRISB= 0x01;
-[e = _TRISB -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:     LATA = 0;
-[e = _LATA -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     LATB = 0b00000000;
-[e = _LATB -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:     while(1){
-[e :U 297 ]
-{
-"80
-[; ;main.c: 80:         if(mode == 0){
-[e $ ! == _mode -> 0 `i 299  ]
-{
-"81
-[; ;main.c: 81:             setstand();
-[e ( _setstand ..  ]
-"82
-[; ;main.c: 82:         }else if(mode == 1){
-}
-[e $U 300  ]
-[e :U 299 ]
-[e $ ! == _mode -> 1 `i 301  ]
-{
-"83
-[; ;main.c: 83:             setsit();
-[e ( _setsit ..  ]
-"84
-[; ;main.c: 84:         }else if(mode == 2){
-}
-[e $U 302  ]
-[e :U 301 ]
-[e $ ! == _mode -> 2 `i 303  ]
-{
-"85
-[; ;main.c: 85:             setlaydown();
-[e ( _setlaydown ..  ]
-"86
-[; ;main.c: 86:         }else if(mode == 3){
-}
-[e $U 304  ]
-[e :U 303 ]
-[e $ ! == _mode -> 3 `i 305  ]
-{
-"87
-[; ;main.c: 87:             walk();
-[e ( _walk ..  ]
 "88
-[; ;main.c: 88:         }else if(mode == 4){
+[; ;main.c: 88:     Timer0_Initialize();
+[e ( _Timer0_Initialize ..  ]
+"89
+[; ;main.c: 89:     Interupt0_Initialize();
+[e ( _Interupt0_Initialize ..  ]
+"90
+[; ;main.c: 90:     TRISB= 0x01;
+[e = _TRISB -> -> 1 `i `uc ]
+"91
+[; ;main.c: 91:     TRISA = 0x00;
+[e = _TRISA -> -> 0 `i `uc ]
+"92
+[; ;main.c: 92:     LATA = 0;
+[e = _LATA -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93:     LATB = 0b00000000;
+[e = _LATB -> -> 0 `i `uc ]
+"94
+[; ;main.c: 94:         UART_Init();
+[e ( _UART_Init ..  ]
+"95
+[; ;main.c: 95:         I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
+"96
+[; ;main.c: 96:         OLED_Init();
+[e ( _OLED_Init ..  ]
+"101
+[; ;main.c: 101:     OLED_Display_Look_Forward();
+[e ( _OLED_Display_Look_Forward ..  ]
+"102
+[; ;main.c: 102:     while(1){
+[e :U 299 ]
+{
+"103
+[; ;main.c: 103:         if(mode == 0){
+[e $ ! == _mode -> 0 `i 301  ]
+{
+"104
+[; ;main.c: 104:             if(old_mode != 0){
+[e $ ! != _old_mode -> 0 `i 302  ]
+{
+"105
+[; ;main.c: 105:                 OLED_Display_Look_Forward();
+[e ( _OLED_Display_Look_Forward ..  ]
+"106
+[; ;main.c: 106:                 old_mode = 0;
+[e = _old_mode -> 0 `i ]
+"107
+[; ;main.c: 107:             }
+}
+[e :U 302 ]
+"108
+[; ;main.c: 108:             setstand();
+[e ( _setstand ..  ]
+"109
+[; ;main.c: 109:         }else if(mode == 1){
+}
+[e $U 303  ]
+[e :U 301 ]
+[e $ ! == _mode -> 1 `i 304  ]
+{
+"110
+[; ;main.c: 110:             if(old_mode != 1){
+[e $ ! != _old_mode -> 1 `i 305  ]
+{
+"111
+[; ;main.c: 111:                 OLED_Display_Look_Right();
+[e ( _OLED_Display_Look_Right ..  ]
+"112
+[; ;main.c: 112:                 old_mode = 1;
+[e = _old_mode -> 1 `i ]
+"113
+[; ;main.c: 113:             }
+}
+[e :U 305 ]
+"114
+[; ;main.c: 114:             setsit();
+[e ( _setsit ..  ]
+"115
+[; ;main.c: 115:         }else if(mode == 2){
 }
 [e $U 306  ]
-[e :U 305 ]
-[e $ ! == _mode -> 4 `i 307  ]
+[e :U 304 ]
+[e $ ! == _mode -> 2 `i 307  ]
 {
-"89
-[; ;main.c: 89:             back_walk();
-[e ( _back_walk ..  ]
-"90
-[; ;main.c: 90:         }else if(mode == 5){
+"116
+[; ;main.c: 116:             setlaydown();
+[e ( _setlaydown ..  ]
+"117
+[; ;main.c: 117:         }else if(mode == 3){
 }
 [e $U 308  ]
 [e :U 307 ]
-[e $ ! == _mode -> 5 `i 309  ]
+[e $ ! == _mode -> 3 `i 309  ]
 {
-"91
-[; ;main.c: 91:             turn_right();
-[e ( _turn_right ..  ]
-"92
-[; ;main.c: 92:         }else if(mode == 6){
+"118
+[; ;main.c: 118:             walk();
+[e ( _walk ..  ]
+"119
+[; ;main.c: 119:         }else if(mode == 4){
 }
 [e $U 310  ]
 [e :U 309 ]
-[e $ ! == _mode -> 6 `i 311  ]
+[e $ ! == _mode -> 4 `i 311  ]
 {
-"93
-[; ;main.c: 93:             turn_left();
-[e ( _turn_left ..  ]
-"94
-[; ;main.c: 94:         }
+"120
+[; ;main.c: 120:             back_walk();
+[e ( _back_walk ..  ]
+"121
+[; ;main.c: 121:         }else if(mode == 5){
 }
+[e $U 312  ]
 [e :U 311 ]
+[e $ ! == _mode -> 5 `i 313  ]
+{
+"122
+[; ;main.c: 122:             turn_right();
+[e ( _turn_right ..  ]
+"123
+[; ;main.c: 123:         }else if(mode == 6){
+}
+[e $U 314  ]
+[e :U 313 ]
+[e $ ! == _mode -> 6 `i 315  ]
+{
+"124
+[; ;main.c: 124:             turn_left();
+[e ( _turn_left ..  ]
+"125
+[; ;main.c: 125:         }
+}
+[e :U 315 ]
+[e :U 314 ]
+[e :U 312 ]
 [e :U 310 ]
 [e :U 308 ]
 [e :U 306 ]
-[e :U 304 ]
-[e :U 302 ]
-[e :U 300 ]
-"95
-[; ;main.c: 95:     }
+[e :U 303 ]
+"126
+[; ;main.c: 126:     }
 }
-[e :U 296 ]
-[e $U 297  ]
 [e :U 298 ]
-"123
-[; ;main.c: 123: }
-[e :UE 295 ]
+[e $U 299  ]
+[e :U 300 ]
+"154
+[; ;main.c: 154: }
+[e :UE 297 ]
 }

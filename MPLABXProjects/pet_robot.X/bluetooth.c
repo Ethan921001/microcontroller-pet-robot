@@ -16,7 +16,9 @@ void UART_Init(void) {
     TXSTAbits.BRGH = 1;  // ???????
     BAUDCONbits.BRG16 = 1;  
     SPBRG = 25;  // ??? 9600??? FOSC=1MHz
- 
+//    
+    PIE1bits.RCIE = 1;
+    IPR1bits.RCIP = 1;
 }
 
 // ????
@@ -32,17 +34,6 @@ char UART_Read(void) {
     if (RCREG == '\r')
             UART_Write('\n');
     
-    if('0'<=RCREG && RCREG<='9'){
-        LATB = RCREG-48;
-        //LATC = RCREG;
-    }
-    
-    if(RCREG == 'a'){
-        LATB = 0;
-    }
-    else if(RCREG == 'b'){
-        LATB = 7;
-    }
     UART_Write(RCREG);
     return RCREG;
 }
