@@ -4659,8 +4659,9 @@ void UART_Init(void) {
     PIR1bits.RCIF = 1;
 
     TXSTAbits.SYNC = 0;
+    BAUDCONbits.BRG16 = 0;
     TXSTAbits.BRGH = 1;
-    BAUDCONbits.BRG16 = 1;
+
     SPBRG = 25;
 
     PIE1bits.RCIE = 1;

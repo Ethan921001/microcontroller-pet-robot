@@ -1,9 +1,9 @@
 #include "servo.h"
-#define Move_delay 15
+#define Move_delay 200
 void Timer0_Initialize(void) {
     T0CON = 0x88;       // ?? Timer0
-    TMR0H = 0xFF;       // ????50µs?
-    TMR0L = 193;
+    TMR0H = 0xFE;       // ????500µs?
+    TMR0L = 0x0C;
     INTCONbits.TMR0IE = 1; // ?? Timer0 ??
     INTCONbits.GIE = 1;    // ??????
     INTCONbits.PEIE = 1;   // ??????

@@ -5526,15 +5526,15 @@ void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
 void __attribute__((picinterrupt(("low_priority")))) L_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0H = 0xFF;
-        TMR0L = 193;
+        TMR0H = 0xFE;
+        TMR0L = 0x0C;
 
         pwmCounter += 500;
 
-        if (pwmCounter <= servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
-        if (pwmCounter <= servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
-        if (pwmCounter <= servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
-        if (pwmCounter <= servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
+        if (pwmCounter < servoPulse[0]) LATBbits.LATB1 = 1; else LATBbits.LATB1 = 0;
+        if (pwmCounter < servoPulse[1]) LATBbits.LATB2 = 1; else LATBbits.LATB2 = 0;
+        if (pwmCounter < servoPulse[2]) LATBbits.LATB3 = 1; else LATBbits.LATB3 = 0;
+        if (pwmCounter < servoPulse[3]) LATBbits.LATB4 = 1; else LATBbits.LATB4 = 0;
 
         if (pwmCounter >= 20000) pwmCounter = 0;
     }
@@ -5546,14 +5546,15 @@ void main() {
 
 
 
+    OSCCON = 0x60;
     Timer0_Initialize();
-    Interupt0_Initialize();
+
     TRISB= 0x01;
     TRISA = 0x00;
     LATA = 0;
     LATB = 0b00000000;
         UART_Init();
-        I2C_Master_Init(250000);
+        I2C_Master_Init(400000);
         OLED_Init();
 
 
@@ -5587,5 +5588,5 @@ void main() {
             turn_left();
         }
     }
-# 158 "main.c"
+# 159 "main.c"
 }

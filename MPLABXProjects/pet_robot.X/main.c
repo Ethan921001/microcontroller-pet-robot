@@ -15,7 +15,7 @@
 #pragma config CPD = OFF        // Data EEPROM?Memory Code Protection bit (Data EEPROM code protection off)
 
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 1000000    // ???????? 1 MH
+#define _XTAL_FREQ 4000000    // ???????? 1 MH
 #endif
 // ?? SH1106 OLED ? I²C ???7 ????????? 0x78?
 #ifndef OLED_ADDRESS
@@ -67,15 +67,15 @@ void __interrupt(high_priority) H_ISR(void){
 void __interrupt(low_priority) L_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0H = 0xFF;
-        TMR0L = 193;
+        TMR0H = 0xFE;
+        TMR0L = 0x0C;
 
         pwmCounter += 500;
 
-        if (pwmCounter <= servoPulse[0]) SERVO1 = 1; else SERVO1 = 0;
-        if (pwmCounter <= servoPulse[1]) SERVO2 = 1; else SERVO2 = 0;
-        if (pwmCounter <= servoPulse[2]) SERVO3 = 1; else SERVO3 = 0;
-        if (pwmCounter <= servoPulse[3]) SERVO4 = 1; else SERVO4 = 0;
+        if (pwmCounter < servoPulse[0]) SERVO1 = 1; else SERVO1 = 0;
+        if (pwmCounter < servoPulse[1]) SERVO2 = 1; else SERVO2 = 0;
+        if (pwmCounter < servoPulse[2]) SERVO3 = 1; else SERVO3 = 0;
+        if (pwmCounter < servoPulse[3]) SERVO4 = 1; else SERVO4 = 0;
 
         if (pwmCounter >= 20000) pwmCounter = 0;
     }
@@ -87,14 +87,15 @@ void main() {
     //OSCCON = 0x60;                 // ???????? 1 MHz
     //I2C_Master_Init(100000);       // ??? I²C?????? 100 kHz
     //OLED_Init();                   // ??? OLED
+    OSCCON = 0x60; //4MHZ osc
     Timer0_Initialize();
-    Interupt0_Initialize();
+    //Interupt0_Initialize();
     TRISB= 0x01;
     TRISA = 0x00;
     LATA = 0;
     LATB = 0b00000000;
         UART_Init();
-        I2C_Master_Init(250000);
+        I2C_Master_Init(400000);
         OLED_Init();
 //    while(1){
 //        UART_Read();

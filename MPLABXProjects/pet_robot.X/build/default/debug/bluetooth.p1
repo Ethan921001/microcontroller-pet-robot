@@ -581,73 +581,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;bluetooth.c: 15:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
 "16
-[; ;bluetooth.c: 16:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+[; ;bluetooth.c: 16:     BAUDCONbits.BRG16 = 0;
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
 "17
-[; ;bluetooth.c: 17:     BAUDCONbits.BRG16 = 1;
-[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
-"18
-[; ;bluetooth.c: 18:     SPBRG = 25;
+[; ;bluetooth.c: 17:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"19
+[; ;bluetooth.c: 19:     SPBRG = 25;
 [e = _SPBRG -> -> 25 `i `uc ]
-"20
-[; ;bluetooth.c: 20:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 "21
-[; ;bluetooth.c: 21:     IPR1bits.RCIP = 1;
-[e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
+[; ;bluetooth.c: 21:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
 "22
-[; ;bluetooth.c: 22: }
+[; ;bluetooth.c: 22:     IPR1bits.RCIP = 1;
+[e = . . _IPR1bits 0 5 -> -> 1 `i `uc ]
+"23
+[; ;bluetooth.c: 23: }
 [e :UE 281 ]
 }
-"25
-[; ;bluetooth.c: 25: void UART_Write(char data) {
+"26
+[; ;bluetooth.c: 26: void UART_Write(char data) {
 [v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"26
-[; ;bluetooth.c: 26:     while (!TXSTAbits.TRMT);
+"27
+[; ;bluetooth.c: 27:     while (!TXSTAbits.TRMT);
 [e $U 283  ]
 [e :U 284 ]
 [e :U 283 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 284  ]
 [e :U 285 ]
-"27
-[; ;bluetooth.c: 27:     TXREG = data;
-[e = _TXREG -> _data `uc ]
 "28
-[; ;bluetooth.c: 28: }
+[; ;bluetooth.c: 28:     TXREG = data;
+[e = _TXREG -> _data `uc ]
+"29
+[; ;bluetooth.c: 29: }
 [e :UE 282 ]
 }
-"31
-[; ;bluetooth.c: 31: char UART_Read(void) {
+"32
+[; ;bluetooth.c: 32: char UART_Read(void) {
 [v _UART_Read `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Read ]
 [f ]
-"32
-[; ;bluetooth.c: 32:     while (!PIR1bits.RCIF);
+"33
+[; ;bluetooth.c: 33:     while (!PIR1bits.RCIF);
 [e $U 287  ]
 [e :U 288 ]
 [e :U 287 ]
 [e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 288  ]
 [e :U 289 ]
-"34
-[; ;bluetooth.c: 34:     if (RCREG == '\r')
-[e $ ! == -> _RCREG `ui -> 13 `ui 290  ]
 "35
-[; ;bluetooth.c: 35:             UART_Write('\n');
+[; ;bluetooth.c: 35:     if (RCREG == '\r')
+[e $ ! == -> _RCREG `ui -> 13 `ui 290  ]
+"36
+[; ;bluetooth.c: 36:             UART_Write('\n');
 [e ( _UART_Write (1 -> -> 10 `ui `uc ]
 [e :U 290 ]
-"37
-[; ;bluetooth.c: 37:     UART_Write(RCREG);
-[e ( _UART_Write (1 -> _RCREG `uc ]
 "38
-[; ;bluetooth.c: 38:     return RCREG;
+[; ;bluetooth.c: 38:     UART_Write(RCREG);
+[e ( _UART_Write (1 -> _RCREG `uc ]
+"39
+[; ;bluetooth.c: 39:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 286  ]
-"39
-[; ;bluetooth.c: 39: }
+"40
+[; ;bluetooth.c: 40: }
 [e :UE 286 ]
 }

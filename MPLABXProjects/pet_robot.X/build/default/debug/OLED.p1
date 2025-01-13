@@ -17986,8 +17986,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _OLED_Init ]
 [f ]
 "13
-[; ;OLED.c: 13:     _delay((unsigned long)((100)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;OLED.c: 13:     _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "14
 [; ;OLED.c: 14:     OLED_Command(0xAE);
 [e ( _OLED_Command (1 -> -> 174 `i `uc ]

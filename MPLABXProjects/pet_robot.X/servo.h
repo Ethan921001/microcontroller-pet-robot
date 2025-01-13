@@ -2,7 +2,7 @@
 #include <pic18f4520.h>
 
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 1000000    // ???????? 1 MHz
+#define _XTAL_FREQ 4000000    // ???????? 1 MHz
 #endif
 
 #define SERVO1 LATBbits.LATB1

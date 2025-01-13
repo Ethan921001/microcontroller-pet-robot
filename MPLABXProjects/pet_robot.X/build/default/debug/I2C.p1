@@ -457,8 +457,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;I2C.c: 6:     SSPCON2 = 0x00;
 [e = _SSPCON2 -> -> 0 `i `uc ]
 "7
-[; ;I2C.c: 7:     SSPADD = (1000000 / (4 * clock)) - 1;
-[e = _SSPADD -> - / -> -> 1000000 `l `ul * -> -> -> 4 `i `l `ul _clock -> -> -> 1 `i `l `ul `uc ]
+[; ;I2C.c: 7:     SSPADD = (4000000 / (4 * clock)) - 1;
+[e = _SSPADD -> - / -> -> 4000000 `l `ul * -> -> -> 4 `i `l `ul _clock -> -> -> 1 `i `l `ul `uc ]
 "8
 [; ;I2C.c: 8:     SSPSTAT = 0x00;
 [e = _SSPSTAT -> -> 0 `i `uc ]

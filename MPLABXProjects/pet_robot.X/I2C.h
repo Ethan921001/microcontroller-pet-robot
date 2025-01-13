@@ -2,7 +2,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include<pic18f4520.h>
 
-#define _XTAL_FREQ 1000000 
+#define _XTAL_FREQ 4000000 
 // TODO Insert appropriate #include <>
 void I2C_Master_Init(unsigned long clock);
 

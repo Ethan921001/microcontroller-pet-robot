@@ -5442,7 +5442,7 @@ void OLED_Command(unsigned char cmd) {
 
 
 void OLED_Init() {
-    _delay((unsigned long)((100)*(1000000/4000.0)));
+    _delay((unsigned long)((100)*(4000000/4000.0)));
     OLED_Command(0xAE);
     OLED_Command(0xD5);
     OLED_Command(0x80);

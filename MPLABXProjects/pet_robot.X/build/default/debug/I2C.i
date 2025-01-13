@@ -4649,7 +4649,7 @@ void I2C_Write(unsigned char data);
 void I2C_Master_Init(unsigned long clock) {
     SSPCON1 = 0b00101000;
     SSPCON2 = 0x00;
-    SSPADD = (1000000 / (4 * clock)) - 1;
+    SSPADD = (4000000 / (4 * clock)) - 1;
     SSPSTAT = 0x00;
     TRISC3 = 1;
     TRISC4 = 1;
