@@ -39,6 +39,7 @@ void Interupt0_Initialize(void){
 }
 
 void __interrupt(high_priority) H_ISR(void){
+    /*
     if (INTCONbits.INT0IF) {
         LATA = 0x01;
         mode = (mode + 1) % 7;
@@ -46,6 +47,7 @@ void __interrupt(high_priority) H_ISR(void){
         __delay_ms(2);
         LATA = 0x00;
     }
+    */
     if(PIR1bits.RCIF){
         //int data = UART_Read();
         int data = RCREG;
@@ -92,26 +94,28 @@ void main() {
     LATA = 0;
     LATB = 0b00000000;
         UART_Init();
-        I2C_Master_Init(100000);
+        I2C_Master_Init(250000);
         OLED_Init();
 //    while(1){
 //        UART_Read();
 //        UART_Write('r');
 //    }
-    OLED_Display_Look_Forward(); 
+    OLED_Display_Array(originalFaceData); 
     while(1){
         if(mode == 0){
-            if(old_mode != 0){ 
-                OLED_Display_Look_Forward(); 
-                old_mode = 0;
+            OLED_Display_Array(originalFaceData); 
+            while(mode==0){
+                setstand();
             }
-            setstand();
+            
         }else if(mode == 1){
-            if(old_mode != 1){ 
-                OLED_Display_Look_Right(); 
-                old_mode = 1;
+            
+            OLED_Display_Array(happyFaceData); 
+            while(mode==1){
+                setsit();
             }
-            setsit();
+                
+            
         }else if(mode == 2){
             setlaydown();
         }else if(mode == 3){

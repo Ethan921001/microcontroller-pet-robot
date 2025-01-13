@@ -5478,22 +5478,35 @@ void OLED_Data(unsigned char data) {
     I2C_Write(data);
     I2C_Stop();
 }
-
-
+# 68 "OLED.c"
 void OLED_Display_Look_Forward() {
+
+    I2C_Start();
+    I2C_Write(0x78);
+    I2C_Write(0x40);
     for (unsigned char page = 0; page < 8; page++) {
         OLED_Command(0xB0 + page);
         OLED_Command(0x00);
         OLED_Command(0x10);
+
+
+        I2C_Start();
+        I2C_Write(0x78);
+        I2C_Write(0x40);
         for (unsigned char col = 0; col < 132; col++) {
+
             if (page >= 2 && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
-                OLED_Data(0xFF);
+                I2C_Write(0xFF);
             } else {
-                OLED_Data(0x00);
+                I2C_Write(0x00);
             }
         }
+        I2C_Stop();
+
     }
 }
+
+
 
 void OLED_Display_Look_Right() {
     for (unsigned char page = 0; page < 8; page++) {
@@ -5527,13 +5540,21 @@ void OLED_Display_Look_Left() {
 
 void OLED_Display_Array(const uint8_t data[]) {
     for (unsigned char page = 0; page < 8; page++) {
+# 138 "OLED.c"
         OLED_Command(0xB0 + page);
         OLED_Command(0x00);
         OLED_Command(0x10);
+        I2C_Start();
+        I2C_Write(0x78);
+        I2C_Write(0x40);
+
         for (unsigned char col = 0; col < 128; col++) {
 
-                OLED_Data(data[page*128+col]);
+
+                I2C_Write(data[page*128+col]);
 
         }
+
+        I2C_Stop();
     }
 }

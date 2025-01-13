@@ -18093,14 +18093,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;OLED.c: 48: }
 [e :UE 283 ]
 }
-"51
-[; ;OLED.c: 51: void OLED_Display_Look_Forward() {
+"68
+[; ;OLED.c: 68: void OLED_Display_Look_Forward() {
 [v _OLED_Display_Look_Forward `(v ~T0 @X0 1 ef ]
 {
 [e :U _OLED_Display_Look_Forward ]
 [f ]
-"52
-[; ;OLED.c: 52:     for (unsigned char page = 0; page < 8; page++) {
+"70
+[; ;OLED.c: 70:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"71
+[; ;OLED.c: 71:     I2C_Write(0x78);
+[e ( _I2C_Write (1 -> -> 120 `i `uc ]
+"72
+[; ;OLED.c: 72:     I2C_Write(0x40);
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+"73
+[; ;OLED.c: 73:     for (unsigned char page = 0; page < 8; page++) {
 {
 [v _page `uc ~T0 @X0 1 a ]
 [e = _page -> -> 0 `i `uc ]
@@ -18108,17 +18117,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 286  ]
 [e :U 285 ]
 {
-"53
-[; ;OLED.c: 53:         OLED_Command(0xB0 + page);
+"74
+[; ;OLED.c: 74:         OLED_Command(0xB0 + page);
 [e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
-"54
-[; ;OLED.c: 54:         OLED_Command(0x00);
+"75
+[; ;OLED.c: 75:         OLED_Command(0x00);
 [e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"55
-[; ;OLED.c: 55:         OLED_Command(0x10);
+"76
+[; ;OLED.c: 76:         OLED_Command(0x10);
 [e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"56
-[; ;OLED.c: 56:         for (unsigned char col = 0; col < 132; col++) {
+"79
+[; ;OLED.c: 79:         I2C_Start();
+[e ( _I2C_Start ..  ]
+"80
+[; ;OLED.c: 80:         I2C_Write(0x78);
+[e ( _I2C_Write (1 -> -> 120 `i `uc ]
+"81
+[; ;OLED.c: 81:         I2C_Write(0x40);
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+"82
+[; ;OLED.c: 82:         for (unsigned char col = 0; col < 132; col++) {
 {
 [v _col `uc ~T0 @X0 1 a ]
 [e = _col -> -> 0 `i `uc ]
@@ -18126,52 +18144,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 289  ]
 [e :U 288 ]
 {
-"57
-[; ;OLED.c: 57:             if (page >= 2 && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
+"84
+[; ;OLED.c: 84:             if (page >= 2 && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
 [e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 30 `i <= -> _col `i -> 50 `i && >= -> _col `i -> 80 `i <= -> _col `i -> 100 `i 291  ]
 {
-"58
-[; ;OLED.c: 58:                 OLED_Data(0xFF);
-[e ( _OLED_Data (1 -> -> 255 `i `uc ]
-"59
-[; ;OLED.c: 59:             } else {
+"85
+[; ;OLED.c: 85:                 I2C_Write(0xFF);
+[e ( _I2C_Write (1 -> -> 255 `i `uc ]
+"86
+[; ;OLED.c: 86:             } else {
 }
 [e $U 292  ]
 [e :U 291 ]
 {
-"60
-[; ;OLED.c: 60:                 OLED_Data(0x00);
-[e ( _OLED_Data (1 -> -> 0 `i `uc ]
-"61
-[; ;OLED.c: 61:             }
+"87
+[; ;OLED.c: 87:                 I2C_Write(0x00);
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+"88
+[; ;OLED.c: 88:             }
 }
 [e :U 292 ]
-"62
-[; ;OLED.c: 62:         }
+"89
+[; ;OLED.c: 89:         }
 }
 [e ++ _col -> -> 1 `i `uc ]
 [e $ < -> _col `i -> 132 `i 288  ]
 [e :U 289 ]
 }
-"63
-[; ;OLED.c: 63:     }
+"90
+[; ;OLED.c: 90:         I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"92
+[; ;OLED.c: 92:     }
 }
 [e ++ _page -> -> 1 `i `uc ]
 [e $ < -> _page `i -> 8 `i 285  ]
 [e :U 286 ]
 }
-"64
-[; ;OLED.c: 64: }
+"93
+[; ;OLED.c: 93: }
 [e :UE 284 ]
 }
-"66
-[; ;OLED.c: 66: void OLED_Display_Look_Right() {
+"97
+[; ;OLED.c: 97: void OLED_Display_Look_Right() {
 [v _OLED_Display_Look_Right `(v ~T0 @X0 1 ef ]
 {
 [e :U _OLED_Display_Look_Right ]
 [f ]
-"67
-[; ;OLED.c: 67:     for (unsigned char page = 0; page < 8; page++) {
+"98
+[; ;OLED.c: 98:     for (unsigned char page = 0; page < 8; page++) {
 {
 [v _page `uc ~T0 @X0 1 a ]
 [e = _page -> -> 0 `i `uc ]
@@ -18179,17 +18200,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 295  ]
 [e :U 294 ]
 {
-"68
-[; ;OLED.c: 68:         OLED_Command(0xB0 + page);
+"99
+[; ;OLED.c: 99:         OLED_Command(0xB0 + page);
 [e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
-"69
-[; ;OLED.c: 69:         OLED_Command(0x00);
+"100
+[; ;OLED.c: 100:         OLED_Command(0x00);
 [e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"70
-[; ;OLED.c: 70:         OLED_Command(0x10);
+"101
+[; ;OLED.c: 101:         OLED_Command(0x10);
 [e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"71
-[; ;OLED.c: 71:         for (unsigned char col = 0; col < 132; col++) {
+"102
+[; ;OLED.c: 102:         for (unsigned char col = 0; col < 132; col++) {
 {
 [v _col `uc ~T0 @X0 1 a ]
 [e = _col -> -> 0 `i `uc ]
@@ -18197,52 +18218,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 298  ]
 [e :U 297 ]
 {
-"72
-[; ;OLED.c: 72:             if (page >= 2 && page <= 6 && ((col>=50 && col<=70) || (col>=100 && col<=120))) {
+"103
+[; ;OLED.c: 103:             if (page >= 2 && page <= 6 && ((col>=50 && col<=70) || (col>=100 && col<=120))) {
 [e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 50 `i <= -> _col `i -> 70 `i && >= -> _col `i -> 100 `i <= -> _col `i -> 120 `i 300  ]
 {
-"73
-[; ;OLED.c: 73:                 OLED_Data(0xFF);
+"104
+[; ;OLED.c: 104:                 OLED_Data(0xFF);
 [e ( _OLED_Data (1 -> -> 255 `i `uc ]
-"74
-[; ;OLED.c: 74:             } else {
+"105
+[; ;OLED.c: 105:             } else {
 }
 [e $U 301  ]
 [e :U 300 ]
 {
-"75
-[; ;OLED.c: 75:                 OLED_Data(0x00);
+"106
+[; ;OLED.c: 106:                 OLED_Data(0x00);
 [e ( _OLED_Data (1 -> -> 0 `i `uc ]
-"76
-[; ;OLED.c: 76:             }
+"107
+[; ;OLED.c: 107:             }
 }
 [e :U 301 ]
-"77
-[; ;OLED.c: 77:         }
+"108
+[; ;OLED.c: 108:         }
 }
 [e ++ _col -> -> 1 `i `uc ]
 [e $ < -> _col `i -> 132 `i 297  ]
 [e :U 298 ]
 }
-"78
-[; ;OLED.c: 78:     }
+"109
+[; ;OLED.c: 109:     }
 }
 [e ++ _page -> -> 1 `i `uc ]
 [e $ < -> _page `i -> 8 `i 294  ]
 [e :U 295 ]
 }
-"79
-[; ;OLED.c: 79: }
+"110
+[; ;OLED.c: 110: }
 [e :UE 293 ]
 }
-"81
-[; ;OLED.c: 81: void OLED_Display_Look_Left() {
+"112
+[; ;OLED.c: 112: void OLED_Display_Look_Left() {
 [v _OLED_Display_Look_Left `(v ~T0 @X0 1 ef ]
 {
 [e :U _OLED_Display_Look_Left ]
 [f ]
-"82
-[; ;OLED.c: 82:     for (unsigned char page = 0; page < 8; page++) {
+"113
+[; ;OLED.c: 113:     for (unsigned char page = 0; page < 8; page++) {
 {
 [v _page `uc ~T0 @X0 1 a ]
 [e = _page -> -> 0 `i `uc ]
@@ -18250,17 +18271,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 304  ]
 [e :U 303 ]
 {
-"83
-[; ;OLED.c: 83:         OLED_Command(0xB0 + page);
+"114
+[; ;OLED.c: 114:         OLED_Command(0xB0 + page);
 [e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
-"84
-[; ;OLED.c: 84:         OLED_Command(0x00);
+"115
+[; ;OLED.c: 115:         OLED_Command(0x00);
 [e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"85
-[; ;OLED.c: 85:         OLED_Command(0x10);
+"116
+[; ;OLED.c: 116:         OLED_Command(0x10);
 [e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"86
-[; ;OLED.c: 86:         for (unsigned char col = 0; col < 132; col++) {
+"117
+[; ;OLED.c: 117:         for (unsigned char col = 0; col < 132; col++) {
 {
 [v _col `uc ~T0 @X0 1 a ]
 [e = _col -> -> 0 `i `uc ]
@@ -18268,53 +18289,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 307  ]
 [e :U 306 ]
 {
-"87
-[; ;OLED.c: 87:             if (page >= 2 && page <= 6 && ((col>=10 && col<=30) || (col>=60 && col<=80))) {
+"118
+[; ;OLED.c: 118:             if (page >= 2 && page <= 6 && ((col>=10 && col<=30) || (col>=60 && col<=80))) {
 [e $ ! && && >= -> _page `i -> 2 `i <= -> _page `i -> 6 `i || && >= -> _col `i -> 10 `i <= -> _col `i -> 30 `i && >= -> _col `i -> 60 `i <= -> _col `i -> 80 `i 309  ]
 {
-"88
-[; ;OLED.c: 88:                 OLED_Data(0xFF);
+"119
+[; ;OLED.c: 119:                 OLED_Data(0xFF);
 [e ( _OLED_Data (1 -> -> 255 `i `uc ]
-"89
-[; ;OLED.c: 89:             } else {
+"120
+[; ;OLED.c: 120:             } else {
 }
 [e $U 310  ]
 [e :U 309 ]
 {
-"90
-[; ;OLED.c: 90:                 OLED_Data(0x00);
+"121
+[; ;OLED.c: 121:                 OLED_Data(0x00);
 [e ( _OLED_Data (1 -> -> 0 `i `uc ]
-"91
-[; ;OLED.c: 91:             }
+"122
+[; ;OLED.c: 122:             }
 }
 [e :U 310 ]
-"92
-[; ;OLED.c: 92:         }
+"123
+[; ;OLED.c: 123:         }
 }
 [e ++ _col -> -> 1 `i `uc ]
 [e $ < -> _col `i -> 132 `i 306  ]
 [e :U 307 ]
 }
-"93
-[; ;OLED.c: 93:     }
+"124
+[; ;OLED.c: 124:     }
 }
 [e ++ _page -> -> 1 `i `uc ]
 [e $ < -> _page `i -> 8 `i 303  ]
 [e :U 304 ]
 }
-"94
-[; ;OLED.c: 94: }
+"125
+[; ;OLED.c: 125: }
 [e :UE 302 ]
 }
-"96
-[; ;OLED.c: 96: void OLED_Display_Array(const uint8_t data[]) {
+"127
+[; ;OLED.c: 127: void OLED_Display_Array(const uint8_t data[]) {
 [v _OLED_Display_Array `(v ~T0 @X0 1 ef1`*Cuc ]
 {
 [e :U _OLED_Display_Array ]
 [v _data `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"97
-[; ;OLED.c: 97:     for (unsigned char page = 0; page < 8; page++) {
+"128
+[; ;OLED.c: 128:     for (unsigned char page = 0; page < 8; page++) {
 {
 [v _page `uc ~T0 @X0 1 a ]
 [e = _page -> -> 0 `i `uc ]
@@ -18322,17 +18343,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 313  ]
 [e :U 312 ]
 {
-"98
-[; ;OLED.c: 98:         OLED_Command(0xB0 + page);
+"138
+[; ;OLED.c: 138:         OLED_Command(0xB0 + page);
 [e ( _OLED_Command (1 -> + -> 176 `i -> _page `i `uc ]
-"99
-[; ;OLED.c: 99:         OLED_Command(0x00);
+"139
+[; ;OLED.c: 139:         OLED_Command(0x00);
 [e ( _OLED_Command (1 -> -> 0 `i `uc ]
-"100
-[; ;OLED.c: 100:         OLED_Command(0x10);
+"140
+[; ;OLED.c: 140:         OLED_Command(0x10);
 [e ( _OLED_Command (1 -> -> 16 `i `uc ]
-"101
-[; ;OLED.c: 101:         for (unsigned char col = 0; col < 128; col++) {
+"141
+[; ;OLED.c: 141:         I2C_Start();
+[e ( _I2C_Start ..  ]
+"142
+[; ;OLED.c: 142:         I2C_Write(0x78);
+[e ( _I2C_Write (1 -> -> 120 `i `uc ]
+"143
+[; ;OLED.c: 143:         I2C_Write(0x40);
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+"145
+[; ;OLED.c: 145:         for (unsigned char col = 0; col < 128; col++) {
 {
 [v _col `uc ~T0 @X0 1 a ]
 [e = _col -> -> 0 `i `uc ]
@@ -18340,24 +18370,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 316  ]
 [e :U 315 ]
 {
-"103
-[; ;OLED.c: 103:                 OLED_Data(data[page*128+col]);
-[e ( _OLED_Data (1 *U + _data * -> + * -> _page `i -> 128 `i -> _col `i `x -> -> # *U _data `i `x ]
-"105
-[; ;OLED.c: 105:         }
+"148
+[; ;OLED.c: 148:                 I2C_Write(data[page*128+col]);
+[e ( _I2C_Write (1 *U + _data * -> + * -> _page `i -> 128 `i -> _col `i `x -> -> # *U _data `i `x ]
+"150
+[; ;OLED.c: 150:         }
 }
 [e ++ _col -> -> 1 `i `uc ]
 [e $ < -> _col `i -> 128 `i 315  ]
 [e :U 316 ]
 }
-"106
-[; ;OLED.c: 106:     }
+"152
+[; ;OLED.c: 152:         I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"153
+[; ;OLED.c: 153:     }
 }
 [e ++ _page -> -> 1 `i `uc ]
 [e $ < -> _page `i -> 8 `i 312  ]
 [e :U 313 ]
 }
-"107
-[; ;OLED.c: 107: }
+"154
+[; ;OLED.c: 154: }
 [e :UE 311 ]
 }

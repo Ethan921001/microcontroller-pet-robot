@@ -5506,13 +5506,7 @@ void Interupt0_Initialize(void){
 }
 
 void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
-    if (INTCONbits.INT0IF) {
-        LATA = 0x01;
-        mode = (mode + 1) % 7;
-        INTCONbits.INT0IF = 0;
-        _delay((unsigned long)((2)*(1000000/4000.0)));
-        LATA = 0x00;
-    }
+# 51 "main.c"
     if(PIR1bits.RCIF){
 
         int data = RCREG;
@@ -5559,26 +5553,28 @@ void main() {
     LATA = 0;
     LATB = 0b00000000;
         UART_Init();
-        I2C_Master_Init(100000);
+        I2C_Master_Init(250000);
         OLED_Init();
 
 
 
 
-    OLED_Display_Look_Forward();
+    OLED_Display_Array(originalFaceData);
     while(1){
         if(mode == 0){
-            if(old_mode != 0){
-                OLED_Display_Look_Forward();
-                old_mode = 0;
+            OLED_Display_Array(originalFaceData);
+            while(mode==0){
+                setstand();
             }
-            setstand();
+
         }else if(mode == 1){
-            if(old_mode != 1){
-                OLED_Display_Look_Right();
-                old_mode = 1;
+
+            OLED_Display_Array(happyFaceData);
+            while(mode==1){
+                setsit();
             }
-            setsit();
+
+
         }else if(mode == 2){
             setlaydown();
         }else if(mode == 3){
@@ -5591,5 +5587,5 @@ void main() {
             turn_left();
         }
     }
-# 154 "main.c"
+# 158 "main.c"
 }
