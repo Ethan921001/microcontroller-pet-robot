@@ -45,56 +45,56 @@ void walk(){
         setServoAngle(2, 1500);
         setServoAngle(3, 1000);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 2
         setServoAngle(0, 2000);
         setServoAngle(1, 2000);
         setServoAngle(2, 1000);  
         setServoAngle(3, 1000);
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 3
         setServoAngle(0, 1500);  
         setServoAngle(1, 2000);
         setServoAngle(2, 1000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 5
         setServoAngle(0, 1500);  
         setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 6
         setServoAngle(0, 1000);  
         setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 7
         setServoAngle(0, 1000);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
         // 8
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 3) return;
+        if(mode != 3 && mode != 'a') return;
 }
 void back_walk(){
     // 1
@@ -103,56 +103,56 @@ void back_walk(){
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 2
         setServoAngle(0, 1000);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 3
         setServoAngle(0, 1000);  
         setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 5
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 6
         setServoAngle(0, 1500);  
         setServoAngle(1, 2000);
         setServoAngle(2, 1000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 7
        setServoAngle(0, 2000);
         setServoAngle(1, 2000);
         setServoAngle(2, 1000);  
         setServoAngle(3, 1000);
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+        if(mode != 4 && mode != 'c') return;
         // 8
         setServoAngle(0, 2000);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1000);  
         __delay_ms(Move_delay);
-        if(mode != 4) return;
+       if(mode != 4 && mode != 'c') return;
 }
 void turn_right(){
             // 1
@@ -161,28 +161,28 @@ void turn_right(){
         setServoAngle(2, 1500);
         setServoAngle(3, 1000);  
         __delay_ms(Move_delay);
-        if(mode != 5) return;
+        if(mode != 5 && mode != 'b') return;
         // 2
         setServoAngle(0, 1000);
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);  
         setServoAngle(3, 1000);
         __delay_ms(Move_delay);
-        if(mode != 5) return;
+        if(mode != 5 && mode != 'b') return;
         // 3
         setServoAngle(0, 1500);  
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 5) return;
+       if(mode != 5 && mode != 'b') return;
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 5) return;
+        if(mode != 5 && mode != 'b') return;
 }
 
 void turn_left(){
@@ -192,26 +192,26 @@ void turn_left(){
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 6) return;
+        if(mode != 6 && mode != 'd') return;
         // 2
         setServoAngle(0, 1000);
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);  
         setServoAngle(3, 1000);
         __delay_ms(Move_delay);
-        if(mode != 6) return;
+        if(mode != 6 && mode != 'd') return;
         // 3
         setServoAngle(0, 1000);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1000);  
         __delay_ms(Move_delay);
-        if(mode != 6) return;
+        if(mode != 6 && mode != 'd') return;
         // 4
         setServoAngle(0, 1500);  
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);  
         __delay_ms(Move_delay);
-        if(mode != 6) return;
+        if(mode != 6 && mode != 'd') return;
 }

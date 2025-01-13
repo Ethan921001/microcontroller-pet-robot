@@ -51,10 +51,15 @@ void __interrupt(high_priority) H_ISR(void){
     if(PIR1bits.RCIF){
         //int data = UART_Read();
         int data = RCREG;
-        if('0' <= data && data <= '6'){
+        //mode = data;
+        if('0' <= data && data <= '6' ){
             mode = data - '0';
         }
-  
+        
+        if('a' <= data && data <= 'g'){
+            mode = data;
+        }
+        if(data == 0) mode = 0;
         UART_Write(data);
 //        if(data == '0'){
 //            mode = 0;
@@ -103,29 +108,29 @@ void main() {
 //    }
     OLED_Display_Array(originalFaceData); 
     while(1){
-        if(mode == 0){
+        if(mode == 0 || mode == 'e'){
             OLED_Display_Array(originalFaceData); 
-            while(mode==0){
+            while(mode==0 || mode == 'e'){
                 setstand();
             }
             
-        }else if(mode == 1){
+        }else if(mode == 1 || mode == 'f'){
             
             OLED_Display_Array(happyFaceData); 
-            while(mode==1){
+            while(mode==1 || mode == 'f'){
                 setsit();
             }
                 
             
-        }else if(mode == 2){
+        }else if(mode == 2 || mode == 'g'){
             setlaydown();
-        }else if(mode == 3){
+        }else if(mode == 3 || mode == 'a'){
             walk();
-        }else if(mode == 4){
+        }else if(mode == 4 || mode == 'c'){
             back_walk();
-        }else if(mode == 5){
+        }else if(mode == 5 || mode == 'b'){
             turn_right();
-        }else if(mode == 6){
+        }else if(mode == 6 || mode =='d'){
             turn_left();
         }
     }
