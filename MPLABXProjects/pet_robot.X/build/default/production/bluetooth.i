@@ -4656,15 +4656,16 @@ void UART_Init(void) {
     TXSTAbits.TXEN = 1;
     RCSTAbits.CREN = 1;
     PIR1bits.TXIF = 1;
-    PIR1bits.RCIF = 0;
+    PIR1bits.RCIF = 1;
 
     TXSTAbits.SYNC = 0;
+    BAUDCONbits.BRG16 = 0;
     TXSTAbits.BRGH = 1;
-    BAUDCONbits.BRG16 = 1;
+
     SPBRG = 25;
 
     PIE1bits.RCIE = 1;
-    PIR1bits.RCIP = 1;
+    IPR1bits.RCIP = 1;
 }
 
 
@@ -4680,17 +4681,6 @@ char UART_Read(void) {
     if (RCREG == '\r')
             UART_Write('\n');
 
-    if('0'<=RCREG && RCREG<='9'){
-        LATB = RCREG-48;
-
-    }
-
-    if(RCREG == 'a'){
-        LATB = 0;
-    }
-    else if(RCREG == 'b'){
-        LATB = 7;
-    }
     UART_Write(RCREG);
     return RCREG;
 }

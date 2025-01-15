@@ -1,5 +1,5 @@
 #include "servo.h"
-#define Move_delay 200
+#define Move_delay 400
 void Timer0_Initialize(void) {
     T0CON = 0x88;       // ?? Timer0
     TMR0H = 0xFE;       // ????500µs?
@@ -20,20 +20,24 @@ void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
 void setstand(){
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
+        __delay_ms(Move_delay);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);    
 }
 
 void setsit(){
+        setServoAngle(2, 2000);
+        setServoAngle(3, 1000); 
+        __delay_ms(Move_delay);
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
-        setServoAngle(2, 2000);
-        setServoAngle(3, 1000);    
+         
 }
 
 void setlaydown(){
         setServoAngle(0, 2000);
         setServoAngle(1, 1000);
+        __delay_ms(Move_delay);
         setServoAngle(2, 1000);
         setServoAngle(3, 2000);    
 }

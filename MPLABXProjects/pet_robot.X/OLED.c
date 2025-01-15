@@ -12,7 +12,9 @@ void OLED_Command(unsigned char cmd) {
 void OLED_Init() {
     __delay_ms(100);               // ?? OLED ??
     OLED_Command(0xAE);            // ????
+    __delay_us(50);
     OLED_Command(0xD5);            // ?????????/????
+    __delay_us(50);
     OLED_Command(0x80);            // ???
     OLED_Command(0xA8);            // ???????
     OLED_Command(0x3F);            // 1/64 ???
@@ -79,7 +81,7 @@ void OLED_Display_Look_Forward() {
         I2C_Start();                   
         I2C_Write(OLED_ADDRESS);       
         I2C_Write(0x40);  
-        for (unsigned char col = 0; col < 132; col++) {
+        for (unsigned char col = 0; col < 128; col++) {
             
             if (page >= 2  && page <= 6 && ((col>=30 && col<=50) || (col>=80 && col<=100))) {
                 I2C_Write(0xFF);  // ??????????
@@ -99,7 +101,7 @@ void OLED_Display_Look_Right() {
         OLED_Command(0xB0 + page); // ?????
         OLED_Command(0x00);       // ??????
         OLED_Command(0x10);       // ??????
-        for (unsigned char col = 0; col < 132; col++) {
+        for (unsigned char col = 0; col < 128; col++) {
             if (page >= 2  && page <= 6 && ((col>=50 && col<=70) || (col>=100 && col<=120))) {
                 OLED_Data(0xFF);  // ??????????
             } else {
@@ -114,7 +116,7 @@ void OLED_Display_Look_Left() {
         OLED_Command(0xB0 + page); // ?????
         OLED_Command(0x00);       // ??????
         OLED_Command(0x10);       // ??????
-        for (unsigned char col = 0; col < 132; col++) {
+        for (unsigned char col = 0; col < 128; col++) {
             if (page >= 2  && page <= 6 && ((col>=10 && col<=30) || (col>=60 && col<=80))) {
                 OLED_Data(0xFF);  // ??????????
             } else {
@@ -138,17 +140,17 @@ void OLED_Display_Array(const uint8_t data[]) {
         OLED_Command(0xB0 + page);
         OLED_Command(0x00);
         OLED_Command(0x10);
-        I2C_Start();                   
-        I2C_Write(OLED_ADDRESS);       
-        I2C_Write(0x40); 
+//        I2C_Start();                   
+//        I2C_Write(OLED_ADDRESS);       
+//        I2C_Write(0x40); 
         
         for (unsigned char col = 0; col < 128; col++) {
             
-                //OLED_Data(data[page*128+col]);  // ??????????
-                I2C_Write(data[page*128+col]);
+                OLED_Data(data[page*128+col]);  // ??????????
+                //I2C_Write(data[page*128+col]);
             
         }
-        
-        I2C_Stop(); 
+        __delay_us(50);
+        //I2C_Stop(); 
     }
 }

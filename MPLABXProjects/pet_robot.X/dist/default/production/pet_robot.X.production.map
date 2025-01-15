@@ -4,22 +4,19 @@ Linker command line:
 
 -W-3 \
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
-  -cn -h+dist/default/debug\pet_robot.X.debug.sym \
-  --cmf=dist/default/debug\pet_robot.X.debug.cmf -z -Q18F4520 \
-  -oC:\Users\User\AppData\Local\Temp\xcAs2v90.\driver_tmp_3.o \
+  -cn -h+dist/default/production\pet_robot.X.production.sym \
+  --cmf=dist/default/production\pet_robot.X.production.cmf -z -Q18F4520 \
+  -oC:\Users\User\AppData\Local\Temp\xcAs2pek.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
-  -Mdist/default/debug/pet_robot.X.debug.map \
-  --md=C:\Users\User\AppData\Local\Temp\xcAs2v90.\driver_tmp_0.dat -E1 \
-  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07DBFh -ACONST=00h-07DBFh \
-  -ASMALLCONST=0600h-06FFhx119,07D00h-07DBFh -AMEDIUMCONST=0600h-07DBFh \
-  -ACOMRAM=01h-07Fh -AABS1=00h-05F3h -ABIGRAM=01h-05F3h \
-  -ARAM=080h-0FFh,0100h-01FFhx4,0500h-05F3h -ABANK0=080h-0FFh \
-  -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh \
-  -ABANK4=0400h-04FFh -ABANK5=0500h-05F3h \
-  -ASFR=0F80h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFCh \
-  -ABIGSFR=0F80h-0F9Bh,0F9Dh-0FD3h,0FD5h-0FDAh,0FE0h-0FE2h,0FE8h-0FEAh,0FF0h-0FFCh \
-  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
-  -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
+  -Mdist/default/production/pet_robot.X.production.map \
+  --md=C:\Users\User\AppData\Local\Temp\xcAs2pek.\driver_tmp_0.dat -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
+  -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-07Fh \
+  -AABS1=00h-05FFh -ABIGRAM=01h-05FFh -ARAM=080h-0FFh,0100h-01FFhx5 \
+  -ABANK0=080h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
+  -ASFR=0F80h-0FFFh -ABIGSFR=0F80h-0FFFh -ACONFIG=0300000h-030000Dh \
+  -AIDLOC=0200000h-0200007h -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=8h,intcodelo=18h,powerup,init -pramtop=0600h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h \
@@ -27,8 +24,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\User\AppData\Local\Temp\xcAs2v90.\driver_tmp_9.o \
-  dist/default/debug\pet_robot.X.debug.o 
+  C:\Users\User\AppData\Local\Temp\xcAs2pek.\driver_tmp_9.o \
+  dist/default/production\pet_robot.X.production.o 
 
 Object code version is 3.11
 
@@ -37,48 +34,48 @@ Machine type is 18F4520
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\User\AppData\Local\Temp\xcAs2v90.\driver_tmp_9.o
+C:\Users\User\AppData\Local\Temp\xcAs2pek.\driver_tmp_9.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 EC       EC        4        C       0
                 reset_vec                             0        0        4        0       0
-dist/default/debug\pet_robot.X.debug.o
+dist/default/production\pet_robot.X.production.o
                 intcodelo                            18       18       D4        C       0
                 intcode                               8        8        6        4       0
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 temp                                 2C       2C        1        1       1
-                mediumconst                        49BE     49BE     3402     24DF       0
-                text25                             1650     1650       16        C       0
-                intcode_body                       1266     1266       A6        C       0
-                text22                             130C     130C       A4        C       0
-                text21                             141E     141E       58        C       0
-                text20                             1678     1678       12        C       0
-                text19                             1666     1666       12        C       0
-                text18                             15B2     15B2       2C        C       0
-                text17                             161A     161A       1E        C       0
-                text16                             15FC     15FC       1E        C       0
-                text15                             13B0     13B0       6E        C       0
-                text14                              F92      F92       D2        C       0
-                text13                             1112     1112       AE        C       0
-                text12                             1064     1064       AE        C       0
-                text11                             11C0     11C0       A6        C       0
-                text10                             1638     1638       18        C       0
-                text9                              15DE     15DE       1E        C       0
-                text8                              1476     1476       54        C       0
-                text7                               4A6      4A6      3B6        C       0
-                text6                              1578     1578       3A        C       0
-                text5                              153E     153E       3A        C       0
-                text4                              1504     1504       3A        C       0
-                text3                               DCC      DCC      1C6        C       0
-                text2                               C06      C06      1C6        C       0
-                text1                                F0       F0      3B6        C       0
-                text0                               85C      85C      3AA        C       0
+                mediumconst                        4BFE     4BFE     3402     25FF       0
+                text25                             16D0     16D0       16        C       0
+                intcode_body                       1296     1296       A6        C       0
+                text22                             133C     133C       A4        C       0
+                text21                             1456     1456       58        C       0
+                text20                             16F8     16F8       12        C       0
+                text19                             16E6     16E6       12        C       0
+                text18                             1632     1632       2C        C       0
+                text17                             169A     169A       1E        C       0
+                text16                             167C     167C       1E        C       0
+                text15                             13E0     13E0       76        C       0
+                text14                              FB2      FB2       D2        C       0
+                text13                             11E8     11E8       AE        C       0
+                text12                             113A     113A       AE        C       0
+                text11                             1084     1084       B6        C       0
+                text10                             16B8     16B8       18        C       0
+                text9                              165E     165E       1E        C       0
+                text8                              14AE     14AE       54        C       0
+                text7                               870      870      3B6        C       0
+                text6                              15A6     15A6       52        C       0
+                text5                              1554     1554       52        C       0
+                text4                              1502     1502       52        C       0
+                text3                               DEC      DEC      1C6        C       0
+                text2                               C26      C26      1C6        C       0
+                text1                               4BA      4BA      3B6        C       0
+                text0                                F0       F0      3CA        C       0
                 cstackCOMRAM                          1        1       1D        1       1
                 dataCOMRAM                           1E       1E        8        1       1
                 bssCOMRAM                            26       26        6        1       1
-                cinit                              14CA     14CA       3A        C       0
-                idataCOMRAM                        168A     168A        8        C       0
+                cinit                              15F8     15F8       3A        C       0
+                idataCOMRAM                        170A     170A        8        C       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -86,40 +83,40 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                 EC       EC        4         0
                 reset_vec                             0        0        4         0
-                text25                             1650     1650       16         0
-                intcode_body                       1266     1266       A6         0
-                text22                             130C     130C       A4         0
-                text21                             141E     141E       58         0
-                text20                             1678     1678       12         0
-                text19                             1666     1666       12         0
-                text18                             15B2     15B2       2C         0
-                text17                             161A     161A       1E         0
-                text16                             15FC     15FC       1E         0
-                text15                             13B0     13B0       6E         0
-                text14                              F92      F92       D2         0
-                text13                             1112     1112       AE         0
-                text12                             1064     1064       AE         0
-                text11                             11C0     11C0       A6         0
-                text10                             1638     1638       18         0
-                text9                              15DE     15DE       1E         0
-                text8                              1476     1476       54         0
-                text7                               4A6      4A6      3B6         0
-                text6                              1578     1578       3A         0
-                text5                              153E     153E       3A         0
-                text4                              1504     1504       3A         0
-                text3                               DCC      DCC      1C6         0
-                text2                               C06      C06      1C6         0
-                text1                                F0       F0      3B6         0
-                text0                               85C      85C      3AA         0
-                cinit                              14CA     14CA       3A         0
-                idataCOMRAM                        168A     168A        8         0
+                text25                             16D0     16D0       16         0
+                intcode_body                       1296     1296       A6         0
+                text22                             133C     133C       A4         0
+                text21                             1456     1456       58         0
+                text20                             16F8     16F8       12         0
+                text19                             16E6     16E6       12         0
+                text18                             1632     1632       2C         0
+                text17                             169A     169A       1E         0
+                text16                             167C     167C       1E         0
+                text15                             13E0     13E0       76         0
+                text14                              FB2      FB2       D2         0
+                text13                             11E8     11E8       AE         0
+                text12                             113A     113A       AE         0
+                text11                             1084     1084       B6         0
+                text10                             16B8     16B8       18         0
+                text9                              165E     165E       1E         0
+                text8                              14AE     14AE       54         0
+                text7                               870      870      3B6         0
+                text6                              15A6     15A6       52         0
+                text5                              1554     1554       52         0
+                text4                              1502     1502       52         0
+                text3                               DEC      DEC      1C6         0
+                text2                               C26      C26      1C6         0
+                text1                               4BA      4BA      3B6         0
+                text0                                F0       F0      3CA         0
+                cinit                              15F8     15F8       3A         0
+                idataCOMRAM                        170A     170A        8         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        49BE     49BE     3402         0
+                mediumconst                        4BFE     4BFE     3402         0
 
         CLASS   COMRAM         
                 temp                                 2C       2C        1         1
@@ -170,8 +167,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00002C  00002D         1       1  COMRAM  
                 intcode                        000008  000006  00000E         4       0  CODE    
-                intcodelo                      000018  00167A  001692         C       0  CODE    
-                mediumconst                    0049BE  003402  007DC0      24DF       0  MEDIUMCO
+                intcodelo                      000018  0016FA  001712         C       0  CODE    
+                mediumconst                    004BFE  003402  008000      25FF       0  MEDIUMCO
 
 
 UNUSED ADDRESS RANGES
@@ -182,31 +179,21 @@ UNUSED ADDRESS RANGES
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
-        BANK5            000500-0005F3               F4
-        BIGRAM           00002D-0005F3              5C7
-        BIGSFR           000F80-000F9B               1C
-                         000F9D-000FD3               37
-                         000FD5-000FDA                6
-                         000FE0-000FE2                3
-                         000FE8-000FEA                3
-                         000FF0-000FFC                D
+        BANK5            000500-0005FF              100
+        BIGRAM           00002D-0005FF              5D3
+        BIGSFR           000F80-000FFF               80
         CODE             000004-000007                4
                          00000E-000017                A
-                         001692-0049BD             332C
+                         001712-004BFD             34EC
         COMRAM           00002D-00007F               53
         CONST            000004-000007                4
                          00000E-000017                A
-                         001692-0049BD             332C
+                         001712-004BFD             34EC
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      001692-0049BD             332C
-        RAM              000080-0005F3              100
-        SFR              000F80-000F9B               1C
-                         000F9D-000FD3               37
-                         000FD5-000FDA                6
-                         000FE0-000FE2                3
-                         000FE8-000FEA                3
-                         000FF0-000FFC                D
-        SMALLCONST       001692-0049BD              100
+        MEDIUMCONST      001712-004BFD             34EC
+        RAM              000080-0005FF              100
+        SFR              000F80-000FFF               80
+        SMALLCONST       001712-004BFD              100
 
                                   Symbol Table
 
@@ -230,24 +217,23 @@ _ADCON1                            (abs)        000FC1
 _BAUDCONbits                       (abs)        000FB8
 _BF                                (abs)        007E38
 _H_ISR                             intcode      000008
-_I2C_Master_Init                   text21       00141E
-_I2C_Start                         text20       001678
-_I2C_Stop                          text19       001666
-_I2C_Write                         text18       0015B2
+_I2C_Master_Init                   text21       001456
+_I2C_Start                         text20       0016F8
+_I2C_Stop                          text19       0016E6
+_I2C_Write                         text18       001632
 _INTCON2bits                       (abs)        000FF1
 _INTCONbits                        (abs)        000FF2
 _IPR1bits                          (abs)        000F9F
-_LATA                              (abs)        000F89
 _LATB                              (abs)        000F8A
 _LATBbits                          (abs)        000F8A
 _L_ISR                             intcodelo    000018
-_OLED_Command                      text17       00161A
-_OLED_Data                         text16       0015FC
-_OLED_Display_Array                text15       0013B0
-_OLED_Display_Look_Forward         text14       000F92
-_OLED_Display_Look_Left            text13       001112
-_OLED_Display_Look_Right           text12       001064
-_OLED_Init                         text11       0011C0
+_OLED_Command                      text17       00169A
+_OLED_Data                         text16       00167C
+_OLED_Display_Array                text15       0013E0
+_OLED_Display_Look_Forward         text14       000FB2
+_OLED_Display_Look_Left            text13       0011E8
+_OLED_Display_Look_Right           text12       00113A
+_OLED_Init                         text11       001084
 _OSCCON                            (abs)        000FD3
 _PEN                               (abs)        007E2A
 _PIE1bits                          (abs)        000F9D
@@ -265,7 +251,6 @@ _SSPSTAT                           (abs)        000FC7
 _T0CON                             (abs)        000FD5
 _TMR0H                             (abs)        000FD7
 _TMR0L                             (abs)        000FD6
-_TRISA                             (abs)        000F92
 _TRISB                             (abs)        000F93
 _TRISC3                            (abs)        007CA3
 _TRISC4                            (abs)        007CA4
@@ -273,9 +258,9 @@ _TRISC6                            (abs)        007CA6
 _TRISC7                            (abs)        007CA7
 _TXREG                             (abs)        000FAD
 _TXSTAbits                         (abs)        000FAC
-_Timer0_Initialize                 text10       001638
-_UART_Init                         text9        0015DE
-_UART_Write                        text25       001650
+_Timer0_Initialize                 text10       0016B8
+_UART_Init                         text9        00165E
+_UART_Write                        text25       0016D0
 __HRAM                             (abs)        000000
 __H__absolute__                    __absolute__ 000000
 __Habs1                            abs1         000000
@@ -316,7 +301,7 @@ __Hintentry                        intentry     000000
 __Hintret                          intret       000000
 __Hintsave_regs                    intsave_regs 000000
 __Hirdata                          irdata       000000
-__Hmediumconst                     mediumconst  007DC0
+__Hmediumconst                     mediumconst  008000
 __HnvFARRAM                        nvFARRAM     000000
 __Hnvbit                           nvbit        000000
 __Hnvrram                          nvrram       000000
@@ -333,7 +318,7 @@ __Hsfr                             sfr          000000
 __Hsivt_hi                         sivt_hi      000000
 __Hsivt_lo                         sivt_lo      000000
 __Hsmallconst                      smallconst   000000
-__Hspace_0                         (abs)        007DC0
+__Hspace_0                         (abs)        008000
 __Hspace_1                         (abs)        00002D
 __Hspace_2                         (abs)        000000
 __Hspace_4                         (abs)        60000E
@@ -405,7 +390,7 @@ __Lintentry                        intentry     000000
 __Lintret                          intret       000000
 __Lintsave_regs                    intsave_regs 000000
 __Lirdata                          irdata       000000
-__Lmediumconst                     mediumconst  0049BE
+__Lmediumconst                     mediumconst  004BFE
 __LnvFARRAM                        nvFARRAM     000000
 __Lnvbit                           nvbit        000000
 __Lnvrram                          nvrram       000000
@@ -454,7 +439,7 @@ __Ltext6                           text6        000000
 __Ltext7                           text7        000000
 __Ltext8                           text8        000000
 __Ltext9                           text9        000000
-__S0                               (abs)        007DC0
+__S0                               (abs)        008000
 __S1                               (abs)        00002D
 __S4                               (abs)        000000
 __S5                               (abs)        000000
@@ -466,7 +451,7 @@ ___inthi_stack_lo                  stack        000000
 ___intlo_sp                        stack        000000
 ___intlo_stack_hi                  stack        000000
 ___intlo_stack_lo                  stack        000000
-___lldiv                           text22       00130C
+___lldiv                           text22       00133C
 ___lldiv@counter                   cstackCOMRAM 000013
 ___lldiv@dividend                  cstackCOMRAM 000007
 ___lldiv@divisor                   cstackCOMRAM 00000B
@@ -478,113 +463,113 @@ ___stack_hi                        stack        000000
 ___stack_lo                        stack        000000
 __accesstop                        (abs)        000080
 __activetblptr                     (abs)        000002
-__end_of_H_ISR                     intcode_body 00130C
-__end_of_I2C_Master_Init           text21       001476
-__end_of_I2C_Start                 text20       00168A
-__end_of_I2C_Stop                  text19       001678
-__end_of_I2C_Write                 text18       0015DE
+__end_of_H_ISR                     intcode_body 00133C
+__end_of_I2C_Master_Init           text21       0014AE
+__end_of_I2C_Start                 text20       00170A
+__end_of_I2C_Stop                  text19       0016F8
+__end_of_I2C_Write                 text18       00165E
 __end_of_L_ISR                     intcodelo    0000EC
-__end_of_OLED_Command              text17       001638
-__end_of_OLED_Data                 text16       00161A
-__end_of_OLED_Display_Array        text15       00141E
-__end_of_OLED_Display_Look_Forward text14       001064
-__end_of_OLED_Display_Look_Left    text13       0011C0
-__end_of_OLED_Display_Look_Right   text12       001112
-__end_of_OLED_Init                 text11       001266
-__end_of_Timer0_Initialize         text10       001650
-__end_of_UART_Init                 text9        0015FC
-__end_of_UART_Write                text25       001666
-__end_of___lldiv                   text22       0013B0
-__end_of__initialization           cinit        0014F6
-__end_of_angryFaceData             mediumconst  006DBF
-__end_of_back_walk                 text7        00085C
-__end_of_happyFaceData             mediumconst  0055BF
-__end_of_main                      text0        000C06
-__end_of_originalFaceData          mediumconst  0069BF
-__end_of_sadFaceData               mediumconst  0071BF
-__end_of_setServoAngle             text8        0014CA
-__end_of_setlaydown                text6        0015B2
-__end_of_setsit                    text5        001578
-__end_of_setstand                  text4        00153E
-__end_of_shockFace2Data            mediumconst  004DBF
-__end_of_shockFaceData             mediumconst  0075BF
-__end_of_sleepFace2Data            mediumconst  007DBF
-__end_of_sleepFace3Data            mediumconst  0079BF
-__end_of_sleepFaceData             mediumconst  0051BF
-__end_of_turn_left                 text3        000F92
-__end_of_turn_right                text2        000DCC
-__end_of_turnleftFace2Data         mediumconst  0061BF
-__end_of_turnleftFaceData          mediumconst  0065BF
-__end_of_turnrightFace2Data        mediumconst  0059BF
-__end_of_turnrightFaceData         mediumconst  005DBF
-__end_of_walk                      text1        0004A6
-__initialization                   cinit        0014CA
-__mediumconst                      mediumconst  0049BE
+__end_of_OLED_Command              text17       0016B8
+__end_of_OLED_Data                 text16       00169A
+__end_of_OLED_Display_Array        text15       001456
+__end_of_OLED_Display_Look_Forward text14       001084
+__end_of_OLED_Display_Look_Left    text13       001296
+__end_of_OLED_Display_Look_Right   text12       0011E8
+__end_of_OLED_Init                 text11       00113A
+__end_of_Timer0_Initialize         text10       0016D0
+__end_of_UART_Init                 text9        00167C
+__end_of_UART_Write                text25       0016E6
+__end_of___lldiv                   text22       0013E0
+__end_of__initialization           cinit        001624
+__end_of_angryFaceData             mediumconst  006BFF
+__end_of_back_walk                 text7        000C26
+__end_of_happyFaceData             mediumconst  007BFF
+__end_of_main                      text0        0004BA
+__end_of_originalFaceData          mediumconst  007FFF
+__end_of_sadFaceData               mediumconst  004FFF
+__end_of_setServoAngle             text8        001502
+__end_of_setlaydown                text6        0015F8
+__end_of_setsit                    text5        0015A6
+__end_of_setstand                  text4        001554
+__end_of_shockFace2Data            mediumconst  0053FF
+__end_of_shockFaceData             mediumconst  006FFF
+__end_of_sleepFace2Data            mediumconst  0077FF
+__end_of_sleepFace3Data            mediumconst  0073FF
+__end_of_sleepFaceData             mediumconst  0057FF
+__end_of_turn_left                 text3        000FB2
+__end_of_turn_right                text2        000DEC
+__end_of_turnleftFace2Data         mediumconst  0063FF
+__end_of_turnleftFaceData          mediumconst  0067FF
+__end_of_turnrightFace2Data        mediumconst  005BFF
+__end_of_turnrightFaceData         mediumconst  005FFF
+__end_of_walk                      text1        000870
+__initialization                   cinit        0015F8
+__mediumconst                      mediumconst  004BFE
 __pbssCOMRAM                       bssCOMRAM    000026
-__pcinit                           cinit        0014CA
+__pcinit                           cinit        0015F8
 __pcstackCOMRAM                    cstackCOMRAM 000001
 __pdataCOMRAM                      dataCOMRAM   00001E
-__pidataCOMRAM                     idataCOMRAM  00168A
+__pidataCOMRAM                     idataCOMRAM  00170A
 __pintcode                         intcode      000008
-__pintcode_body                    intcode_body 001266
+__pintcode_body                    intcode_body 001296
 __pintcodelo                       intcodelo    000018
-__pmediumconst                     mediumconst  0049BE
-__ptext0                           text0        00085C
-__ptext1                           text1        0000F0
-__ptext10                          text10       001638
-__ptext11                          text11       0011C0
-__ptext12                          text12       001064
-__ptext13                          text13       001112
-__ptext14                          text14       000F92
-__ptext15                          text15       0013B0
-__ptext16                          text16       0015FC
-__ptext17                          text17       00161A
-__ptext18                          text18       0015B2
-__ptext19                          text19       001666
-__ptext2                           text2        000C06
-__ptext20                          text20       001678
-__ptext21                          text21       00141E
-__ptext22                          text22       00130C
-__ptext25                          text25       001650
-__ptext3                           text3        000DCC
-__ptext4                           text4        001504
-__ptext5                           text5        00153E
-__ptext6                           text6        001578
-__ptext7                           text7        0004A6
-__ptext8                           text8        001476
-__ptext9                           text9        0015DE
+__pmediumconst                     mediumconst  004BFE
+__ptext0                           text0        0000F0
+__ptext1                           text1        0004BA
+__ptext10                          text10       0016B8
+__ptext11                          text11       001084
+__ptext12                          text12       00113A
+__ptext13                          text13       0011E8
+__ptext14                          text14       000FB2
+__ptext15                          text15       0013E0
+__ptext16                          text16       00167C
+__ptext17                          text17       00169A
+__ptext18                          text18       001632
+__ptext19                          text19       0016E6
+__ptext2                           text2        000C26
+__ptext20                          text20       0016F8
+__ptext21                          text21       001456
+__ptext22                          text22       00133C
+__ptext25                          text25       0016D0
+__ptext3                           text3        000DEC
+__ptext4                           text4        001502
+__ptext5                           text5        001554
+__ptext6                           text6        0015A6
+__ptext7                           text7        000870
+__ptext8                           text8        0014AE
+__ptext9                           text9        00165E
 __ramtop                           ramtop       000600
 __smallconst                       smallconst   000000
-_angryFaceData                     mediumconst  0069BF
-_back_walk                         text7        0004A6
-_happyFaceData                     mediumconst  0051BF
-_main                              text0        00085C
+_angryFaceData                     mediumconst  0067FF
+_back_walk                         text7        000870
+_happyFaceData                     mediumconst  0077FF
+_main                              text0        0000F0
 _mode                              bssCOMRAM    000028
 _old_mode                          bssCOMRAM    000026
-_originalFaceData                  mediumconst  0065BF
+_originalFaceData                  mediumconst  007BFF
 _pwmCounter                        bssCOMRAM    00002A
-_sadFaceData                       mediumconst  006DBF
+_sadFaceData                       mediumconst  004BFF
 _servoPulse                        dataCOMRAM   00001E
-_setServoAngle                     text8        001476
-_setlaydown                        text6        001578
-_setsit                            text5        00153E
-_setstand                          text4        001504
-_shockFace2Data                    mediumconst  0049BF
-_shockFaceData                     mediumconst  0071BF
-_sleepFace2Data                    mediumconst  0079BF
-_sleepFace3Data                    mediumconst  0075BF
-_sleepFaceData                     mediumconst  004DBF
-_turn_left                         text3        000DCC
-_turn_right                        text2        000C06
-_turnleftFace2Data                 mediumconst  005DBF
-_turnleftFaceData                  mediumconst  0061BF
-_turnrightFace2Data                mediumconst  0055BF
-_turnrightFaceData                 mediumconst  0059BF
-_walk                              text1        0000F0
+_setServoAngle                     text8        0014AE
+_setlaydown                        text6        0015A6
+_setsit                            text5        001554
+_setstand                          text4        001502
+_shockFace2Data                    mediumconst  004FFF
+_shockFaceData                     mediumconst  006BFF
+_sleepFace2Data                    mediumconst  0073FF
+_sleepFace3Data                    mediumconst  006FFF
+_sleepFaceData                     mediumconst  0053FF
+_turn_left                         text3        000DEC
+_turn_right                        text2        000C26
+_turnleftFace2Data                 mediumconst  005FFF
+_turnleftFaceData                  mediumconst  0063FF
+_turnrightFace2Data                mediumconst  0057FF
+_turnrightFaceData                 mediumconst  005BFF
+_walk                              text1        0004BA
 btemp                              temp         00002C
-end_of_initialization              cinit        0014F6
+end_of_initialization              cinit        001624
 int$flags                          temp         00002C
-int_func                           intcode_body 001266
+int_func                           intcode_body 001296
 intlevel0                          text         000000
 intlevel1                          text         000000
 intlevel2                          text         000000
@@ -596,7 +581,7 @@ setServoAngle@servo                cstackCOMRAM 000009
 stackhi                            (abs)        000000
 stacklo                            (abs)        000000
 start                              init         0000EC
-start_initialization               cinit        0014CA
+start_initialization               cinit        0015F8
 ttemp5                             temp         00002D
 ttemp6                             temp         000030
 ttemp7                             temp         000034
@@ -607,70 +592,70 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 servo.c
-		_turn_left     		CODE           	0DCC	0000	454
-		_walk          		CODE           	00F0	0000	950
-		_setsit        		CODE           	153E	0000	58
-		_setstand      		CODE           	1504	0000	58
-		_Timer0_Initialize		CODE           	1638	0000	24
-		_setServoAngle 		CODE           	1476	0000	84
-		_back_walk     		CODE           	04A6	0000	950
-		_setlaydown    		CODE           	1578	0000	58
-		_turn_right    		CODE           	0C06	0000	454
+		_turn_left     		CODE           	0DEC	0000	454
+		_walk          		CODE           	04BA	0000	950
+		_setsit        		CODE           	1554	0000	82
+		_setstand      		CODE           	1502	0000	82
+		_Timer0_Initialize		CODE           	16B8	0000	24
+		_setServoAngle 		CODE           	14AE	0000	84
+		_back_walk     		CODE           	0870	0000	950
+		_setlaydown    		CODE           	15A6	0000	82
+		_turn_right    		CODE           	0C26	0000	454
 
-servo.c estimated size: 3090
+servo.c estimated size: 3162
 
 I2C.c
-		_I2C_Master_Init		CODE           	141E	0000	88
-		_I2C_Write     		CODE           	15B2	0000	44
-		_I2C_Stop      		CODE           	1666	0000	18
-		_I2C_Start     		CODE           	1678	0000	18
+		_I2C_Master_Init		CODE           	1456	0000	88
+		_I2C_Write     		CODE           	1632	0000	44
+		_I2C_Stop      		CODE           	16E6	0000	18
+		_I2C_Start     		CODE           	16F8	0000	18
 
 I2C.c estimated size: 168
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c
-		___lldiv       		CODE           	130C	0000	164
+		___lldiv       		CODE           	133C	0000	164
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c estimated size: 164
 
 shared
-		_turnrightFace2Data		MEDIUMCONST    	55BF	0000	1024
-		_shockFaceData 		MEDIUMCONST    	71BF	0000	1024
-		_shockFace2Data		MEDIUMCONST    	49BF	0000	1024
-		_angryFaceData 		MEDIUMCONST    	69BF	0000	1024
-		_happyFaceData 		MEDIUMCONST    	51BF	0000	1024
-		__initialization		CODE           	14CA	0000	44
-		_turnleftFaceData		MEDIUMCONST    	61BF	0000	1024
-		_originalFaceData		MEDIUMCONST    	65BF	0000	1024
-		_turnleftFace2Data		MEDIUMCONST    	5DBF	0000	1024
-		_sleepFaceData 		MEDIUMCONST    	4DBF	0000	1024
-		_turnrightFaceData		MEDIUMCONST    	59BF	0000	1024
-		_sadFaceData   		MEDIUMCONST    	6DBF	0000	1024
-		_sleepFace2Data		MEDIUMCONST    	79BF	0000	1024
-		_sleepFace3Data		MEDIUMCONST    	75BF	0000	1024
+		_turnrightFace2Data		MEDIUMCONST    	57FF	0000	1024
+		_shockFaceData 		MEDIUMCONST    	6BFF	0000	1024
+		_shockFace2Data		MEDIUMCONST    	4FFF	0000	1024
+		_angryFaceData 		MEDIUMCONST    	67FF	0000	1024
+		_happyFaceData 		MEDIUMCONST    	77FF	0000	1024
+		__initialization		CODE           	15F8	0000	44
+		_turnleftFaceData		MEDIUMCONST    	63FF	0000	1024
+		_originalFaceData		MEDIUMCONST    	7BFF	0000	1024
+		_turnleftFace2Data		MEDIUMCONST    	5FFF	0000	1024
+		_sleepFaceData 		MEDIUMCONST    	53FF	0000	1024
+		_turnrightFaceData		MEDIUMCONST    	5BFF	0000	1024
+		_sadFaceData   		MEDIUMCONST    	4BFF	0000	1024
+		_sleepFace2Data		MEDIUMCONST    	73FF	0000	1024
+		_sleepFace3Data		MEDIUMCONST    	6FFF	0000	1024
 
 shared estimated size: 13356
 
 OLED.c
-		_OLED_Display_Look_Left		CODE           	1112	0000	174
-		_OLED_Display_Array		CODE           	13B0	0000	110
-		_OLED_Command  		CODE           	161A	0000	30
-		_OLED_Display_Look_Forward		CODE           	0F92	0000	210
-		_OLED_Init     		CODE           	11C0	0000	166
-		_OLED_Display_Look_Right		CODE           	1064	0000	174
-		_OLED_Data     		CODE           	15FC	0000	30
+		_OLED_Display_Look_Left		CODE           	11E8	0000	174
+		_OLED_Display_Array		CODE           	13E0	0000	118
+		_OLED_Command  		CODE           	169A	0000	30
+		_OLED_Display_Look_Forward		CODE           	0FB2	0000	210
+		_OLED_Init     		CODE           	1084	0000	182
+		_OLED_Display_Look_Right		CODE           	113A	0000	174
+		_OLED_Data     		CODE           	167C	0000	30
 
-OLED.c estimated size: 894
+OLED.c estimated size: 918
 
 bluetooth.c
-		_UART_Init     		CODE           	15DE	0000	30
-		_UART_Write    		CODE           	1650	0000	22
+		_UART_Init     		CODE           	165E	0000	30
+		_UART_Write    		CODE           	16D0	0000	22
 
 bluetooth.c estimated size: 52
 
 main.c
 		_H_ISR         		CODE           	0008	0000	172
-		_main          		CODE           	085C	0000	938
+		_main          		CODE           	00F0	0000	970
 		_L_ISR         		CODE           	0018	0000	212
 
-main.c estimated size: 1322
+main.c estimated size: 1354
 

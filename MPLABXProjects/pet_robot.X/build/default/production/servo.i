@@ -4636,6 +4636,7 @@ void Timer0_Initialize(void);
 
 void setServoAngle(uint8_t servo, uint16_t pulseWidth);
 extern int mode = 0;
+extern int old_mode = 0;
 
 
 void setstand();
@@ -4650,8 +4651,8 @@ void turn_left();
 
 void Timer0_Initialize(void) {
     T0CON = 0x88;
-    TMR0H = 0xFF;
-    TMR0L = 193;
+    TMR0H = 0xFE;
+    TMR0L = 0x0C;
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
@@ -4668,22 +4669,26 @@ void setServoAngle(uint8_t servo, uint16_t pulseWidth) {
 void setstand(){
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
 }
 
 void setsit(){
+        setServoAngle(2, 2000);
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
-        setServoAngle(2, 2500);
-        setServoAngle(3, 500);
+
 }
 
 void setlaydown(){
-        setServoAngle(0, 2500);
-        setServoAngle(1, 500);
-        setServoAngle(2, 500);
-        setServoAngle(3, 2500);
+        setServoAngle(0, 2000);
+        setServoAngle(1, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        setServoAngle(2, 1000);
+        setServoAngle(3, 2000);
 }
 
 void walk(){
@@ -4691,58 +4696,58 @@ void walk(){
         setServoAngle(0, 2000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
         setServoAngle(0, 2000);
         setServoAngle(1, 2000);
-        setServoAngle(2, 1005);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        setServoAngle(2, 1000);
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 2000);
-        setServoAngle(2, 1005);
+        setServoAngle(2, 1000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
         setServoAngle(0, 1500);
-        setServoAngle(1, 1005);
+        setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
-        setServoAngle(0, 1005);
-        setServoAngle(1, 1005);
+        setServoAngle(0, 1000);
+        setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 3) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 3 && mode != 'a') return;
 }
 void back_walk(){
 
@@ -4750,87 +4755,87 @@ void back_walk(){
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
-        setServoAngle(0, 1005);
-        setServoAngle(1, 1005);
+        setServoAngle(0, 1000);
+        setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 2000);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
         setServoAngle(0, 1500);
-        setServoAngle(1, 1005);
+        setServoAngle(1, 1000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 2000);
-        setServoAngle(2, 1005);
+        setServoAngle(2, 1000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
        setServoAngle(0, 2000);
         setServoAngle(1, 2000);
-        setServoAngle(2, 1005);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        setServoAngle(2, 1000);
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 4 && mode != 'c') return;
 
         setServoAngle(0, 2000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 4) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+       if(mode != 4 && mode != 'c') return;
 }
 void turn_right(){
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 5) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 5 && mode != 'b') return;
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 5) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 5 && mode != 'b') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 5) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+       if(mode != 5 && mode != 'b') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 5) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 5 && mode != 'b') return;
 }
 
 void turn_left(){
@@ -4839,27 +4844,27 @@ void turn_left(){
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 6) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 6 && mode != 'd') return;
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 2000);
         setServoAngle(2, 2000);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 6) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 6 && mode != 'd') return;
 
-        setServoAngle(0, 1005);
+        setServoAngle(0, 1000);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
-        setServoAngle(3, 1005);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 6) return;
+        setServoAngle(3, 1000);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 6 && mode != 'd') return;
 
         setServoAngle(0, 1500);
         setServoAngle(1, 1500);
         setServoAngle(2, 1500);
         setServoAngle(3, 1500);
-        _delay((unsigned long)((15)*(1000000/4000.0)));
-        if(mode != 6) return;
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 6 && mode != 'd') return;
 }

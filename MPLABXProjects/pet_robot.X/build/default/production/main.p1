@@ -95,12 +95,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1699 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1699: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"1477
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1477: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"977
-[; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 977: extern volatile unsigned char LATA __attribute__((address(0xF89)));
-[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
 "1089
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 1089: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
 [v _LATB `Vuc ~T0 @X0 0 e@3978 ]
@@ -118,16 +112,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./OLED.h
 [; ;./OLED.h: 16: void OLED_Init();
 [v _OLED_Init `(v ~T0 @X0 0 e? ]
+"28
+[; ;./OLED.h: 28: void OLED_Display_Array(const uint8_t data[]);
+[v _OLED_Display_Array `(v ~T0 @X0 0 ef1`*Cuc ]
 "22
 [; ;./OLED.h: 22: void OLED_Display_Look_Forward();
 [v _OLED_Display_Look_Forward `(v ~T0 @X0 0 e? ]
 "23 ./servo.h
 [; ;./servo.h: 23: void setstand();
 [v _setstand `(v ~T0 @X0 0 e? ]
-"28 ./OLED.h
-[; ;./OLED.h: 28: void OLED_Display_Array(const uint8_t data[]);
-[v _OLED_Display_Array `(v ~T0 @X0 0 ef1`*Cuc ]
-"24 ./servo.h
+"24
 [; ;./servo.h: 24: void setsit();
 [v _setsit `(v ~T0 @X0 0 e? ]
 "25
@@ -14174,248 +14168,255 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 98:     TRISB= 0x01;
 [e = _TRISB -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:     LATA = 0;
-[e = _LATA -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:     LATB = 0b00000000;
+[; ;main.c: 99:     LATB = 0b00000000;
 [e = _LATB -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:         UART_Init();
+"100
+[; ;main.c: 100:         UART_Init();
 [e ( _UART_Init ..  ]
-"103
-[; ;main.c: 103:         I2C_Master_Init(400000);
+"101
+[; ;main.c: 101:         I2C_Master_Init(400000);
 [e ( _I2C_Master_Init (1 -> -> 400000 `l `ul ]
-"104
-[; ;main.c: 104:         _delay((unsigned long)((1000)*(4000000/4000.0)));
+"102
+[; ;main.c: 102:         _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"105
-[; ;main.c: 105:         OLED_Init();
+"103
+[; ;main.c: 103:         OLED_Init();
 [e ( _OLED_Init ..  ]
-"106
-[; ;main.c: 106:         _delay((unsigned long)((500)*(4000000/4000.0)));
+"104
+[; ;main.c: 104:         _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"112
-[; ;main.c: 112:     while(1){
+"110
+[; ;main.c: 110:     while(1){
 [e :U 300 ]
 {
-"113
-[; ;main.c: 113:         if(mode == 0 || mode == 'e'){
-[e $ ! || == _mode -> 0 `i == -> _mode `ui -> 101 `ui 302  ]
+"112
+[; ;main.c: 112:         if(mode ==-1){
+[e $ ! == _mode -U -> 1 `i 302  ]
 {
-"116
-[; ;main.c: 116:             OLED_Display_Look_Forward();
-[e ( _OLED_Display_Look_Forward ..  ]
-"117
-[; ;main.c: 117:             while(mode==0 || mode == 'e'){
+"113
+[; ;main.c: 113:             OLED_Display_Array(originalFaceData);
+[e ( _OLED_Display_Array (1 &U _originalFaceData ]
+"114
+[; ;main.c: 114:         }
+}
 [e $U 303  ]
-[e :U 304 ]
+"115
+[; ;main.c: 115:         else if(mode == 0 || mode == 'e'){
+[e :U 302 ]
+[e $ ! || == _mode -> 0 `i == -> _mode `ui -> 101 `ui 304  ]
 {
 "118
-[; ;main.c: 118:                 setstand();
-[e ( _setstand ..  ]
+[; ;main.c: 118:             OLED_Display_Look_Forward();
+[e ( _OLED_Display_Look_Forward ..  ]
 "119
-[; ;main.c: 119:             }
-}
-[e :U 303 ]
-"117
-[; ;main.c: 117:             while(mode==0 || mode == 'e'){
-[e $ || == _mode -> 0 `i == -> _mode `ui -> 101 `ui 304  ]
-[e :U 305 ]
-"121
-[; ;main.c: 121:         }else if(mode == 1 || mode == 'f'){
-}
-[e $U 306  ]
-[e :U 302 ]
-[e $ ! || == _mode -> 1 `i == -> _mode `ui -> 102 `ui 307  ]
+[; ;main.c: 119:             while(mode==0 || mode == 'e'){
+[e $U 305  ]
+[e :U 306 ]
 {
-"124
-[; ;main.c: 124:             while(mode==1 || mode == 'f'){
+"120
+[; ;main.c: 120:                 setstand();
+[e ( _setstand ..  ]
+"121
+[; ;main.c: 121:             }
+}
+[e :U 305 ]
+"119
+[; ;main.c: 119:             while(mode==0 || mode == 'e'){
+[e $ || == _mode -> 0 `i == -> _mode `ui -> 101 `ui 306  ]
+[e :U 307 ]
+"123
+[; ;main.c: 123:         }else if(mode == 1 || mode == 'f'){
+}
 [e $U 308  ]
-[e :U 309 ]
+[e :U 304 ]
+[e $ ! || == _mode -> 1 `i == -> _mode `ui -> 102 `ui 309  ]
 {
 "126
-[; ;main.c: 126:                 OLED_Display_Array(sadFaceData);
-[e ( _OLED_Display_Array (1 &U _sadFaceData ]
-"127
-[; ;main.c: 127:                 setsit();
-[e ( _setsit ..  ]
+[; ;main.c: 126:             while(mode==1 || mode == 'f'){
+[e $U 310  ]
+[e :U 311 ]
+{
 "128
-[; ;main.c: 128:             }
+[; ;main.c: 128:                 OLED_Display_Array(happyFaceData);
+[e ( _OLED_Display_Array (1 &U _happyFaceData ]
+"129
+[; ;main.c: 129:                 setsit();
+[e ( _setsit ..  ]
+"130
+[; ;main.c: 130:             }
 }
-[e :U 308 ]
-"124
-[; ;main.c: 124:             while(mode==1 || mode == 'f'){
-[e $ || == _mode -> 1 `i == -> _mode `ui -> 102 `ui 309  ]
 [e :U 310 ]
-"131
-[; ;main.c: 131:         }else if(mode == 2 || mode == 'g'){
+"126
+[; ;main.c: 126:             while(mode==1 || mode == 'f'){
+[e $ || == _mode -> 1 `i == -> _mode `ui -> 102 `ui 311  ]
+[e :U 312 ]
+"133
+[; ;main.c: 133:         }else if(mode == 2 || mode == 'g'){
 }
-[e $U 311  ]
-[e :U 307 ]
-[e $ ! || == _mode -> 2 `i == -> _mode `ui -> 103 `ui 312  ]
-{
-"132
-[; ;main.c: 132:             setlaydown();
-[e ( _setlaydown ..  ]
-"135
-[; ;main.c: 135:             while(mode==2 || mode == 'g'){
 [e $U 313  ]
-[e :U 314 ]
+[e :U 309 ]
+[e $ ! || == _mode -> 2 `i == -> _mode `ui -> 103 `ui 314  ]
 {
+"134
+[; ;main.c: 134:             setlaydown();
+[e ( _setlaydown ..  ]
 "137
-[; ;main.c: 137:                 if(mode != 2 && mode != 'g') break;
-[e $ ! && != _mode -> 2 `i != -> _mode `ui -> 103 `ui 316  ]
+[; ;main.c: 137:             while(mode==2 || mode == 'g'){
 [e $U 315  ]
 [e :U 316 ]
-"138
-[; ;main.c: 138:                 OLED_Display_Array(sleepFace2Data);
-[e ( _OLED_Display_Array (1 &U _sleepFace2Data ]
-"139
-[; ;main.c: 139:                 _delay((unsigned long)((750)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"140
-[; ;main.c: 140:                 if(mode != 2 && mode != 'g') break;
-[e $ ! && != _mode -> 2 `i != -> _mode `ui -> 103 `ui 317  ]
-[e $U 315  ]
-[e :U 317 ]
-"141
-[; ;main.c: 141:                 OLED_Display_Array(sleepFace3Data);
-[e ( _OLED_Display_Array (1 &U _sleepFace3Data ]
-"142
-[; ;main.c: 142:                 _delay((unsigned long)((750)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"144
-[; ;main.c: 144:             }
-}
-[e :U 313 ]
-"135
-[; ;main.c: 135:             while(mode==2 || mode == 'g'){
-[e $ || == _mode -> 2 `i == -> _mode `ui -> 103 `ui 314  ]
-[e :U 315 ]
-"147
-[; ;main.c: 147:         }else if(mode == 3 || mode == 'a'){
-}
-[e $U 318  ]
-[e :U 312 ]
-[e $ ! || == _mode -> 3 `i == -> _mode `ui -> 97 `ui 319  ]
 {
-"148
-[; ;main.c: 148:             OLED_Display_Array(angryFaceData);
-[e ( _OLED_Display_Array (1 &U _angryFaceData ]
+"139
+[; ;main.c: 139:                 if(mode != 2 && mode != 'g') break;
+[e $ ! && != _mode -> 2 `i != -> _mode `ui -> 103 `ui 318  ]
+[e $U 317  ]
+[e :U 318 ]
+"140
+[; ;main.c: 140:                 OLED_Display_Array(sleepFace2Data);
+[e ( _OLED_Display_Array (1 &U _sleepFace2Data ]
+"141
+[; ;main.c: 141:                 _delay((unsigned long)((750)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"142
+[; ;main.c: 142:                 if(mode != 2 && mode != 'g') break;
+[e $ ! && != _mode -> 2 `i != -> _mode `ui -> 103 `ui 319  ]
+[e $U 317  ]
+[e :U 319 ]
+"143
+[; ;main.c: 143:                 OLED_Display_Array(sleepFace3Data);
+[e ( _OLED_Display_Array (1 &U _sleepFace3Data ]
+"144
+[; ;main.c: 144:                 _delay((unsigned long)((750)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 750 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"146
+[; ;main.c: 146:             }
+}
+[e :U 315 ]
+"137
+[; ;main.c: 137:             while(mode==2 || mode == 'g'){
+[e $ || == _mode -> 2 `i == -> _mode `ui -> 103 `ui 316  ]
+[e :U 317 ]
 "149
-[; ;main.c: 149:             while(mode == 3 || mode == 'a'){
+[; ;main.c: 149:         }else if(mode == 3 || mode == 'a'){
+}
 [e $U 320  ]
-[e :U 321 ]
+[e :U 314 ]
+[e $ ! || == _mode -> 3 `i == -> _mode `ui -> 97 `ui 321  ]
 {
 "150
-[; ;main.c: 150:                 walk();
-[e ( _walk ..  ]
+[; ;main.c: 150:             OLED_Display_Array(angryFaceData);
+[e ( _OLED_Display_Array (1 &U _angryFaceData ]
 "151
-[; ;main.c: 151:             }
-}
-[e :U 320 ]
-"149
-[; ;main.c: 149:             while(mode == 3 || mode == 'a'){
-[e $ || == _mode -> 3 `i == -> _mode `ui -> 97 `ui 321  ]
-[e :U 322 ]
-"152
-[; ;main.c: 152:         }else if(mode == 4 || mode == 'c'){
-}
-[e $U 323  ]
-[e :U 319 ]
-[e $ ! || == _mode -> 4 `i == -> _mode `ui -> 99 `ui 324  ]
+[; ;main.c: 151:             while(mode == 3 || mode == 'a'){
+[e $U 322  ]
+[e :U 323 ]
 {
+"152
+[; ;main.c: 152:                 walk();
+[e ( _walk ..  ]
 "153
-[; ;main.c: 153:             OLED_Display_Array(shockFaceData);
-[e ( _OLED_Display_Array (1 &U _shockFaceData ]
+[; ;main.c: 153:             }
+}
+[e :U 322 ]
+"151
+[; ;main.c: 151:             while(mode == 3 || mode == 'a'){
+[e $ || == _mode -> 3 `i == -> _mode `ui -> 97 `ui 323  ]
+[e :U 324 ]
 "154
-[; ;main.c: 154:             while(mode == 4 || mode == 'c'){
+[; ;main.c: 154:         }else if(mode == 4 || mode == 'c'){
+}
 [e $U 325  ]
-[e :U 326 ]
+[e :U 321 ]
+[e $ ! || == _mode -> 4 `i == -> _mode `ui -> 99 `ui 326  ]
 {
 "155
-[; ;main.c: 155:                 back_walk();
-[e ( _back_walk ..  ]
+[; ;main.c: 155:             OLED_Display_Array(shockFaceData);
+[e ( _OLED_Display_Array (1 &U _shockFaceData ]
 "156
-[; ;main.c: 156:             }
-}
-[e :U 325 ]
-"154
-[; ;main.c: 154:             while(mode == 4 || mode == 'c'){
-[e $ || == _mode -> 4 `i == -> _mode `ui -> 99 `ui 326  ]
-[e :U 327 ]
-"157
-[; ;main.c: 157:         }else if(mode == 5 || mode == 'b'){
-}
-[e $U 328  ]
-[e :U 324 ]
-[e $ ! || == _mode -> 5 `i == -> _mode `ui -> 98 `ui 329  ]
+[; ;main.c: 156:             while(mode == 4 || mode == 'c'){
+[e $U 327  ]
+[e :U 328 ]
 {
+"157
+[; ;main.c: 157:                 back_walk();
+[e ( _back_walk ..  ]
+"158
+[; ;main.c: 158:             }
+}
+[e :U 327 ]
+"156
+[; ;main.c: 156:             while(mode == 4 || mode == 'c'){
+[e $ || == _mode -> 4 `i == -> _mode `ui -> 99 `ui 328  ]
+[e :U 329 ]
 "159
-[; ;main.c: 159:             OLED_Display_Look_Left();
-[e ( _OLED_Display_Look_Left ..  ]
-"160
-[; ;main.c: 160:             while(mode == 5 || mode == 'b'){
+[; ;main.c: 159:         }else if(mode == 5 || mode == 'b'){
+}
 [e $U 330  ]
-[e :U 331 ]
+[e :U 326 ]
+[e $ ! || == _mode -> 5 `i == -> _mode `ui -> 98 `ui 331  ]
 {
 "161
-[; ;main.c: 161:                 turn_right();
-[e ( _turn_right ..  ]
+[; ;main.c: 161:             OLED_Display_Look_Left();
+[e ( _OLED_Display_Look_Left ..  ]
 "162
-[; ;main.c: 162:             }
-}
-[e :U 330 ]
-"160
-[; ;main.c: 160:             while(mode == 5 || mode == 'b'){
-[e $ || == _mode -> 5 `i == -> _mode `ui -> 98 `ui 331  ]
-[e :U 332 ]
-"163
-[; ;main.c: 163:         }else if(mode == 6 || mode =='d'){
-}
-[e $U 333  ]
-[e :U 329 ]
-[e $ ! || == _mode -> 6 `i == -> _mode `ui -> 100 `ui 334  ]
+[; ;main.c: 162:             while(mode == 5 || mode == 'b'){
+[e $U 332  ]
+[e :U 333 ]
 {
+"163
+[; ;main.c: 163:                 turn_right();
+[e ( _turn_right ..  ]
+"164
+[; ;main.c: 164:             }
+}
+[e :U 332 ]
+"162
+[; ;main.c: 162:             while(mode == 5 || mode == 'b'){
+[e $ || == _mode -> 5 `i == -> _mode `ui -> 98 `ui 333  ]
+[e :U 334 ]
 "165
-[; ;main.c: 165:             OLED_Display_Look_Right();
-[e ( _OLED_Display_Look_Right ..  ]
-"166
-[; ;main.c: 166:             while(mode == 6 || mode =='d'){
+[; ;main.c: 165:         }else if(mode == 6 || mode =='d'){
+}
 [e $U 335  ]
-[e :U 336 ]
+[e :U 331 ]
+[e $ ! || == _mode -> 6 `i == -> _mode `ui -> 100 `ui 336  ]
 {
 "167
-[; ;main.c: 167:                 turn_left();
-[e ( _turn_left ..  ]
+[; ;main.c: 167:             OLED_Display_Look_Right();
+[e ( _OLED_Display_Look_Right ..  ]
 "168
-[; ;main.c: 168:             }
-}
-[e :U 335 ]
-"166
-[; ;main.c: 166:             while(mode == 6 || mode =='d'){
-[e $ || == _mode -> 6 `i == -> _mode `ui -> 100 `ui 336  ]
-[e :U 337 ]
+[; ;main.c: 168:             while(mode == 6 || mode =='d'){
+[e $U 337  ]
+[e :U 338 ]
+{
 "169
-[; ;main.c: 169:         }
-}
-[e :U 334 ]
-[e :U 333 ]
-[e :U 328 ]
-[e :U 323 ]
-[e :U 318 ]
-[e :U 311 ]
-[e :U 306 ]
+[; ;main.c: 169:                 turn_left();
+[e ( _turn_left ..  ]
 "170
-[; ;main.c: 170:     }
+[; ;main.c: 170:             }
+}
+[e :U 337 ]
+"168
+[; ;main.c: 168:             while(mode == 6 || mode =='d'){
+[e $ || == _mode -> 6 `i == -> _mode `ui -> 100 `ui 338  ]
+[e :U 339 ]
+"171
+[; ;main.c: 171:         }
+}
+[e :U 336 ]
+[e :U 335 ]
+[e :U 330 ]
+[e :U 325 ]
+[e :U 320 ]
+[e :U 313 ]
+[e :U 308 ]
+[e :U 303 ]
+"172
+[; ;main.c: 172:     }
 }
 [e :U 299 ]
 [e $U 300  ]
 [e :U 301 ]
-"198
-[; ;main.c: 198: }
+"200
+[; ;main.c: 200: }
 [e :UE 298 ]
 }

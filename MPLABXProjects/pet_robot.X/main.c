@@ -96,42 +96,78 @@ void main() {
     Timer0_Initialize();
     //Interupt0_Initialize();
     TRISB= 0x01;
-    TRISA = 0x00;
-    LATA = 0;
     LATB = 0b00000000;
         UART_Init();
         I2C_Master_Init(400000);
+        __delay_ms(1000);
         OLED_Init();
+        __delay_ms(500);
 //    while(1){
 //        UART_Read();
 //        UART_Write('r');
 //    }
-    OLED_Display_Array(originalFaceData); 
+    //OLED_Display_Array(originalFaceData); 
     while(1){
-        if(mode == 0 || mode == 'e'){
-            OLED_Display_Array(originalFaceData); 
+        
+        if(mode ==-1){
+            OLED_Display_Array(originalFaceData);
+        }
+        else if(mode == 0 || mode == 'e'){
+            //OLED_Display_Array(originalFaceData);
+            //OLED_Display_Array(happyFaceData);
+            OLED_Display_Look_Forward();
             while(mode==0 || mode == 'e'){
                 setstand();
             }
             
         }else if(mode == 1 || mode == 'f'){
             
-            OLED_Display_Array(happyFaceData); 
+            
             while(mode==1 || mode == 'f'){
+                //OLED_Display_Array(happyFaceData);
+                OLED_Display_Array(happyFaceData);
                 setsit();
             }
                 
             
         }else if(mode == 2 || mode == 'g'){
             setlaydown();
+            //OLED_Display_Array(happyFaceData);
+            
+            while(mode==2 || mode == 'g'){
+                
+                if(mode != 2 && mode != 'g') break;
+                OLED_Display_Array(sleepFace2Data);
+                __delay_ms(750);
+                if(mode != 2 && mode != 'g') break;
+                OLED_Display_Array(sleepFace3Data);
+                __delay_ms(750);
+                
+            }
+            
+            
         }else if(mode == 3 || mode == 'a'){
-            walk();
+            OLED_Display_Array(angryFaceData);
+            while(mode == 3 || mode == 'a'){
+                walk();
+            }
         }else if(mode == 4 || mode == 'c'){
-            back_walk();
+            OLED_Display_Array(shockFaceData);
+            while(mode == 4 || mode == 'c'){
+                back_walk();
+            } 
         }else if(mode == 5 || mode == 'b'){
-            turn_right();
+            //OLED_Display_Array(turnrightFace2Data);
+            OLED_Display_Look_Left();
+            while(mode == 5 || mode == 'b'){
+                turn_right();
+            }
         }else if(mode == 6 || mode =='d'){
-            turn_left();
+            //OLED_Display_Array(turnleftFace2Data);
+            OLED_Display_Look_Right();
+            while(mode == 6 || mode =='d'){
+                turn_left();
+            }
         }
     }
 //    while (1) {
