@@ -5289,6 +5289,7 @@ void walk();
 void back_walk();
 void turn_right();
 void turn_left();
+void handshaking();
 # 6 "main.c" 2
 
 # 1 "./bluetooth.h" 1
@@ -5332,11 +5333,11 @@ void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
 
         int data = RCREG;
 
-        if('0' <= data && data <= '6' ){
+        if('0' <= data && data <= '7' ){
             mode = data - '0';
         }
 
-        if('a' <= data && data <= 'g'){
+        if('a' <= data && data <= 'h'){
             mode = data;
         }
         if(data == 0) mode = 0;
@@ -5449,6 +5450,14 @@ void main() {
                 turn_left();
             }
         }
+        else if(mode == 7 || mode =='h'){
+
+            OLED_Display_Array(happyFaceData);
+            while(mode == 7 || mode =='h'){
+                handshaking();
+            }
+        }
+
     }
-# 200 "main.c"
+
 }

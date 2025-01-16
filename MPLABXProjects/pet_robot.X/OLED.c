@@ -8,10 +8,10 @@ void OLED_Command(unsigned char cmd) {
     I2C_Stop();                    
 }
 
-// ??? OLED ??
+
 void OLED_Init() {
-    __delay_ms(100);               // ?? OLED ??
-    OLED_Command(0xAE);            // ????
+    __delay_ms(100);               
+    OLED_Command(0xAE);            
     __delay_us(50);
     OLED_Command(0xD5);            // ?????????/????
     __delay_us(50);

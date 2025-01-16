@@ -4646,6 +4646,7 @@ void walk();
 void back_walk();
 void turn_right();
 void turn_left();
+void handshaking();
 # 1 "servo.c" 2
 
 
@@ -4867,4 +4868,20 @@ void turn_left(){
         setServoAngle(3, 1500);
         _delay((unsigned long)((400)*(4000000/4000.0)));
         if(mode != 6 && mode != 'd') return;
+}
+
+void handshaking(){
+    setServoAngle(2, 2000);
+    setServoAngle(3, 1000);
+    _delay((unsigned long)((400)*(4000000/4000.0)));
+    setServoAngle(0, 1500);
+    setServoAngle(1, 1500);
+    _delay((unsigned long)((400)*(4000000/4000.0)));
+    while(mode==7 || mode=='h'){
+        setServoAngle(0, 2500);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+        if(mode != 7 && mode != 'h') return;
+        setServoAngle(0, 1500);
+        _delay((unsigned long)((400)*(4000000/4000.0)));
+    }
 }

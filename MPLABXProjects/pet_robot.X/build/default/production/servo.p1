@@ -1180,3 +1180,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;servo.c: 221: }
 [e :UE 310 ]
 }
+"223
+[; ;servo.c: 223: void handshaking(){
+[v _handshaking `(v ~T0 @X0 1 ef ]
+{
+[e :U _handshaking ]
+[f ]
+"224
+[; ;servo.c: 224:     setServoAngle(2, 2000);
+[e ( _setServoAngle (2 , -> -> 2 `i `uc -> -> 2000 `i `us ]
+"225
+[; ;servo.c: 225:     setServoAngle(3, 1000);
+[e ( _setServoAngle (2 , -> -> 3 `i `uc -> -> 1000 `i `us ]
+"226
+[; ;servo.c: 226:     _delay((unsigned long)((400)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"227
+[; ;servo.c: 227:     setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"228
+[; ;servo.c: 228:     setServoAngle(1, 1500);
+[e ( _setServoAngle (2 , -> -> 1 `i `uc -> -> 1500 `i `us ]
+"229
+[; ;servo.c: 229:     _delay((unsigned long)((400)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"230
+[; ;servo.c: 230:     while(mode==7 || mode=='h'){
+[e $U 316  ]
+[e :U 317 ]
+{
+"231
+[; ;servo.c: 231:         setServoAngle(0, 2500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 2500 `i `us ]
+"232
+[; ;servo.c: 232:         _delay((unsigned long)((400)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"233
+[; ;servo.c: 233:         if(mode != 7 && mode != 'h') return;
+[e $ ! && != _mode -> 7 `i != -> _mode `ui -> 104 `ui 319  ]
+[e $UE 315  ]
+[e :U 319 ]
+"234
+[; ;servo.c: 234:         setServoAngle(0, 1500);
+[e ( _setServoAngle (2 , -> -> 0 `i `uc -> -> 1500 `i `us ]
+"235
+[; ;servo.c: 235:         _delay((unsigned long)((400)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"236
+[; ;servo.c: 236:     }
+}
+[e :U 316 ]
+"230
+[; ;servo.c: 230:     while(mode==7 || mode=='h'){
+[e $ || == _mode -> 7 `i == -> _mode `ui -> 104 `ui 317  ]
+[e :U 318 ]
+"237
+[; ;servo.c: 237: }
+[e :UE 315 ]
+}

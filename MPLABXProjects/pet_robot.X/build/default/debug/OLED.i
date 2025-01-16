@@ -5265,7 +5265,9 @@ void OLED_Command(unsigned char cmd) {
 void OLED_Init() {
     _delay((unsigned long)((100)*(4000000/4000.0)));
     OLED_Command(0xAE);
+    _delay((unsigned long)((50)*(4000000/4000000.0)));
     OLED_Command(0xD5);
+    _delay((unsigned long)((50)*(4000000/4000000.0)));
     OLED_Command(0x80);
     OLED_Command(0xA8);
     OLED_Command(0x3F);
@@ -5299,7 +5301,7 @@ void OLED_Data(unsigned char data) {
     I2C_Write(data);
     I2C_Stop();
 }
-# 68 "OLED.c"
+# 70 "OLED.c"
 void OLED_Display_Look_Forward() {
 
     I2C_Start();
@@ -5361,7 +5363,7 @@ void OLED_Display_Look_Left() {
 
 void OLED_Display_Array(const uint8_t data[]) {
     for (unsigned char page = 0; page < 8; page++) {
-# 138 "OLED.c"
+# 140 "OLED.c"
         OLED_Command(0xB0 + page);
         OLED_Command(0x00);
         OLED_Command(0x10);
@@ -5375,7 +5377,7 @@ void OLED_Display_Array(const uint8_t data[]) {
 
 
         }
-
+        _delay((unsigned long)((50)*(4000000/4000000.0)));
 
     }
 }

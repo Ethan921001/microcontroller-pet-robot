@@ -219,3 +219,19 @@ void turn_left(){
         __delay_ms(Move_delay);
         if(mode != 6 && mode != 'd') return;
 }
+
+void handshaking(){
+    setServoAngle(2, 2000);
+    setServoAngle(3, 1000); 
+    __delay_ms(Move_delay);
+    setServoAngle(0, 1500);
+    setServoAngle(1, 1500);
+    __delay_ms(Move_delay);
+    while(mode==7 || mode=='h'){
+        setServoAngle(0, 2500);
+        __delay_ms(Move_delay);
+        if(mode != 7 && mode != 'h') return;
+        setServoAngle(0, 1500);
+        __delay_ms(Move_delay);
+    }
+}

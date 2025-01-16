@@ -5289,6 +5289,7 @@ void walk();
 void back_walk();
 void turn_right();
 void turn_left();
+void handshaking();
 # 6 "main.c" 2
 
 # 1 "./bluetooth.h" 1
@@ -5332,11 +5333,11 @@ void __attribute__((picinterrupt(("high_priority")))) H_ISR(void){
 
         int data = RCREG;
 
-        if('0' <= data && data <= '6' ){
+        if('0' <= data && data <= '7' ){
             mode = data - '0';
         }
 
-        if('a' <= data && data <= 'g'){
+        if('a' <= data && data <= 'h'){
             mode = data;
         }
         if(data == 0) mode = 0;
@@ -5376,8 +5377,6 @@ void main() {
     Timer0_Initialize();
 
     TRISB= 0x01;
-    TRISA = 0x00;
-    LATA = 0;
     LATB = 0b00000000;
         UART_Init();
         I2C_Master_Init(400000);
@@ -5390,7 +5389,11 @@ void main() {
 
 
     while(1){
-        if(mode == 0 || mode == 'e'){
+
+        if(mode ==-1){
+            OLED_Display_Array(originalFaceData);
+        }
+        else if(mode == 0 || mode == 'e'){
 
 
             OLED_Display_Look_Forward();
@@ -5403,7 +5406,7 @@ void main() {
 
             while(mode==1 || mode == 'f'){
 
-                OLED_Display_Array(sadFaceData);
+                OLED_Display_Array(happyFaceData);
                 setsit();
             }
 
@@ -5447,6 +5450,14 @@ void main() {
                 turn_left();
             }
         }
+        else if(mode == 7 || mode =='h'){
+
+            OLED_Display_Array(happyFaceData);
+            while(mode == 7 || mode =='h'){
+                handshaking();
+            }
+        }
+
     }
-# 198 "main.c"
+
 }

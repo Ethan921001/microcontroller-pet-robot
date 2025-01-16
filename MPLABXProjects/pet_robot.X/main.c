@@ -30,6 +30,7 @@
 // 4 : back_walk
 // 5 : turn right
 // 6 : turn left
+//7:hand shaking
 void Interupt0_Initialize(void){
     INTCONbits.INT0IF = 0;
     INTCONbits.GIE = 1;
@@ -39,33 +40,17 @@ void Interupt0_Initialize(void){
 }
 
 void __interrupt(high_priority) H_ISR(void){
-    /*
-    if (INTCONbits.INT0IF) {
-        LATA = 0x01;
-        mode = (mode + 1) % 7;
-        INTCONbits.INT0IF = 0;
-        __delay_ms(2);
-        LATA = 0x00;
-    }
-    */
+
     if(PIR1bits.RCIF){
-        //int data = UART_Read();
         int data = RCREG;
-        //mode = data;
-        if('0' <= data && data <= '6' ){
+        if('0' <= data && data <= '7' ){
             mode = data - '0';
         }
-        
-        if('a' <= data && data <= 'g'){
+        if('a' <= data && data <= 'h'){
             mode = data;
         }
         if(data == 0) mode = 0;
         UART_Write(data);
-//        if(data == '0'){
-//            mode = 0;
-//        }else if(data == 'a'){
-//            mode = 3;
-//        }
     }
 }
 
@@ -89,12 +74,10 @@ void __interrupt(low_priority) L_ISR(void) {
 
 // ???
 void main() {
-    //OSCCON = 0x60;                 // ???????? 1 MHz
-    //I2C_Master_Init(100000);       // ??? I²C?????? 100 kHz
-    //OLED_Init();                   // ??? OLED
+
     OSCCON = 0x60; //4MHZ osc
     Timer0_Initialize();
-    //Interupt0_Initialize();
+
     TRISB= 0x01;
     LATB = 0b00000000;
         UART_Init();
@@ -102,19 +85,13 @@ void main() {
         __delay_ms(1000);
         OLED_Init();
         __delay_ms(500);
-//    while(1){
-//        UART_Read();
-//        UART_Write('r');
-//    }
-    //OLED_Display_Array(originalFaceData); 
+
     while(1){
         
         if(mode ==-1){
             OLED_Display_Array(originalFaceData);
         }
         else if(mode == 0 || mode == 'e'){
-            //OLED_Display_Array(originalFaceData);
-            //OLED_Display_Array(happyFaceData);
             OLED_Display_Look_Forward();
             while(mode==0 || mode == 'e'){
                 setstand();
@@ -169,32 +146,14 @@ void main() {
                 turn_left();
             }
         }
+        else if(mode == 7 || mode =='h'){
+            //OLED_Display_Array(turnleftFace2Data);
+            OLED_Display_Array(happyFaceData);
+            while(mode == 7 || mode =='h'){
+                handshaking();
+            }
+        }
+        
     }
-//    while (1) {
-//        setstand();
-//        OLED_Display_Look_Forward();      // ??????
-//        __delay_ms(1000); 
-//        
-//        while(RB0 == 0b1); 
-//        setsit();
-//        OLED_Display_Look_Right();
-//        __delay_ms(1000);          // ?? 1 ?
-//        
-//        while(RB0 == 0b1);
-//        setstand();
-//        OLED_Display_Look_Forward();
-//        __delay_ms(1000); 
-//        
-//        while(RB0 == 0b1);
-//        setlaydown();
-//        OLED_Display_Look_Left();
-//        __delay_ms(1000); 
-//        
-//        while(RB0 == 0b1);
-//        setsit();
-//        OLED_Display_Array(originFaceData);
-//        __delay_ms(1000);
-//        
-//        while(RB0 == 0b1);
-//    }
+
 }

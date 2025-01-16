@@ -145,6 +145,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 ./servo.h
 [; ;./servo.h: 29: void turn_left();
 [v _turn_left `(v ~T0 @X0 0 e? ]
+"30
+[; ;./servo.h: 30: void handshaking();
+[v _handshaking `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\proc\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -14046,8 +14049,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _data `i ~T0 @X0 1 a ]
 [e = _data -> _RCREG `i ]
 "55
-[; ;main.c: 55:         if('0' <= data && data <= '6' ){
-[e $ ! && <= -> 48 `ui -> _data `ui <= -> _data `ui -> 54 `ui 284  ]
+[; ;main.c: 55:         if('0' <= data && data <= '7' ){
+[e $ ! && <= -> 48 `ui -> _data `ui <= -> _data `ui -> 55 `ui 284  ]
 {
 "56
 [; ;main.c: 56:             mode = data - '0';
@@ -14057,8 +14060,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 284 ]
 "59
-[; ;main.c: 59:         if('a' <= data && data <= 'g'){
-[e $ ! && <= -> 97 `ui -> _data `ui <= -> _data `ui -> 103 `ui 285  ]
+[; ;main.c: 59:         if('a' <= data && data <= 'h'){
+[e $ ! && <= -> 97 `ui -> _data `ui <= -> _data `ui -> 104 `ui 285  ]
 {
 "60
 [; ;main.c: 60:             mode = data;
@@ -14402,7 +14405,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "171
 [; ;main.c: 171:         }
 }
+[e $U 340  ]
+"172
+[; ;main.c: 172:         else if(mode == 7 || mode =='h'){
 [e :U 336 ]
+[e $ ! || == _mode -> 7 `i == -> _mode `ui -> 104 `ui 341  ]
+{
+"174
+[; ;main.c: 174:             OLED_Display_Array(happyFaceData);
+[e ( _OLED_Display_Array (1 &U _happyFaceData ]
+"175
+[; ;main.c: 175:             while(mode == 7 || mode =='h'){
+[e $U 342  ]
+[e :U 343 ]
+{
+"176
+[; ;main.c: 176:                 handshaking();
+[e ( _handshaking ..  ]
+"177
+[; ;main.c: 177:             }
+}
+[e :U 342 ]
+"175
+[; ;main.c: 175:             while(mode == 7 || mode =='h'){
+[e $ || == _mode -> 7 `i == -> _mode `ui -> 104 `ui 343  ]
+[e :U 344 ]
+"178
+[; ;main.c: 178:         }
+}
+[e :U 341 ]
+[e :U 340 ]
 [e :U 335 ]
 [e :U 330 ]
 [e :U 325 ]
@@ -14410,13 +14442,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 313 ]
 [e :U 308 ]
 [e :U 303 ]
-"172
-[; ;main.c: 172:     }
+"180
+[; ;main.c: 180:     }
 }
 [e :U 299 ]
 [e $U 300  ]
 [e :U 301 ]
-"200
-[; ;main.c: 200: }
+"182
+[; ;main.c: 182: }
 [e :UE 298 ]
 }
